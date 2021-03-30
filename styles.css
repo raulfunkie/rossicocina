@@ -1950,3 +1950,20 @@ h1,h2,h3,h4,h5,h6, .post-meta a, .anariel-read-more a, .blog_time_read, .blog_so
 /*gdpr comments*/
 p.comment-form-cookies-consent {float:left;}
 p.comment-form-cookies-consent input{width:15px; margin-right:20px; margin-top:-2px}
+
+:root {
+	--teal: #00b8ce;
+	--pink: #f06ba8;
+	--magenta: #fe0072;
+}
+
+/* custom css */
+.blogsingleimage img {
+	margin: 1rem auto;
+	text-align: center;
+}
+
+.content.singlepage h1 {
+	font-weight: 700;
+	color: var(--teal);
+}
