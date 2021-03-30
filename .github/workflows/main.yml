@@ -11,7 +11,7 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
         server: ${{ secrets.FTP_HOST }}
-	      username: ${{ secrets.FTP_USER }}
-	      password: ${{ secrets.FTP_PASS }}
-	      server-dir: public_html/wp-content/themes/anariel-lite/
+        username: ${{ secrets.FTP_USER }}
+        password: ${{ secrets.FTP_PASS }}
+        server-dir: public_html/wp-content/themes/anariel-lite/
         dry-run: true
