@@ -1,10 +1,42 @@
 /*
-Theme Name: raul
-Version: 5.0
-Theme URI: https://www.raulrincon.me
+Theme Name: rossicocina
+Version: 1.0
+Theme URI: https://www.rossicocina.com
 Author: Raul Rincon Melendez
 Author URI: https://www.raulrincon.me
-Description: The fourth version theme of my personal website.
-Tags: white, yellow, gradients, colorful, designer, tech, dev.
-Text Domain: raulrincon
+Description: RossiCocina website & blog
+Tags: white, yellow, mint, pink, blog, food, recipes, mom
+Text Domain: rossicocina
 */
+
+
+:root {
+	--dark: #1D1D1D;
+	--light-dark: #282828;
+	--darker: #5A5A5A;
+	--light: #F8FAFC;
+	--yellow: #FDF96C;
+	
+	--txt: #C0C0C0;
+	
+	--lime: #FFF431;
+	--light-lime: #F8E3A1;
+	--green: #9AFF3C;
+	--purple: #7000FF;
+	--red: #E83D38;
+	--orange: #FF6A20;
+	--teal: #00E4FF;
+	--light-teal: #CAE8FF;
+	--pink: #EA4C89;
+	--blue: #2151E0;
+	
+	--basic: 'Work Sans', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+	--title: 'Playfair Display', Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+	--kiwi: 'Kiwi Maru', Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+	--mono: 'JetBrains Mono', revertMenlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+}
+
+::selection {
+	background: var(--lime);
+	color: var(--dark);
+}

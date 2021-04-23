@@ -13,4 +13,12 @@ jobs:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASS }}
-        server-dir: public_html/wp-content/themes/anariel-lite/
+        server-dir: public_html/wp-content/themes/rossicocina/
+        dry-run: true
+        exclude: .git*
+        - .git*/**
+        - **/.git*/**
+        - node_modules/**
+        - node_modules/**/*
+        - *.bkup
+        - *.html
