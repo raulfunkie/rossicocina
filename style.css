@@ -11,24 +11,15 @@ Text Domain: rossicocina
 
 
 :root {
-	--dark: #1D1D1D;
-	--light-dark: #282828;
-	--darker: #5A5A5A;
-	--light: #F8FAFC;
-	--yellow: #FDF96C;
+	--wine: #8B1C5C;
+	--dark: #121212;
+	--darker: #001630;
+	--pink: #F174AC;
+	--dark-wine: #6C425E;
+	--pink-two: #FF7BB8;
+	--yellow: #FACF00;
 	
-	--txt: #C0C0C0;
-	
-	--lime: #FFF431;
-	--light-lime: #F8E3A1;
-	--green: #9AFF3C;
-	--purple: #7000FF;
-	--red: #E83D38;
-	--orange: #FF6A20;
-	--teal: #00E4FF;
-	--light-teal: #CAE8FF;
-	--pink: #EA4C89;
-	--blue: #2151E0;
+	--txt: #3E3E3E;
 	
 	--basic: 'Bitter', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
 	--title: 'Playfair Display', Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
