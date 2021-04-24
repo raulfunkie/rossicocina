@@ -4,14 +4,15 @@
     <title>test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=JetBrains+Mono&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono&family=Playfair+Display:ital,wght@0,600;0,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css?v=1">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <header>
-      <div class="search">
-        <input type="text" value="" name="s" id="s" placeholder="Search.." onfocus="fadeOut(this)" onfocusout="fadeIn(this)">
+      <div class="search input-container">
+        <input type="text" value="" name="s" id="s" placeholder="Buscar receta.." />
       </div>
       <nav>
         <ul>
@@ -26,41 +27,45 @@
       <section class="homepage-hero">
         <div>
           <h1>
-            <a href="#">
-              <figure>
-                <img src="#" alt="Logo RossiCocina" />
-              </figure>
-            </a>
+            <object type="image/svg+xml" data="assets/rossi-logo.svg" class="logo">
+              no-fallback
+            </object>
           </h1>
           <p>Me encanta cocinar y crear nuevos platos y sabores. En este blog compartiré contigo recetas, tips de cocina e ideas sencillas para que pongas en practica en tu cocina.</p>
         </div>
         <div>
           <figure>
-            <img src="#" alt="Foto Rossana Hanna">
+            <img src="assets/rossana.jpg" alt="Logo RossiCocina" />
           </figure>
         </div>
       </section>
       <section class="sticky">
         <ul>
           <li>
+            <a class="category" href="#">Recetas</a>
+            <figure>
+              <a href="#">
+                <img src="assets/image1.png" alt="post title image"/>
+              </a>
+            </figure>
             <a href="#">
-              <figure>
-                <img src="#" alt="post title image"/>
-              </figure>
               <div>
                 <h2>Post Title</h2>
-                <p>Post excerpt</p>
+                <p>There’s nothing quite like an impressive looking, yet super easy cake to usher in the warmer weather Springtime brings.</p>
               </div>
             </a>
           </li>
           <li>
+            <a class="category" href="#">Recetas</a>
+            <figure>
+              <a href="#">
+                <img src="assets/image2.png" alt="post title image"/>
+              </a>
+            </figure>
             <a href="#">
-              <figure>
-                <img src="#" alt="post title image"/>
-              </figure>
               <div>
                 <h2>Post Title</h2>
-                <p>Post excerpt</p>
+                <p>There’s nothing quite like an impressive looking, yet super easy cake to usher in the warmer weather Springtime brings.</p>
               </div>
             </a>
           </li>
@@ -68,9 +73,10 @@
       </section>
       <section class="home-posts">
         <section class="posts">
+          <h2>Lo último</h2>
           <article>
             <figure>
-              <img src="#" alt="single post image">
+              <img src="assets/post-img.png" alt="single post image">
             </figure>
             <div>
               <date>21/01/2021</date>
@@ -78,12 +84,11 @@
                 <a href="#">Crispy Ranch Fried Rice Sheet-Pan Style Sensational</a>
               </h2>
               <p>This Instant Pot Chicken and Dumplings is the most comforting, delicious bowl of goodness. Chicken, veggies, pre-made biscuits, seasoning, and all of it made creamy by the humble potato. YUM!</p>
-              <a class="btn btn-reading" href="#">Seguir leyendo..</a>
             </div>
           </article>
           <article>
             <figure>
-              <img src="#" alt="single post image">
+              <img src="assets/post-img.png" alt="single post image">
             </figure>
             <div>
               <date>21/01/2021</date>
@@ -91,12 +96,11 @@
                 <a href="#">Crispy Ranch Fried Rice Sheet-Pan Style Sensational</a>
               </h2>
               <p>This Instant Pot Chicken and Dumplings is the most comforting, delicious bowl of goodness. Chicken, veggies, pre-made biscuits, seasoning, and all of it made creamy by the humble potato. YUM!</p>
-              <a class="btn btn-reading" href="#">Seguir leyendo..</a>
             </div>
           </article>
           <article>
             <figure>
-              <img src="#" alt="single post image">
+              <img src="assets/post-img.png" alt="single post image">
             </figure>
             <div>
               <date>21/01/2021</date>
@@ -104,12 +108,11 @@
                 <a href="#">Crispy Ranch Fried Rice Sheet-Pan Style Sensational</a>
               </h2>
               <p>This Instant Pot Chicken and Dumplings is the most comforting, delicious bowl of goodness. Chicken, veggies, pre-made biscuits, seasoning, and all of it made creamy by the humble potato. YUM!</p>
-              <a class="btn btn-reading" href="#">Seguir leyendo..</a>
             </div>
           </article>
           <article>
             <figure>
-              <img src="#" alt="single post image">
+              <img src="assets/post-img.png" alt="single post image">
             </figure>
             <div>
               <date>21/01/2021</date>
@@ -117,12 +120,11 @@
                 <a href="#">Crispy Ranch Fried Rice Sheet-Pan Style Sensational</a>
               </h2>
               <p>This Instant Pot Chicken and Dumplings is the most comforting, delicious bowl of goodness. Chicken, veggies, pre-made biscuits, seasoning, and all of it made creamy by the humble potato. YUM!</p>
-              <a class="btn btn-reading" href="#">Seguir leyendo..</a>
             </div>
           </article>
           <article>
             <figure>
-              <img src="#" alt="single post image">
+              <img src="assets/post-img.png" alt="single post image">
             </figure>
             <div>
               <date>21/01/2021</date>
@@ -130,12 +132,11 @@
                 <a href="#">Crispy Ranch Fried Rice Sheet-Pan Style Sensational</a>
               </h2>
               <p>This Instant Pot Chicken and Dumplings is the most comforting, delicious bowl of goodness. Chicken, veggies, pre-made biscuits, seasoning, and all of it made creamy by the humble potato. YUM!</p>
-              <a class="btn btn-reading" href="#">Seguir leyendo..</a>
             </div>
           </article>
           <article>
             <figure>
-              <img src="#" alt="single post image">
+              <img src="assets/post-img.png" alt="single post image">
             </figure>
             <div>
               <date>21/01/2021</date>
@@ -143,12 +144,11 @@
                 <a href="#">Crispy Ranch Fried Rice Sheet-Pan Style Sensational</a>
               </h2>
               <p>This Instant Pot Chicken and Dumplings is the most comforting, delicious bowl of goodness. Chicken, veggies, pre-made biscuits, seasoning, and all of it made creamy by the humble potato. YUM!</p>
-              <a class="btn btn-reading" href="#">Seguir leyendo..</a>
             </div>
           </article>
           <article>
             <figure>
-              <img src="#" alt="single post image">
+              <img src="assets/post-img.png" alt="single post image">
             </figure>
             <div>
               <date>21/01/2021</date>
@@ -156,7 +156,6 @@
                 <a href="#">Crispy Ranch Fried Rice Sheet-Pan Style Sensational</a>
               </h2>
               <p>This Instant Pot Chicken and Dumplings is the most comforting, delicious bowl of goodness. Chicken, veggies, pre-made biscuits, seasoning, and all of it made creamy by the humble potato. YUM!</p>
-              <a class="btn btn-reading" href="#">Seguir leyendo..</a>
             </div>
           </article>
           <div class="user-actions">

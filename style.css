@@ -30,3 +30,379 @@ Text Domain: rossicocina
 	background: var(--lime);
 	color: var(--dark);
 }
+
+/* input styles */
+.input-container input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]) {
+	-webkit-appearance: none;
+	outline: none;
+	box-sizing: border-box;
+	width: 100%;
+	padding: .8rem .75rem;
+	font-family: var(--basic);
+	font-size: 1rem;
+	line-height: 1;
+	font-weight: 400;
+	color: var(--dark);
+	border-radius: 4px;
+	border: 1px solid #CED0D7;
+	transition: border 120ms linear;
+}
+
+.input-container select {
+	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M8 0C12.4 0 16 3.6 16 8 16 12.4 12.4 16 8 16 3.6 16 0 12.4 0 8 0 3.6 3.6 0 8 0ZM8 1.2C4.3 1.2 1.2 4.3 1.2 8 1.2 11.7 4.3 14.8 8 14.8 11.7 14.8 14.8 11.7 14.8 8 14.8 4.3 11.7 1.2 8 1.2ZM5.2 6.5L5.3 6.6 8 9.3 10.7 6.6C11 6.3 11.4 6.3 11.6 6.6 11.8 6.8 11.8 7.2 11.6 7.4L11.6 7.5 8.4 10.6C8.2 10.8 7.9 10.9 7.6 10.7L7.6 10.6 4.4 7.5C4.2 7.2 4.2 6.8 4.4 6.6 4.6 6.3 5 6.3 5.2 6.5Z" fill="%234B4B4B"/></svg>');
+	background-position: center right 10px;
+	background-repeat: no-repeat;
+}
+
+.input-container select option { font-weight:normal; }
+
+.input-container select:hover,
+.input-container textarea:hover,
+.input-container input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):hover {
+	border-color: var(--txt);
+	box-shadow: 0 0 0 4px rgba(0,100,227,.08);
+}
+
+select:focus,
+textarea:focus,
+input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):focus {
+	border: 1px solid var(--pink);
+	box-shadow: 0 0 0 1px rgba(0,100,227,.15);
+}
+
+/* btn */
+/* button */
+.btn {
+	-webkit-appearance: none;
+	-webkit-user-select: none;
+	user-select: none;
+	padding: .625rem 4rem .625rem 1.5rem;
+	margin: 10px 4px 0 0;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: left;
+	display: inline-block;
+	font-family: var(--base);
+	font-size: .875rem;
+	font-weight: 600;
+	white-space: nowrap;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	color: var(--darker);
+	background-color: var(--yellow);
+	background-image: url('data:image/svg+xml;utf8,<svg width="26" height="10" viewBox="0 0 26 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M25.0808 4.53345L20.8131 9.06691L19.9887 8.19L22.8468 5.15391H15.754H15.7132H14.5874V5.15387H0.82312V3.91296H14.9025V3.913H15.7132H15.754H22.8468L19.9887 0.876909L20.8131 0L25.0808 4.53345Z" fill="%23001630"/></svg>');
+	background-position: right 8px center;
+	background-repeat: no-repeat;
+	transition: all 120ms ease-in-out;
+}
+
+.btn:hover {
+	transform: translateY(-2px);
+}
+
+.btn:active {
+	transform: scale3d(0.94,0.94,0.94) scale(.95);
+}
+
+/* gogo gadget css */
+
+body {
+	font-family: var(--basic);
+	color: var(--txt);
+	background-color: #ffffff;
+}
+
+header {
+	padding: 1rem .625rem;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+}
+
+header div.search.input-container.input-container input[type="text"] {
+	background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.7" fill-rule="evenodd" clip-rule="evenodd" d="M9.93904 9.65363e-06C15.4205 -0.00755355 19.8702 4.42993 19.8778 9.9114C19.8808 12.0509 19.1923 14.134 17.9151 15.8504L23.2804 20.3885C24.142 21.1237 24.2444 22.4182 23.5091 23.2798C22.7739 24.1413 21.4794 24.2437 20.6179 23.5085C20.5357 23.4384 20.4593 23.3619 20.3892 23.2798L15.8499 17.9152C11.4421 21.1821 5.2205 20.2572 1.95367 15.8493C-1.31319 11.4415 -0.388239 5.2199 4.01959 1.95307C5.73212 0.683835 7.80747 -0.000900502 9.93905 2.01296e-05L9.93904 9.65363e-06ZM9.93904 17.7849C14.2724 17.7849 17.7853 14.272 17.7853 9.93865C17.7853 5.60526 14.2724 2.09235 9.93904 2.09235C5.60565 2.09235 2.09274 5.60526 2.09274 9.93865V9.9386C2.09274 14.272 5.60562 17.7848 9.93898 17.7849L9.93904 17.7849Z" fill="%236C2D51"/></svg>');
+	background-size: 24px 24px;
+	background-position: left 8px center;
+	background-repeat: no-repeat;
+	padding-left: 38px !important;
+	font-family: var(--basic);
+	font-style: italic;
+	font-size: 1.125rem;
+	color: #c5c5c5;
+	border: 0;
+	transition: unset;
+}
+
+header div.search.input-container.input-container input[type="text"]:hover,
+header div.search.input-container.input-container input[type="text"]:focus {
+	border: 0;
+	box-shadow: none;
+}
+
+header nav {
+	margin: auto .625rem auto 0;
+}
+
+header nav ul {
+	list-style-type: none;
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+header nav ul li:not(:last-child) {
+	margin-right: 1.25rem;
+}
+
+header nav ul li a,
+header nav ul li a:visited {
+	text-decoration: none;
+	font-weight: 700;
+	color: var(--txt);
+	text-transform: lowercase;
+	transition: color 120ms linear;
+}
+
+header nav ul li a:hover {
+	color: var(--pink);
+}
+
+header nav ul li a:focus-visible {
+	border-bottom: 2px solid var(--pink);
+}
+
+/* main page */
+.homepage-hero {
+	max-width: 1280px;
+	margin: 2rem auto;
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.homepage-hero > div {
+	flex: 0 1 50%;
+}
+
+.homepage-hero > div:first-child object {
+	max-width: 300px;
+	margin-bottom: 1rem;
+}
+
+.homepage-hero > div:first-child {
+	text-align: left;
+	margin: auto 0;
+}
+
+.homepage-hero > div:first-child p {
+	font-family: var(--title);
+	font-size: 1.125rem;
+	line-height: 1.6;
+	color: var(--dark-wine);
+	max-width: 520px;
+}
+
+.homepage-hero div:last-child figure {
+	position: relative;
+	max-width: 440px;
+	max-height: 440px;
+	margin: 1rem auto;
+}
+
+.homepage-hero div:last-child figure img {
+	position: relative;
+	z-index: 2;
+	max-width: 100%;
+	overflow: hidden;
+	border-radius: 100%;
+}
+
+.homepage-hero div:last-child figure::after,
+.homepage-hero div:last-child figure::before {
+	position: absolute;
+	top: -4%;
+	left: -4%;
+	content: '';
+	width: 120%;
+	height: 120%;
+	display: block;
+	background-image: url('data:image/svg+xml;utf8,<svg width="470" height="476" viewBox="0 0 470 476" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 255.145C0 250.445 0 245.845 0 241.145C0.8 238.445 0.8 235.845 0 233.145C0 228.445 0 223.845 0 219.145C1.1 213.545 0.1 207.145 3.9 202.445C11 193.745 12.2 182.345 18.1 173.045C22.4 166.345 23.2 158.245 21.2 149.945C18.6 139.145 22.2 129.545 29.5 121.445C32.9 117.745 35.8 113.745 37.9 109.245C41.8 101.045 47.2 94.4455 55.5 90.2455C64.6 85.6455 71.8 78.1455 80.4 72.8455C82.3 71.6455 83.2 69.7455 84.1 67.6455C90.4 52.7455 100.7 41.8455 116 36.0455C118.2 35.2455 120.3 34.3455 122.3 33.0455C133.9 25.1455 147.1 22.2455 160.7 20.7455C165.1 20.2455 169.1 18.9455 172.8 16.5455C174.4 15.5455 175.9 14.6455 177.9 15.2455C186.3 17.7455 193.1 14.1455 199.8 9.64546C200.1 9.44546 200.3 9.24546 200.6 9.04546C209.3 0.245456 219.9 -1.35454 231.4 0.945456C233.7 1.44546 235.9 1.34546 238.3 0.945456C251.9 -1.55454 264 1.94546 274.5 10.6455C277.1 12.8455 280.4 13.7455 283.1 15.3455C291 20.1455 299.7 20.9455 308.4 20.4455C325.6 19.4455 340.3 27.3455 355.8 32.5455C361.8 34.5455 364.9 40.1455 369.5 43.8455C377.4 50.3455 383.4 58.3455 387.1 68.2455C389.5 74.7455 393.1 80.5455 400.4 82.7455C402 83.2455 403.4 84.2455 404.7 85.3455C416.2 94.6455 429.1 102.045 441.3 110.345C444.3 112.345 446.2 114.745 446.6 118.345C448.1 132.145 451.9 145.345 456.1 158.545C457.3 162.445 458 166.545 457 170.345C454.8 179.145 458 186.745 461.5 194.245C467.1 206.245 469.6 218.845 469.8 231.945C469.9 237.245 469.6 242.645 469.9 247.945C470.4 255.645 468.5 262.845 465.4 269.745C462.5 276.245 458.6 282.545 456.5 289.245C453.8 298.145 449.2 306.845 449.4 316.345C449.7 334.145 442.2 349.545 435.5 365.345C434.4 367.945 432.3 370.045 430.3 372.045C422.3 379.845 413.6 386.745 404.9 393.545C399.2 397.945 393.5 402.545 388.7 408.145C384.1 413.545 379.9 419.245 375.5 424.845C367.5 435.245 357.3 443.245 343.9 446.145C342.4 446.445 341 446.845 339.6 447.445C330.6 451.545 321.1 452.645 311.4 452.345C307.9 452.245 304.4 452.345 300.9 452.345C298.4 452.345 296.5 453.145 294.9 455.145C290.5 460.845 284.4 463.145 277.4 463.245C273.8 463.345 270.6 464.245 267.4 465.745C257.3 470.545 246.5 473.945 235.5 475.045C221.2 476.445 207.8 472.245 196.4 463.145C193.2 460.645 190 459.645 186 459.145C173.8 457.545 161.7 455.345 149.8 452.545C141.1 450.545 132.3 448.445 123.9 445.345C119.3 443.645 115.4 441.145 111.8 437.745C102.6 429.045 93.3 420.545 84.8 411.245C81.7 407.845 79.4 404.145 78.1 399.745C77.3 397.045 75.7 395.145 73.3 393.645C64.7 388.545 56.2 383.545 49.7 375.645C47.3 372.645 43.6 371.045 40.3 369.145C27.3 361.945 22.4 350.545 22.5 336.345C22.6 325.045 22.3 313.745 20.4 302.545C19.7 298.645 18.7 295.145 15.7 292.345C14.3 291.045 1.3 262.545 0.7 260.645C0.2 258.745 1.1 256.845 0 255.145Z" fill="%23FEF1F6"/></svg>');
+	background-size: 470px 476px;
+	background-repeat: no-repeat;
+}
+
+.homepage-hero div:last-child figure::before {
+	transform: rotate(18deg);
+	transform-origin: center center;
+}
+
+/* sticky posts */
+.sticky {
+	position: relative;
+	padding: 4rem 1rem;
+	background-image: url('assets/bg-spotlight.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom center;
+}
+
+.sticky::before {
+	content: 'destacados';
+	max-width: 1080px;
+	margin: 0 auto;
+	display: block;
+	font-family: var(--title);
+	font-weight: 900;
+	font-size: 8.75rem;
+	font-style: italic;
+	color: rgba(255, 233, 233, 0.5);
+	position: absolute;
+	top: -130px;
+	left: 40%;
+	transform: translateX(-40%);
+}
+
+.sticky ul {
+	list-style-type: none;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+}
+
+.sticky ul li:not(:last-child) {
+	margin-right: 2rem;
+}
+
+.sticky ul li {
+	position: relative;
+	flex: 0 1 480px;
+	background-color: #ffffff;
+	border-radius: 16px;
+	overflow: hidden;
+	transition: all 120ms linear;
+}
+
+.sticky ul li a {
+	text-decoration: none;
+}
+
+.sticky ul li:hover {
+	box-shadow: 0px 16px 11px rgba(120, 122, 166, 0.11), 0px 6.16296px 3.5037px rgba(120, 122, 166, 0.0668148), 0px 1.3037px 0.896296px rgba(120, 122, 166, 0.0431852);
+	transform: translateY(-2px);
+}
+
+.sticky ul li .category {
+	position: absolute;
+	padding: .75rem 1rem;
+	right: 0;
+	top: 1rem;
+	background-color: var(--yellow);
+	border-radius: 20px 0 0 20px;
+	font-weight: 700;
+	font-size: .75rem;
+	color: var(--darker);
+	text-transform: uppercase;
+}
+
+.sticky ul li div {
+	padding: 1rem 1.25rem;
+	text-align: left;
+}
+
+.sticky ul li div h2 {
+	font-family: var(--title);
+	font-size: 1.375rem;
+	font-weight: 600;
+	color: var(--wine);
+	margin-bottom: .625rem;
+}
+
+.sticky ul li div p {
+	font-size: 1rem;
+	line-height: 1.6;
+	color: var(--dark);
+}
+
+/* posts home */
+.home-posts {
+	max-width: 1080px;
+	margin: 2rem auto;
+	display: flex;
+	flex-flow: row nowrap;
+	text-align: left;
+	justify-content: space-between;
+}
+
+.home-posts .posts {
+	flex: 0 1 680px;
+}
+
+.home-posts .posts > h2 {
+	font-family: var(--title);
+	font-size: 2rem;
+	font-weight: 700;
+	color: var(--dark);
+	margin-bottom: 2rem;
+}
+
+.home-posts .posts article {
+	display: flex;
+	flex-flow: row nowrap;
+	margin-bottom: 1.25rem;
+	padding-bottom: 1.25rem;
+}
+
+.home-posts .posts article:not(:last-child) {
+	border-bottom: 1px solid #E9D5EA;
+}
+
+.home-posts .posts article figure {
+	flex: 0 0 200px;
+	margin-right: 1rem;
+	max-width: 200px;
+}
+
+.home-posts .posts article date {
+	font-family: var(--mono);
+	font-size: .875rem;
+	font-weight: 400;
+	color: #B9B9B9;
+}
+
+.home-posts .posts article div {
+	padding: .625rem 0;
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+.home-posts .posts article h2 {
+	margin: auto 0;
+	font-family: var(--title);
+	font-size: 2rem;
+	font-weight: 700;
+	line-height: 1;
+}
+
+.home-posts .posts article h2 a {
+	color: var(--wine);
+	text-decoration: none;
+}
+
+.home-posts .posts article p {
+	font-size: .875rem;
+	line-height: 1.6;
+}
+
+.home-posts .posts article .btn.btn-reading {
+	flex: 0 1 auto;
+	min-width: 0;
+	background-color: var(--yellow);
+	color: var(--darker);
+	text-align: left;
+	padding: 2px 4px;
+	margin-top: .625rem;
+	border: 0;
+}
+
+.home-posts aside {
+	flex: 0 1 360px;
+}
