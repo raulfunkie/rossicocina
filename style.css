@@ -539,3 +539,60 @@ footer .split > div:nth-child(2) small {
 	font-weight: 400;
 	color: #ffffff;
 }
+
+/* page */
+.page main {
+	max-width: 1080px;
+	margin: 2rem auto;
+}
+
+.page main .page-header {
+	margin: 2rem auto;
+}
+
+.page main .page-header a object {
+	max-width: 160px;
+}
+
+.page main .page-meta {
+	max-width: 900px;
+	margin: 0 auto 4rem;
+}
+
+.page main .page-meta h1 {
+	font-family: var(--title);
+	font-size: 4rem;
+	line-height: 1;
+	text-align: center;
+}
+
+.page main .page-meta h1 a {
+	color: var(--wine);
+	text-decoration: none;
+}
+
+.page main article {
+	text-align: left;
+}
+
+.page main article :is(p, div, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote) {
+	max-width: 940px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.page main article .content p {
+	margin: 1rem auto;
+	line-height: 1.6;
+	text-align: left;
+}
+
+.page main article .content > p:first-of-type {
+	font-size: 1.125rem;
+}
+
+.page main article .content .float-right {
+	margin-left: 2rem;
+	clear: right;
+	float: right;
+}
