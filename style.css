@@ -76,7 +76,7 @@ input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):focus {
 	-webkit-appearance: none;
 	-webkit-user-select: none;
 	user-select: none;
-	padding: .625rem 4rem .625rem 1.5rem;
+	padding: .875rem 4rem .875rem 1.5rem;
 	margin: 10px 4px 0 0;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -403,6 +403,54 @@ header nav ul li a:focus-visible {
 	border: 0;
 }
 
-.home-posts aside {
+.home-posts aside.sidebar {
 	flex: 0 1 360px;
+}
+
+.sidebar .panel {
+	padding-bottom: 2rem;
+	margin-bottom: 1.25rem;
+}
+
+.sidebar .panel:first-of-type {
+	background-color: #FDEAEC;
+}
+
+.sidebar .panel:nth-child(2) {
+	background-color: #FFF8FB;
+}
+
+.sidebar .panel:nth-child(3) {
+	background-color: #FFF8D4;
+}
+
+.sidebar .panel figure img {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.sidebar .panel div {
+	padding: 1rem 2rem;
+}
+
+.sidebar .panel div h3 {
+	font-family: var(--title);
+	font-size: 2rem;
+	font-weight: 700;
+	color: var(--dark-wine);
+	margin-bottom: 1.125rem;
+}
+
+.sidebar .panel div p {
+	font-size: .875rem;
+	color: var(--text);
+	line-height: 1.8;
+	margin-bottom: 1.125rem;
+}
+
+/* footer */
+footer {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
 }
