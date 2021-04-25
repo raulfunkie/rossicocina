@@ -16,9 +16,9 @@ jobs:
         server-dir: public_html/wp-content/themes/rossicocina/
         dry-run: true
         exclude: .git*
-        - .git*/**
-        - **/.git*/**
-        - node_modules/**
-        - node_modules/**/*
-        - *.bkup
-        - *.html
+          - .git*/**
+          - **/.git*/**
+          - node_modules/**
+          - node_modules/**/*
+          - *.bkup
+          - *.html
