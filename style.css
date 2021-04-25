@@ -450,7 +450,54 @@ header nav ul li a:focus-visible {
 
 /* footer */
 footer {
+	margin: 2rem 0;
+	background-image: url('assets/footer-bg.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+footer .split {
+	max-width: 1080px;
+	margin: 0 auto;
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;
+}
+
+footer .split ul  {
+	list-style-type: none;
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+footer .split > div {
+	text-align: left;
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+footer .split > div > section {
+	padding: 4rem 0;
+}
+
+footer .split div h4 {
+	font-family: var(--title);
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: var(--yellow);
+}
+
+footer .split > div > .split-column {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+footer .split > div:nth-child(2) ul {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+footer .split > div:nth-child(2) ul li a svg {
+	max-width: 32px;
+	max-height: 32px;
 }
