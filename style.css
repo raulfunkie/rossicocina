@@ -16,8 +16,9 @@ Text Domain: rossicocina
 	--darker: #001630;
 	--pink: #F174AC;
 	--dark-wine: #6C425E;
-	--pink-two: #FF7BB8;
-	--yellow: #FACF00;
+	--pink-two: #F175AB;
+	--yellow: #FFE52C;
+	--green: #83D0CF;
 	
 	--txt: #3E3E3E;
 	
@@ -185,7 +186,7 @@ header nav ul li a:focus-visible {
 
 .homepage-hero > div:first-child object,
 object.logo {
-	max-width: 300px;
+	max-width: 180px;
 	margin-bottom: 1rem;
 }
 
@@ -546,53 +547,260 @@ footer .split > div:nth-child(2) small {
 	margin: 2rem auto;
 }
 
-.page main .page-header {
+.page main .page-header,
+.single main .page-header {
 	margin: 2rem auto;
 }
 
-.page main .page-header a object {
+.page main .page-header a object,
+.single main .page-header a object {
 	max-width: 160px;
 }
 
-.page main .page-meta {
+.page main .page-meta,
+.single main .post-meta {
 	max-width: 900px;
 	margin: 0 auto 4rem;
 }
 
-.page main .page-meta h1 {
+.page main .page-meta h1,
+.single main .post-meta h1 {
 	font-family: var(--title);
 	font-size: 4rem;
 	line-height: 1;
 	text-align: center;
 }
 
-.page main .page-meta h1 a {
+.page main .page-meta h1 a,
+.single main .post-meta h1 a {
 	color: var(--wine);
 	text-decoration: none;
 }
 
-.page main article {
+.page main article,
+.single main article {
 	text-align: left;
 }
 
-.page main article :is(p, div, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote) {
+.page main article :is(p, div, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote),
+.single main article :is(p, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote),
+.single main:not(figure, img, div, article, main) {
 	max-width: 940px;
 	margin-right: auto;
 	margin-left: auto;
 }
 
-.page main article .content p {
+.page main article .content p,
+.single main article .content p {
 	margin: 1rem auto;
+	font-size: 1.125rem;
 	line-height: 1.6;
 	text-align: left;
 }
 
-.page main article .content > p:first-of-type {
-	font-size: 1.125rem;
+.page main article .content > p:first-of-type,
+.single main article .content > p:first-of-type {
+	font-size: 1.375rem;
+	font-style: italic;
+	margin-bottom: 2rem;
 }
 
-.page main article .content .float-right {
+main article .content .float-right {
 	margin-left: 2rem;
 	clear: right;
 	float: right;
+}
+
+main article .content .float-left {
+	margin-right: 2rem;
+	clear: left;
+	float: left;
+}
+
+main article .content ul,
+main article .content ol {
+	margin: 1.25rem auto;
+	padding-left: 2rem;
+}
+
+main article .content li {
+	padding: .5rem;
+}
+
+main article .content li a,
+main article .content a {
+	text-decoration: none;
+	font-weight: 700;
+	color: var(--wine);
+	transition: all 120ms linear;
+}
+
+main article .content a:hover {
+	background-color: var(--pink);
+	color: #ffffff;
+}
+
+main article .content h2 {
+	margin-top: 2rem;
+	font-family: var(--title);
+	font-size: 2.25rem;
+	color: var(--wine);
+}
+
+main article .content h3 {
+	margin-top: 2rem;
+	font-family: var(--text);
+	font-size: 2rem;
+	color: var(--dark-wine);
+}
+
+main article .content h4 {
+	margin-top: 2rem;
+	font-size: 1.5rem;
+	color: var(--dark);
+}
+
+main article .content h5 {
+	margin-top: 2rem;
+	font-size: 1.25rem;
+	color: var(--wine);
+}
+
+/* related */
+.related {
+	background-color: #FFF8FB;
+	width: 100%;
+	padding: 1rem;
+	margin-bottom: 4rem;
+}
+
+.related ul {
+	max-width: 1080px;
+	margin: 0 auto;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+}
+
+.related ul li {
+	flex: 0 0 260px;
+	text-align: left;
+}
+
+.related ul li:not(:last-child) {
+	margin-right: 1.25rem;
+}
+
+.related ul li a {
+	position: relative;
+	padding: 1rem;
+	background-color: #ffffff;
+	border-radius: 16px;
+	text-decoration: none;
+	overflow: hidden;
+	display: flex;
+	flex-flow: row nowrap;
+	transition: all 100ms linear;
+}
+
+.related ul li a:hover {
+	transform: translateY(-2px);
+	box-shadow: 0px 16px 11px rgba(120, 122, 166, 0.11), 0px 6.16296px 3.5037px rgba(120, 122, 166, 0.0668148), 0px 1.3037px 0.896296px rgba(120, 122, 166, 0.0431852);
+}
+
+.related ul li a figure {
+	flex: 0 0 64px;
+	max-width: 64px;
+	max-height: 64px;
+	margin: auto 10px auto 0;
+	border-radius: 100%;
+	overflow: hidden;
+}
+
+.related ul li a figure img {
+	max-width: 100%;
+}
+
+.related ul li a h3 {
+	margin-left: .625rem;
+	font-family: var(--title);
+	font-size: 1rem;
+	color: var(--wine);
+}
+
+/* single */
+.single main .post-meta {
+	max-width: 1080px;
+}
+
+.single main .post-meta figure {
+	margin-bottom: 2rem;
+}
+
+.single main article .content figure {
+	margin: 2.5rem auto;
+}
+
+.single main article .content figure img {
+	margin: 1rem auto;
+}
+
+.single main article .content figure figcaption {
+	text-align: center;
+	font-size: 1rem;
+	font-style: italic;
+	color: var(--wine);
+}
+
+.single main .post-meta h1 {
+	text-align: left;
+	margin-bottom: 2rem;
+}
+
+.post-meta-details {
+	padding: .625rem 0;
+	border-top: 1px solid #91CEC2;
+	border-bottom: 1px solid #91CEC2;
+}
+
+.post-meta-details ul {
+	list-style-type: none;
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.post-meta-details ul li:not(:last-child) {
+	border-right: 1px solid #FECB4D;
+}
+
+.post-meta-details ul li {
+	padding: 0 1rem;
+}
+
+.post-meta-details ul li h5 {
+	margin-bottom: .25rem;
+	font-family: var(--title);
+	color: var(--wine);
+	font-size: .875rem;
+	font-weight: 600;
+}
+
+.post-meta-details ul li time {
+	padding-left: .25rem;
+	color: #838383;
+	font-weight: 500;
+}
+
+.post-meta-details ul li .tag-list {
+	padding-left: .25rem;
+}
+
+.post-meta-details ul li .tag-list a {
+	color: #838383;
+	text-decoration: none;
+	transition: color 100ms linear;
+}
+
+.post-meta-details ul li .tag-list a:hover {
+	color: var(--wine);
 }
