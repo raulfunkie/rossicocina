@@ -122,6 +122,7 @@ header {
 }
 
 header div.search.input-container.input-container input[type="text"] {
+	background-color: transparent;
 	background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.7" fill-rule="evenodd" clip-rule="evenodd" d="M9.93904 9.65363e-06C15.4205 -0.00755355 19.8702 4.42993 19.8778 9.9114C19.8808 12.0509 19.1923 14.134 17.9151 15.8504L23.2804 20.3885C24.142 21.1237 24.2444 22.4182 23.5091 23.2798C22.7739 24.1413 21.4794 24.2437 20.6179 23.5085C20.5357 23.4384 20.4593 23.3619 20.3892 23.2798L15.8499 17.9152C11.4421 21.1821 5.2205 20.2572 1.95367 15.8493C-1.31319 11.4415 -0.388239 5.2199 4.01959 1.95307C5.73212 0.683835 7.80747 -0.000900502 9.93905 2.01296e-05L9.93904 9.65363e-06ZM9.93904 17.7849C14.2724 17.7849 17.7853 14.272 17.7853 9.93865C17.7853 5.60526 14.2724 2.09235 9.93904 2.09235C5.60565 2.09235 2.09274 5.60526 2.09274 9.93865V9.9386C2.09274 14.272 5.60562 17.7848 9.93898 17.7849L9.93904 17.7849Z" fill="%236C2D51"/></svg>');
 	background-size: 24px 24px;
 	background-position: left 8px center;
@@ -263,7 +264,8 @@ object.logo {
 	transform: translateX(-40%);
 }
 
-.sticky ul {
+.sticky ul,
+.post-list {
 	list-style-type: none;
 	display: flex;
 	flex-flow: row nowrap;
@@ -274,7 +276,8 @@ object.logo {
 	margin-right: 2rem;
 }
 
-.sticky ul li {
+.sticky ul li,
+.post-list article {
 	position: relative;
 	flex: 0 1 480px;
 	background-color: #ffffff;
@@ -283,11 +286,13 @@ object.logo {
 	transition: all 120ms linear;
 }
 
-.sticky ul li a {
+.sticky ul li a,
+.post-list article a {
 	text-decoration: none;
 }
 
-.sticky ul li:hover {
+.sticky ul li:hover,
+.post-list article:hover {
 	box-shadow: 0px 16px 11px rgba(120, 122, 166, 0.11), 0px 6.16296px 3.5037px rgba(120, 122, 166, 0.0668148), 0px 1.3037px 0.896296px rgba(120, 122, 166, 0.0431852);
 	transform: translateY(-2px);
 }
@@ -305,12 +310,14 @@ object.logo {
 	text-transform: uppercase;
 }
 
-.sticky ul li div {
+.sticky ul li div,
+.post-list article div {
 	padding: 1rem 1.25rem;
 	text-align: left;
 }
 
-.sticky ul li div h2 {
+.sticky ul li div h2,
+.post-list article div h2 {
 	font-family: var(--title);
 	font-size: 1.375rem;
 	font-weight: 600;
@@ -318,7 +325,8 @@ object.logo {
 	margin-bottom: .625rem;
 }
 
-.sticky ul li div p {
+.sticky ul li div p,
+.post-list article div p {
 	font-size: 1rem;
 	line-height: 1.6;
 	color: var(--dark);
@@ -363,7 +371,8 @@ object.logo {
 	max-width: 200px;
 }
 
-.home-posts .posts article date {
+.home-posts .posts article time,
+.post-list article time {
 	font-family: var(--mono);
 	font-size: .875rem;
 	font-weight: 400;
@@ -803,4 +812,75 @@ main article .content h5 {
 
 .post-meta-details ul li .tag-list a:hover {
 	color: var(--wine);
+}
+
+/* category */
+.category {
+	background: linear-gradient(180deg, rgba(145, 206, 194, 0.1) 0%, rgba(145, 206, 194, 0) 100%);
+}
+
+.page.category .page-meta {
+	margin-bottom: 4rem;
+}
+
+.page.category .page-meta h1 {
+	color: var(--green);
+	font-style: italic;
+}
+
+.page.search .page-meta h1 {
+	color: var(--pink-two);
+	font-style: italic;
+	padding: 1.25rem;
+	border-bottom: 1px solid var(--green);
+}
+
+.page.category .page-meta h4 {
+	font-size: .875rem;
+	font-weight: 400;
+	color: #838383;
+	margin-bottom: 1rem;
+	text-transform: lowercase;
+}
+
+.post-list {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	column-gap: 2rem;
+	row-gap: 2rem;
+	padding-bottom: 4rem;
+}
+
+.post-list article {
+	border: 1px solid #F3E8EF;
+}
+
+.post-list article:nth-child(3n-3) {
+	margin-right: 0;
+}
+
+.post-list article:last-child {
+	margin-left: 0;
+	align-self: flex-start;
+}
+
+.post-list article figure img {
+	width: 100%;
+}
+
+.post-list article div h2 {
+	margin-bottom: 0;
+}
+
+.post-list article:hover {
+	border-color: var(--green);
+}
+
+.search {
+	background: linear-gradient(180deg, rgba(254, 203, 77, 0.1) 0%, rgba(255, 204, 78, 0) 100%);
+}
+
+.blog.archive {
+	background: linear-gradient(180deg, rgba(139, 28, 92, 0.1) 0%, rgba(139, 28, 92, 0) 100%);
 }
