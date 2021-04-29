@@ -181,6 +181,19 @@ header nav ul li a:focus-visible {
 	flex-flow: row nowrap;
 }
 
+@media only screen and (max-width: 1280px) {
+	.homepage-hero {
+		padding: 0 1rem;
+	}
+}
+
+@media only screen and (max-width: 960px) {
+	.homepage-hero {
+		flex-flow: column nowrap;
+		justify-content: center;
+	}
+}
+
 .homepage-hero > div {
 	flex: 0 1 50%;
 }
@@ -194,6 +207,15 @@ object.logo {
 .homepage-hero > div:first-child {
 	text-align: left;
 	margin: auto 0;
+}
+
+@media only screen and (max-width: 960px) {
+	.homepage-hero > div:first-child {
+		order: 2;
+		text-align: center;
+		margin: 2rem auto;
+		z-index: 10;
+	}
 }
 
 .homepage-hero > div:first-child p {
@@ -231,6 +253,16 @@ object.logo {
 	background-image: url('data:image/svg+xml;utf8,<svg width="470" height="476" viewBox="0 0 470 476" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 255.145C0 250.445 0 245.845 0 241.145C0.8 238.445 0.8 235.845 0 233.145C0 228.445 0 223.845 0 219.145C1.1 213.545 0.1 207.145 3.9 202.445C11 193.745 12.2 182.345 18.1 173.045C22.4 166.345 23.2 158.245 21.2 149.945C18.6 139.145 22.2 129.545 29.5 121.445C32.9 117.745 35.8 113.745 37.9 109.245C41.8 101.045 47.2 94.4455 55.5 90.2455C64.6 85.6455 71.8 78.1455 80.4 72.8455C82.3 71.6455 83.2 69.7455 84.1 67.6455C90.4 52.7455 100.7 41.8455 116 36.0455C118.2 35.2455 120.3 34.3455 122.3 33.0455C133.9 25.1455 147.1 22.2455 160.7 20.7455C165.1 20.2455 169.1 18.9455 172.8 16.5455C174.4 15.5455 175.9 14.6455 177.9 15.2455C186.3 17.7455 193.1 14.1455 199.8 9.64546C200.1 9.44546 200.3 9.24546 200.6 9.04546C209.3 0.245456 219.9 -1.35454 231.4 0.945456C233.7 1.44546 235.9 1.34546 238.3 0.945456C251.9 -1.55454 264 1.94546 274.5 10.6455C277.1 12.8455 280.4 13.7455 283.1 15.3455C291 20.1455 299.7 20.9455 308.4 20.4455C325.6 19.4455 340.3 27.3455 355.8 32.5455C361.8 34.5455 364.9 40.1455 369.5 43.8455C377.4 50.3455 383.4 58.3455 387.1 68.2455C389.5 74.7455 393.1 80.5455 400.4 82.7455C402 83.2455 403.4 84.2455 404.7 85.3455C416.2 94.6455 429.1 102.045 441.3 110.345C444.3 112.345 446.2 114.745 446.6 118.345C448.1 132.145 451.9 145.345 456.1 158.545C457.3 162.445 458 166.545 457 170.345C454.8 179.145 458 186.745 461.5 194.245C467.1 206.245 469.6 218.845 469.8 231.945C469.9 237.245 469.6 242.645 469.9 247.945C470.4 255.645 468.5 262.845 465.4 269.745C462.5 276.245 458.6 282.545 456.5 289.245C453.8 298.145 449.2 306.845 449.4 316.345C449.7 334.145 442.2 349.545 435.5 365.345C434.4 367.945 432.3 370.045 430.3 372.045C422.3 379.845 413.6 386.745 404.9 393.545C399.2 397.945 393.5 402.545 388.7 408.145C384.1 413.545 379.9 419.245 375.5 424.845C367.5 435.245 357.3 443.245 343.9 446.145C342.4 446.445 341 446.845 339.6 447.445C330.6 451.545 321.1 452.645 311.4 452.345C307.9 452.245 304.4 452.345 300.9 452.345C298.4 452.345 296.5 453.145 294.9 455.145C290.5 460.845 284.4 463.145 277.4 463.245C273.8 463.345 270.6 464.245 267.4 465.745C257.3 470.545 246.5 473.945 235.5 475.045C221.2 476.445 207.8 472.245 196.4 463.145C193.2 460.645 190 459.645 186 459.145C173.8 457.545 161.7 455.345 149.8 452.545C141.1 450.545 132.3 448.445 123.9 445.345C119.3 443.645 115.4 441.145 111.8 437.745C102.6 429.045 93.3 420.545 84.8 411.245C81.7 407.845 79.4 404.145 78.1 399.745C77.3 397.045 75.7 395.145 73.3 393.645C64.7 388.545 56.2 383.545 49.7 375.645C47.3 372.645 43.6 371.045 40.3 369.145C27.3 361.945 22.4 350.545 22.5 336.345C22.6 325.045 22.3 313.745 20.4 302.545C19.7 298.645 18.7 295.145 15.7 292.345C14.3 291.045 1.3 262.545 0.7 260.645C0.2 258.745 1.1 256.845 0 255.145Z" fill="%23FEF1F6"/></svg>');
 	background-size: 470px 476px;
 	background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 900px) {
+	.homepage-hero div:last-child figure::after,
+	.homepage-hero div:last-child figure::before {
+		width: 100%;
+		height: 100%;
+		white-space: nowrap;
+		background-size: auto;
+	}
 }
 
 .homepage-hero div:last-child figure::before {
@@ -276,6 +308,12 @@ object.logo {
 	margin-right: 2rem;
 }
 
+@media only screen and (max-width: 1024px) {
+	.sticky ul li:not(:last-child) {
+		margin-right: 1.25rem;
+	}
+}
+
 .sticky ul li,
 .post-list article {
 	position: relative;
@@ -284,6 +322,12 @@ object.logo {
 	border-radius: 16px;
 	overflow: hidden;
 	transition: all 120ms linear;
+}
+
+@media only screen and (max-width: 1024px) {
+	.sticky ul li {
+		flex: 0 1 50%;
+	}
 }
 
 .sticky ul li a,
@@ -530,12 +574,24 @@ footer {
 	background-repeat: no-repeat;
 }
 
+@media only screen and (max-width: 1140px) {
+	footer {
+		padding: 0 1rem;
+	}
+}
+
 footer .split {
 	max-width: 1080px;
 	margin: 0 auto;
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;
+}
+
+@media only screen and (max-width: 840px) {
+	footer .split {
+		flex-wrap: wrap;
+	}
 }
 
 footer .split > div ul  {
@@ -562,6 +618,13 @@ footer .split > div {
 footer .split > div > section {
 	padding: 4rem 0;
 	flex: 0 0 220px;
+}
+
+@media only screen and (max-width: 840px) {
+	footer .split > div > section {
+		flex: 1 1 auto;
+		padding-bottom: 1rem;
+	}
 }
 
 footer .split div h4 {
@@ -591,7 +654,20 @@ footer .split > div:nth-child(2) {
 	text-align: center;
 }
 
+@media only screen and (max-width: 840px) {
+	footer .split > div:nth-child(2) {
+		flex: 0 1 100%;
+		padding-bottom: 2rem;
+		text-align: center;
+	}
+	
+	footer .split > div:nth-child(2) object {
+		margin: 0 auto;
+	}
+}
+
 footer .split > div:nth-child(2) ul {
+	padding-left: 0;
 	margin-bottom: 2rem;
 	display: flex;
 	flex-flow: row nowrap;
