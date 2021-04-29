@@ -140,6 +140,7 @@ header div.search.input-container.input-container input[type="text"]:hover,
 header div.search.input-container.input-container input[type="text"]:focus {
 	border: 0;
 	box-shadow: none;
+	color: var(--text);
 }
 
 header nav {
@@ -152,8 +153,26 @@ header nav ul {
 	flex-flow: row nowrap;
 }
 
+@media only screen and (max-width: 630px) {
+	header nav ul {
+		flex-flow: column;
+	}
+}
+
 header nav ul li:not(:last-child) {
 	margin-right: 1.25rem;
+}
+
+@media only screen and (max-width: 630px) {
+	header nav ul li {
+		margin-right: 0;
+		margin-bottom: .625rem;
+		text-align: right;
+	}
+	
+	header nav ul li:not(:last-child) {
+		margin-right: 0;
+	}
 }
 
 header nav ul li a,
@@ -706,6 +725,12 @@ footer .split > div ul li a {
 	text-decoration: none;
 	color: #F2C5E3;
 	padding: .25rem 0;
+	transition: color 100ms linear;
+}
+
+footer .split > div ul li a:hover,
+footer .split > div ul li a:focus {
+	color: var(--pink);
 }
 
 footer .split > div {
@@ -1150,7 +1175,7 @@ main article .content h5 {
 	border-color: var(--green);
 }
 
-.search {
+.page.search {
 	background: linear-gradient(180deg, rgba(254, 203, 77, 0.1) 0%, rgba(255, 204, 78, 0) 100%);
 }
 
