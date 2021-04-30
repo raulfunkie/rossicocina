@@ -13,7 +13,7 @@ jobs:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASS }}
-        server-dir: public_html/wp-content/themes/rossicocina/
+        server-dir: /public_html/wp-content/themes/rossicocina/
         exclude: .git*
           - .git*/**
           - **/.git*/**
