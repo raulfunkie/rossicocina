@@ -522,7 +522,8 @@ object.logo {
 }
 
 .home-posts .posts article time,
-.post-list article time {
+.post-list article time,
+.related ul li a div time {
 	font-family: var(--mono);
 	font-size: .875rem;
 	font-weight: 400;
@@ -862,7 +863,7 @@ footer .split > div:nth-child(2) small {
 .page main .page-meta,
 .single main .post-meta {
 	max-width: 900px;
-	margin: 0 auto 4rem;
+	margin: 0 auto 2rem;
 }
 
 .page main .page-meta h1,
@@ -871,6 +872,27 @@ footer .split > div:nth-child(2) small {
 	font-size: 4rem;
 	line-height: 1;
 	text-align: center;
+}
+
+@media only screen and (max-width: 640px) {
+	.page main .page-meta h1,
+	.single main .post-meta h1 {
+		font-size: 2.75rem;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.page main .page-meta h1,
+	.single main .post-meta h1 {
+		font-size: 2.5rem;
+	}
+}
+
+@media only screen and (max-width: 414px) {
+	.page main .page-meta h1,
+	.single main .post-meta h1 {
+		font-size: 2.25rem;
+	}
 }
 
 .page main .page-meta h1 a,
@@ -890,6 +912,18 @@ footer .split > div:nth-child(2) small {
 	max-width: 940px;
 	margin-right: auto;
 	margin-left: auto;
+}
+
+@media only screen and (max-width: 960px) {
+	.page main article :is(p, div, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote),
+	.single main article :is(p, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote),
+	.single main:not(figure, img, div, article, main) {
+		padding: 0 .625rem;
+	}
+	
+	.single main article section.post-meta {
+		padding: 0;
+	}
 }
 
 .page main article .content p,
@@ -984,6 +1018,24 @@ main article .content h5 {
 	justify-content: center;
 }
 
+@media only screen and (max-width: 1080px) {
+	.related ul {
+		flex-flow: row wrap;
+		justify-content: center;
+	}
+}
+
+@media only screen and (max-width: 720px) {
+	.related ul {
+		list-style-type: none;
+		width: 100%;
+		overflow: auto;
+		flex-flow: row nowrap;
+		justify-content: flex-start;
+		-webkit-overflow-scrolling: touch;
+	}
+}
+
 .related ul li {
 	flex: 0 0 260px;
 	text-align: left;
@@ -992,6 +1044,44 @@ main article .content h5 {
 .related ul li:not(:last-child) {
 	margin-right: 1.25rem;
 }
+
+@media only screen and (max-width: 1080px) {
+	.related ul li {
+		flex: 0 1 60%;
+		max-width: 420px;
+		margin-bottom: 1.25rem;
+	}
+	
+	.related ul li:not(:last-child) {
+		margin-right: 0;
+	}
+	
+	.related ul li:nth-child(odd) {
+		margin-right: 1rem;
+	}
+	
+	.related ul li:nth-child(even) {
+		margin-right: 0;
+	}
+	
+	.related ul li:nth-last-child(-n+2) {
+		margin-bottom: 0;
+	}
+}
+
+@media only screen and (max-width: 720px) {
+	.related ul li {
+		flex: 0 0 90%;
+		margin-bottom: 0;
+	}
+}
+/*
+@media only screen and (max-width: 720px) {
+	.related ul li {
+		flex: 0 1 100%;
+		margin: .312rem 0 !important;
+	}
+}*/
 
 .related ul li a {
 	position: relative;
@@ -1010,6 +1100,12 @@ main article .content h5 {
 	box-shadow: 0px 16px 11px rgba(120, 122, 166, 0.11), 0px 6.16296px 3.5037px rgba(120, 122, 166, 0.0668148), 0px 1.3037px 0.896296px rgba(120, 122, 166, 0.0431852);
 }
 
+@media only screen and (max-width: 720px) {
+	.related ul li a:hover {
+		box-shadow: none;
+	}
+}
+
 .related ul li a figure {
 	flex: 0 0 64px;
 	max-width: 64px;
@@ -1023,11 +1119,19 @@ main article .content h5 {
 	max-width: 100%;
 }
 
+.related ul li a div {
+	margin: auto 0;
+}
+
 .related ul li a h3 {
-	margin-left: .625rem;
 	font-family: var(--title);
 	font-size: 1rem;
 	color: var(--wine);
+	margin-bottom: .5rem;
+}
+
+.realted ul li a div time {
+	font-size: .75rem;
 }
 
 /* single */
@@ -1035,16 +1139,30 @@ main article .content h5 {
 	max-width: 1080px;
 }
 
+/*@media only screen and (max-width: 960px) {
+	.single main .post-meta {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}*/
+
 .single main .post-meta figure {
 	margin-bottom: 2rem;
+	max-width: 100%;
+}
+
+.single main .post-meta figure img {
+	max-width: 100%;
 }
 
 .single main article .content figure {
 	margin: 2.5rem auto;
+	max-width: 100%;
 }
 
 .single main article .content figure img {
 	margin: 1rem auto;
+	max-width: 100%;
 }
 
 .single main article .content figure figcaption {
@@ -1065,10 +1183,28 @@ main article .content h5 {
 	border-bottom: 1px solid #91CEC2;
 }
 
+@media only screen and (max-width: 640px) {
+	.post-meta-details {
+		padding: 0;
+	}
+}
+
 .post-meta-details ul {
 	list-style-type: none;
 	display: flex;
 	flex-flow: row nowrap;
+}
+
+@media only screen and (max-width: 640px) {
+	.post-meta-details ul {
+		flex-wrap: wrap;
+	}
+}
+
+@media only screen and (max-width: 640px) {
+	.post-meta-details ul {
+		flex-flow: column;
+	}
 }
 
 .post-meta-details ul li:not(:last-child) {
@@ -1079,8 +1215,34 @@ main article .content h5 {
 	padding: 0 1rem;
 }
 
+@media only screen and (max-width: 640px) {
+	.post-meta-details ul li {
+		padding: .625rem;
+	}
+	
+	.post-meta-details ul li:nth-child(-n+2) {
+		flex: 1 1 50%;
+		border-bottom: 1px solid var(--green);
+	}
+	
+	.post-meta-details ul li:nth-child(2) {
+		border-right: 0;
+	}
+	
+	.post-meta-details ul li:nth-child(3) {
+		flex: 0 1 100%;
+	}
+}
+
+@media screen and (max-width: 460px) {
+	.post-meta-details ul li:first-child {
+		border-right: 0;
+	}
+}
+
 .post-meta-details ul li h5 {
 	margin-bottom: .25rem;
+	padding-left: 0;
 	font-family: var(--title);
 	color: var(--wine);
 	font-size: .875rem;
