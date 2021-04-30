@@ -1,7 +1,7 @@
         <aside class="sidebar">
           <section class="panel">
             <figure class="fw">
-              <img src="assets/sidebar1.png" alt="sidebar image">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/sidebar1.png" alt="sidebar image">
             </figure>
             <div>
               <h3>Sidebar Panel title</h3>
@@ -11,7 +11,7 @@
           </section>
           <section class="panel">
             <figure>
-              <img src="assets/sidebar2.png" alt="sidebar image">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/sidebar2.png" alt="sidebar image">
             </figure>
             <div>
               <h3>Sidebar Panel title</h3>

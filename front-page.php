@@ -5,15 +5,15 @@ get_header(); ?>
       <section class="homepage-hero">
         <div>
           <h1>
-            <object type="image/svg+xml" data="assets/rossi-logo.svg" class="logo">
-              no-fallback
+            <object type="image/svg+xml" data="<?php echo get_template_directory_uri(); ?>/assets/rossi-logo.svg" class="logo">
+              RossiCocina Logo
             </object>
           </h1>
           <p><?php echo get_post_field('post_content', $post->ID); ?></p>
         </div>
         <div>
           <figure>
-            <img src="assets/rossana.jpg" alt="Logo RossiCocina" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/rossana.jpg" alt="Logo RossiCocina" />
           </figure>
         </div>
       </section>
@@ -40,7 +40,9 @@ get_header(); ?>
             <?php } ?>
             <figure>
              <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => __('Sigue leyendo: '), 'after' => ' &rarr;' ) ); ?>">
-                <img src="assets/image1.png" alt="post title image"/>
+                <?php if ( has_post_thumbnail() ) { the_post_thumbnail('post-featured-img'); } else { ?>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/default-post-img.png" alt="<?php the_title(); ?>" />
+                <?php } ?>
               </a>
             </figure>
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => __('Sigue leyendo: '), 'after' => ' &rarr;' ) ); ?>">
@@ -67,7 +69,7 @@ get_header(); ?>
           <article  <?php post_class(); ?>>
             <figure>
               <?php if ( has_post_thumbnail() ) { the_post_thumbnail('post-featured-img'); } else { ?>
-              <img src="<?php bloginfo('template_directory'); ?>/assets/default-post-img.png" alt="<?php the_title(); ?>" />
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/default-post-img.png" alt="<?php the_title(); ?>" />
               <?php } ?>
             </figure>
             <div>
@@ -79,10 +81,6 @@ get_header(); ?>
             </div>
           </article>
           <?php endwhile; ?>
-          <?php if ($the_query->max_num_pages > 1) { ?>
-            <div class="user-actions">
-              <a class="btn btn-yellow">Posts anteriores</a>
-            </div>
             <?php next_posts_link( 'Posts Anteriores', $custom_query->max_num_pages );
              previous_posts_link( 'Posts Recientes' ); ?>
           <?php } ?>
