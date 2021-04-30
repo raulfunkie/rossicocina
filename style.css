@@ -501,6 +501,11 @@ object.logo {
 	max-width: 200px;
 }
 
+.home-posts .posts article a {
+	text-decoration: none;
+	margin: auto 0;
+}
+
 @media only screen and (max-width: 1080px) {
 	.home-posts .posts article figure {
 		flex: 0 1 160px;
@@ -537,7 +542,6 @@ object.logo {
 }
 
 .home-posts .posts article h2 {
-	margin: auto 0;
 	font-family: var(--title);
 	font-size: 2rem;
 	font-weight: 700;
@@ -545,12 +549,12 @@ object.logo {
 }
 
 @media only screen and (max-width: 414px) {
-	.home-posts .posts article h2 {
+	.home-posts .posts article a {
 		margin: .625rem 0;
 	}
 }
 
-.home-posts .posts article h2 a {
+.home-posts .posts article a h2 {
 	color: var(--wine);
 	text-decoration: none;
 }
