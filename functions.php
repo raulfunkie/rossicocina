@@ -132,7 +132,21 @@ function favico() { ?>
 <?php }
 add_action( 'wp_head', 'favico', 10 );
 
-/* Custom page for RossiCocina */
+
+// register sidebars
+function wpb_widgets_init() {
+
+  register_sidebar( array(
+      'name' => __( 'Sidebar', 'rcsb' ),
+      'id' => 'sidebar',
+      'description' => __( 'The main sidebar appears on the right on each page except the front page template', 'wpb' ),
+      'before_widget' => '<section id="%1$s" class="panel %2$s">',
+      'after_widget' => '</section>'
+  ) );
+}
+add_action( 'widgets_init', 'wpb_widgets_init' );
+
+// Custom page for RossiCocina
 function wp_rossicocina() {
   add_menu_page(
     __( 'RossiCocina', 'rossicocina-textdomain' ),
