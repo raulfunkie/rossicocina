@@ -83,7 +83,6 @@ get_header(); ?>
           <?php endwhile; ?>
             <?php next_posts_link( 'Posts Anteriores', $custom_query->max_num_pages );
              previous_posts_link( 'Posts Recientes' ); ?>
-          <?php } ?>
         <?php else:  ?>
           <!--<?php _e( 'Sorry, no posts matched your criteria.' ); ?>-->
         <?php endif; ?>
