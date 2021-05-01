@@ -2,17 +2,19 @@
     <main>
       <?php get_template_part('includes/logo', 'header'); ?>
       <section class="page-meta">
-        <h4>Mostrando Articulos con el tag</h4>
-        <h1><?php single_tag_title(); ?></h1>
+        <h4>Resultados de la busqueda</h4>
+        <h1><?php the_search_query(); ?></h1>
       </section>
       <section class="post-list">
-      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-        <article>
+        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <article <?php post_class(); ?>>
+          <?php if ( has_post_thumbnail()) : ?>
           <figure>
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => __('Sigue leyendo: '), 'after' => ' &rarr;' ) ); ?>">
-              <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+              <?php the_post_thumbnail(); ?>
             </a>
           </figure>
+          <?php endif; ?>
           <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => __('Sigue leyendo: '), 'after' => ' &rarr;' ) ); ?>">
             <div>
               <?php the_title( '<h2>', '</h2>' ); ?>
@@ -21,12 +23,14 @@
             </div>
           </a>
         </article>
-        <?php endwhile; else: ?>
-        <?php _e( 'Sorry, no posts matched your criteria.', 'textdomain' ); ?>
+        <?php endwhile; ?>
+        <div class="pagination">
+          <?php next_posts_link( 'Posts Anteriores', $custom_query->max_num_pages );
+           previous_posts_link( 'Posts Recientes' ); ?>
+        </div>
+        <?php else: ?>
+          <?php  _e( 'Sorry, no posts matched your criteria.', 'textdomain' ); ?>
         <?php endif; ?>
       </section>
-      <div class="pagination">
-        <?php next_posts_link( 'Posts Anteriores', $custom_query->max_num_pages ); previous_posts_link( 'Posts Recientes' ); ?>
-      </div>
     </main>
 <?php get_footer(); ?>

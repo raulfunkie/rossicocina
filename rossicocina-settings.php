@@ -1,5 +1,4 @@
 <?php
-
 /*
     Plugin Name: RossiCocina Settings Page
     description: Setting up configurable fields.

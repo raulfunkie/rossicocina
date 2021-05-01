@@ -21,21 +21,11 @@ get_header(); ?>
       </section>
       <section class="sticky">
         <?php $sticky = get_option( 'sticky_posts' );
-          $args = array(
-            'posts_per_page'      => 2,
-            'post__in'            => $sticky,
-            'ignore_sticky_posts' => 1
-            );
-        
-          if ( !empty($sticky) ):
-            // has sticky posts
-            query_posts($args);
-        
-          $stickyPosts = new WP_query();
-          $stickyPosts->query($args);
-            if ( $stickyPosts->have_posts() ): ?>
+        rsort( $sticky );
+        $sticky = array_slice( $sticky, 0, 2 );
+        $the_query = new WP_Query(array( 'post__in' => $sticky, 'ignore_sticky_posts' => 1, 'orderby' => 'modified' )); ?>
         <ul>
-          <?php while ( $stickyPosts->have_posts() ) : $stickyPosts->the_post();?>
+          <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
           <li>
             <?php $tags = get_the_tags(); foreach ( $tags as $tag ) { ?>
             <a class="category"  href="<?php echo get_tag_link( $tag->term_id ); ?>" rel="tag"><?php echo $tag->name; ?></a>
@@ -52,21 +42,18 @@ get_header(); ?>
               </div>
             </a>
           </li>
-          <?php endwhile; endif;
-          wp_reset_query(); endif; ?>
+          <?php endwhile; else : ?>
+           <li><?php _e( 'Sorry, no posts matched your criteria.' ); ?></li>
+          <?php endif; ?>
+          <?php wp_reset_query(); ?>
         </ul>
       </section>
       <section class="home-posts">
         <section class="posts">
           <h2>Lo último</h2>
-          <?php $custom_query_args = array( 'posts_per_page' => 6, 'ignore_sticky_posts' => 1 );
-          $custom_query_args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-          $custom_query = new WP_Query( $custom_query_args );
-          $temp_query = $wp_query;
-          $wp_query   = NULL;
-          $wp_query   = $custom_query; ?>
-          <?php if ( $custom_query->have_posts() ) : while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
-          <article  <?php post_class(); ?>>
+          <?php $the_query = new WP_Query( array( 'posts_per_page' => 6, 'post__not_in' => get_option( 'sticky_posts' ) ) );
+          if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+          <article <?php post_class(); ?>>
             <figure>
               <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
             </figure>
@@ -79,7 +66,7 @@ get_header(); ?>
             </div>
           </article>
           <?php endwhile; ?>
-          <a class="btn" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">Mas Articulos</a>
+          <a class="btn" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">más Articulos</a>
         <?php else:  ?>
           <!--<?php _e( 'Sorry, no posts matched your criteria.' ); ?>-->
         <?php endif; ?>

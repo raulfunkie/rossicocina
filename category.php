@@ -2,8 +2,8 @@
     <main>
       <?php get_template_part('includes/logo', 'header'); ?>
       <section class="page-meta">
-        <h4>Mostrando Articulos en la Categoria</h4>
-        <h1><?php printf( __( '%s', 'pietergoosen' ), single_cat_title( '', false ) ); ?></h1>
+        <h4>Mostrando articulos en la Categoria</h4>
+        <h1><?php single_cat_title(); ?></h1>
       </section>
       <section class="post-list">
       <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -27,7 +27,7 @@
          previous_posts_link( 'Posts Recientes' ); ?>
       </div>
       <?php else: ?>
-        <?php  _e( 'Sorry, no posts matched your criteria.', 'textdomain' ); ?>
+        <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
       <?php endif; ?>
     </section>
     </main>

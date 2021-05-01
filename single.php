@@ -3,19 +3,7 @@
       <?php get_template_part('includes/logo', 'header'); ?>
       <div class="related">
         <ul>
-          <?php
-          $tags = wp_get_post_tags($post->ID);
-          if ($tags) {
-          $first_tag = $tags[0]->term_id;
-          $args=array(
-          'tag__in' => array($first_tag),
-          'post__not_in' => array($post->ID),
-          'posts_per_page'=> 4,
-          'caller_get_posts'=> 1
-          );
-          $my_query = new WP_Query($args);
-          if( $my_query->have_posts() ) {
-          while ($my_query->have_posts()) : $my_query->the_post(); ?>
+          <?php $popularpost = new WP_Query( array( 'posts_per_page' => 4, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'RAND'  ) ); while ( $popularpost->have_posts() ) : $popularpost->the_post(); ?>
           <li>
             <a href="<?php the_permalink(); ?>" rel="bookmark" <?php the_title_attribute(); ?>>
               <figure>
@@ -57,11 +45,7 @@
               </li>
               <li>
                 <h5>Tags</h5>
-                <div class="tag-list">
-                <?php $tags = get_the_tags(); foreach ( $tags as $tag ) { ?>
-                 <a href="<?php echo get_tag_link( $tag->term_id ); ?>" rel="tag"><?php echo $tag->name; ?></a>
-                <?php } ?>
-                </div>
+                <?php the_tags( '<div class="tag-list">', ', ', '</div>' ); ?>
               </li>
             </ul>
           </div>

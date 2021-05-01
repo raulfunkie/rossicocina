@@ -2,7 +2,7 @@
 
 function load_css() {
   wp_enqueue_style( 'reset', get_template_directory_uri() . '/reset.css' );
-  wp_enqueue_style( 'gfonts', '//fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono&family=Playfair+Display:ital,wght@0,600;0,700;1,900&display=swap', false ); 
+  wp_enqueue_style( 'gfonts', 'https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono&family=Playfair+Display:ital,wght@0,600;0,700;1,700&display=swap', false ); 
   wp_enqueue_style( 'style', get_stylesheet_directory_uri() .'/style.css', array(), filemtime(get_stylesheet_directory() .'/style.css'), 'all' );
 }
 add_action( 'wp_enqueue_scripts', 'load_css' );
@@ -17,6 +17,18 @@ remove_action('wp_head', 'feed_links_extra', 3);
 remove_action('wp_head', 'start_post_rel_link', 10, 0);
 remove_action('wp_head', 'parent_post_rel_link', 10, 0);
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+function disable_wp_emojicons() {
+  remove_action( 'admin_print_styles', 'print_emoji_styles' );
+  remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+  remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+  remove_action( 'wp_print_styles', 'print_emoji_styles' );
+  remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+  remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+  remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+}
+add_action( 'init', 'disable_wp_emojicons' );
+add_filter( 'emoji_svg_url', '__return_false' );
 
 function wrong_login() {
   return 'Wrong username or password.';
@@ -111,6 +123,11 @@ function cf_google_analytics_tracking() { ?>
 <?php }
 add_action( 'wp_head', 'cf_google_analytics_tracking', 10 );
 
+function prefetch_links() { ?>
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+<?php }
+add_action( 'wp_head', 'prefetch_links', 10 );
+
 function favico() { ?>
   <link rel="apple-touch-icon" sizes="57x57" href="assets/fav/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="assets/fav/apple-icon-60x60.png">
@@ -158,5 +175,45 @@ function rc_image_sizes() {
   add_image_size( 'sticky-post-image', 480, 240 );
   add_image_size( 'related-image', 100, 100, array( 'center', 'center' ) ); 
 }
+
+function wpb_track_post_views ($post_id) {
+  if ( !is_single() ) return;
+  if ( empty ( $post_id) ) {
+      global $post;
+      $post_id = $post->ID;    
+  }
+  wpb_set_post_views($post_id);
+}
+add_action( 'wp_head', 'wpb_track_post_views');
+
+function wpb_set_post_views($postID) {
+  $count_key = 'wpb_post_views_count';
+  $count = get_post_meta($postID, $count_key, true);
+  if($count==''){
+      $count = 0;
+      delete_post_meta($postID, $count_key);
+      add_post_meta($postID, $count_key, '0');
+  }else{
+      $count++;
+      update_post_meta($postID, $count_key, $count);
+  }
+}
+//To keep the count accurate, lets get rid of prefetching
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+function clean_post_content($content) {
+    // For individual posts and the index page
+    if ( is_single() || is_home() ) {
+        // Remove inline styling
+        $content = preg_replace('/(<[^>]+) style=".*?"/i', '$1', $content);
+        // Remove font tag
+        $content = preg_replace('/<font[^>]+>/', '', $content);
+        // Remove empty tags
+        $post_cleaners = array('<p></p>' => '', '<p> </p>' => '', '<div></div>' => '', '<div>&nbsp;</div>' => '', '<div> </div>' => '', '<p>&nbsp;</p>' => '', '<span></span>' => '', '<span> </span>' => '', '<span>&nbsp;</span>' => '', '<span>' => '', '</span>' => '', '<font>' => '', '</font>' => '');
+        $content = strtr($content, $post_cleaners);
+    }
+    return $content;
+}
+add_filter( 'the_content', 'clean_post_content' );
 
 ?>
