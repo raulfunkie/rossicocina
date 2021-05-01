@@ -233,6 +233,7 @@ header nav ul li a:focus-visible {
 object.logo {
 	max-width: 180px;
 	margin-bottom: 1rem;
+	pointer-events: none;
 }
 
 .homepage-hero > div:first-child {
@@ -513,6 +514,7 @@ object.logo {
 }
 
 .home-posts .posts article a {
+	color: var(--wine);
 	text-decoration: none;
 	margin: auto 0;
 }
@@ -550,6 +552,7 @@ object.logo {
 	padding: .5rem 0;
 	display: flex;
 	flex-flow: column nowrap;
+	justify-content: space-between;
 }
 
 .home-posts .posts article h2 {
@@ -694,7 +697,7 @@ object.logo {
 
 /* footer */
 footer {
-	margin: 2rem 0 0;
+	margin: 4rem 0 0;
 	padding-bottom: 2rem;
 	background-image: url('assets/footer-bg.png');
 	background-size: cover;
@@ -871,17 +874,22 @@ footer .split > div:nth-child(2) small {
 
 /* page */
 .page main,
-.archive main {
+.archive main,
+.blog main,
+.search main {
 	max-width: 1080px;
 	margin: 2rem auto;
 }
 
 main .page-header {
-	margin: 2rem auto;
+	margin: 2rem auto 3rem;
 }
 
 main .page-header a {
+	width: 160px;
+	height: 55px;
 	display: block;
+	margin: 0 auto;
 }
 
 .page main .page-header a object,
@@ -900,6 +908,7 @@ main .page-meta {
 main .page-meta h1,
 main .post-meta h1 {
 	font-family: var(--title);
+	color: var(--wine);
 	font-size: 4rem;
 	line-height: 1;
 	text-align: center;
@@ -1326,7 +1335,7 @@ main article .content h5 {
 }
 
 .page-meta h4 {
-	font-size: .875rem;
+	font-size: 1rem;
 	font-weight: 400;
 	color: #838383;
 	margin-bottom: 1rem;
@@ -1334,7 +1343,7 @@ main article .content h5 {
 }
 
 .page-meta h3 {
-	font-size: 1rem;
+	font-size: 2rem;
 	color: var(--wine);
 	text-align: center;
 }
@@ -1393,3 +1402,17 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 a img.alignright {float:right; margin:0 0 1em 1em} 
 a img.alignleft {float:left; margin:0 1em 1em 0} 
 a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+
+/* error page */
+.error404 .content p {
+	max-width: 940px;
+	margin: 0 auto 2rem;
+	padding: 1rem;
+	text-align: center;
+	font-size: 1.25rem;
+	line-height: 1.7;
+}
+
+.big-emoji {
+	font-size: 120px;
+}
