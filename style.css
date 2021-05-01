@@ -1325,12 +1325,18 @@ main article .content h5 {
 	border-bottom: 1px solid var(--green);
 }
 
-main .page-meta h4 {
+.page-meta h4 {
 	font-size: .875rem;
 	font-weight: 400;
 	color: #838383;
 	margin-bottom: 1rem;
 	text-transform: lowercase;
+}
+
+.page-meta h3 {
+	font-size: 1rem;
+	color: var(--wine);
+	text-align: center;
 }
 
 .post-list {
