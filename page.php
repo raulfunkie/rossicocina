@@ -1,12 +1,6 @@
 <?php get_header(); ?>
   <main>
-    <div class="page-header">
-      <a href="<?php echo get_home_url(); ?>">
-        <object type="image/svg+xml" data="assets/rossi-logo.svg" class="logo">
-          no-fallback
-        </object>
-      </a>
-    </div>
+    <?php get_template_part('includes/logo', 'header'); ?>
     <article>
       <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
       <section class="page-meta">

@@ -1,12 +1,9 @@
-<?php
-/*
-Template Name: Blog
-*/
-get_header(); ?>
+<?php get_header(); ?>
     <main>
       <?php get_template_part('includes/logo', 'header'); ?>
       <section class="page-meta">
-        <h1>Articulos</h1>
+        <h4>Mostrando Articulos con el tag</h4>
+        <h1><?php printf( __( '%s', 'pietergoosen' ), single_tag_title( '', false ) ); ?></h1>
       </section>
       <section class="post-list">
       <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -32,5 +29,5 @@ get_header(); ?>
         <div class="pagination">
           <?php next_posts_link( 'Posts Anteriores', $custom_query->max_num_pages ); previous_posts_link( 'Posts Recientes' ); ?>
         </div>
-    </main>
+      </main>
 <?php get_footer(); ?>

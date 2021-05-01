@@ -100,7 +100,7 @@ function shapeSpace_remove_toolbar_nodes($wp_admin_bar) {
 add_action('admin_bar_menu', 'shapeSpace_remove_toolbar_nodes', 999);
 
 function cf_google_analytics_tracking() { ?>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SWGSHY3BQG"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=asdfasdf"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -137,7 +137,7 @@ add_action( 'wp_head', 'favico', 10 );
 function wpb_widgets_init() {
 
   register_sidebar( array(
-      'name' => __( 'Sidebar', 'rcsb' ),
+      'name' => __( 'sidebar', 'rcsb' ),
       'id' => 'sidebar',
       'description' => __( 'The main sidebar appears on the right on each page except the front page template', 'wpb' ),
       'before_widget' => '<section id="%1$s" class="panel %2$s">',
@@ -146,27 +146,17 @@ function wpb_widgets_init() {
 }
 add_action( 'widgets_init', 'wpb_widgets_init' );
 
-// Custom page for RossiCocina
-function wp_rossicocina() {
-  add_menu_page(
-    __( 'RossiCocina', 'rossicocina-textdomain' ),
-    __( 'RossiCocina menu', 'rossicocina-textdomain' ),
-    'manage_options',
-    'rossicocina-page',
-    'wp_page_rossicocina',
-    'data:image/svg;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAyOTcgMjk3IiB2aWV3Qm94PSIwIDAgMjk3IDI5NyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtNzkuNzkyIDE5Mi45MjRjOC4zMjYgOS44ODMgMjAuODY0IDE2LjE4NSAzNC44NjQgMTYuMTg1IDEzLjcxNiAwIDI2LjAwMS02LjI2OSAzNC4xNzgtMTYuMTA5IDguMjc0IDkuODQxIDIwLjcxIDE2LjEwOSAzNC41OTIgMTYuMTA5IDEzLjcxNiAwIDI2LjAwMS02LjI2OSAzNC4xNzgtMTYuMTA5IDguMjc0IDkuODQxIDIwLjcxIDE2LjEwOSAzNC41OTIgMTYuMTA5IDI0LjcwNSAwIDQ0LjgwNS0yMC4wOTkgNDQuODA1LTQ0LjgwNCAwLTU1LjA5Ni00OC4yNjUtMTAxLjQzNS0xMTMuMTIyLTExNC4wMTQtMi43NzUgMi43MzUtNS45NTggNS40NTEtOS41NzQgOC4xNDEtOS41NjggNy4xMTUtMTkuMDcgMTEuODQ2LTE5LjQ3MSAxMi4wNDMtMi4wMzkgMS4wMS00LjI1NCAxLjUxNS02LjQ3MSAxLjUxNS0yLjI1NSAwLTQuNTEtLjUyNC02LjU3Ny0xLjU2Ny0uMzk4LS4yMDEtOS44NjItNS4wMS0xOS4zNzMtMTIuMjAyLTMuNDczLTIuNjI4LTYuNTMzLTUuMjc1LTkuMjIxLTcuOTM4LTY0Ljg5MSAxMi41NTctMTEzLjE5MiA1OC45MDYtMTEzLjE5MiAxMTQuMDIyIDAgMjQuNzA1IDIwLjM0MiA0NC44MDQgNDUuMzQ2IDQ0LjgwNCAxMy44MzMtLjAwMSAyNi4yMjEtNi4zMDIgMzQuNDQ2LTE2LjE4NXoiLz48cGF0aCBkPSJtMTgyLjg4OCAyMy4xNTdjLjAzNy05LjQ5Ni03LjYzLTE3LjIyNS0xNy4xMjUtMTcuMjY1LS4wMjQgMC0uMDQ3IDAtLjA3MSAwLTkuNDYzIDAtMTcuMTUzIDcuNjUyLTE3LjE5MiAxNy4xMjEuMDM5LTkuNDk0LTcuNjMtMTcuMjIzLTE3LjEyMy0xNy4yNjMtLjAyNCAwLS4wNDkgMC0uMDczIDAtOS40NjEuMDAxLTE3LjE1MiA3LjY1NC0xNy4xOSAxNy4xMjMtLjA2NyAxNy4xOTIgMzQuMjUgMzQuNTI3IDM0LjI1IDM0LjUyN3MzNC40NTQtMTcuMDUxIDM0LjUyNC0zNC4yNDN6Ii8+PHBhdGggZD0ibTI1Mi4xOTUgMjIzLjY5NmMtMTIuNTI3IDAtMjQuNTQ4LTMuODk2LTM0LjU0LTEwLjk3OC05LjkwMiA3LjA4Mi0yMS44MTMgMTAuOTc4LTM0LjIzIDEwLjk3OC0xMi41MjcgMC0yNC41NDgtMy44OTYtMzQuNTQtMTAuOTc4LTkuOTAyIDcuMDgyLTIxLjgxMyAxMC45NzgtMzQuMjI5IDEwLjk3OC0xMi42MzYgMC0yNC43NTEtMy45MjQtMzQuODEyLTExLjA1OC05Ljk2OCA3LjEzNC0yMS45NzMgMTEuMDU4LTM0LjQ5OSAxMS4wNTgtMy44MTIgMC03LjUzNy0uMzY5LTExLjE1My0xLjA0N2w0Ljc2MSAzMC45MjljMy4xOTYgMjAuNzcyIDIyLjg5NiAzNy42NzEgNDMuOTExIDM3LjY3MWgxMzEuMjcxYzIxLjAxNiAwIDQwLjcxNS0xNi44OTggNDMuOTEtMzcuNjdsNC43NDgtMzAuODQ5Yy0zLjQ0MS42MjQtNi45NzkuOTY2LTEwLjU5OC45NjZ6Ii8+PC9zdmc+',
-    1
-  );
-}
+add_filter('next_posts_link_attributes', 'next_class');
+add_filter('previous_posts_link_attributes', 'prev_class');
 
-add_action( 'admin_menu', 'my_admin_menu' );
+function prev_class() { return 'class="btn btn-yellow"'; }
+function next_class() { return 'class="btn btn-magenta"'; }
 
-function wp_page_rossicocina() {
-  ?>
-    <h1>
-      <?php esc_html_e( 'RossiCocina Custom Settings', 'rossicocina-textdomain' ); ?>
-    </h1>
-  <?php
+add_action( 'after_setup_theme', 'rc_image_sizes' );
+function rc_image_sizes() {
+  add_image_size( 'single-post-image', 1080, 540 );
+  add_image_size( 'sticky-post-image', 480, 240 );
+  add_image_size( 'related-image', 100, 100, array( 'center', 'center' ) ); 
 }
 
 ?>

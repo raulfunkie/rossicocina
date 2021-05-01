@@ -105,6 +105,12 @@ input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):focus {
 	transform: scale3d(0.94,0.94,0.94) scale(.95);
 }
 
+.btn.btn-magenta {
+	background-color: var(--pink);
+	color: #ffffff;
+	background-image: url('data:image/svg+xml;utf8,<svg width="26" height="10" viewBox="0 0 26 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M25.0808 4.53345L20.8131 9.06691L19.9887 8.19L22.8468 5.15391H15.754H15.7132H14.5874V5.15387H0.82312V3.91296H14.9025V3.913H15.7132H15.754H22.8468L19.9887 0.876909L20.8131 0L25.0808 4.53345Z" fill="%23ffffff"/></svg>');
+}
+
 /* gogo gadget css */
 
 body {
@@ -498,6 +504,12 @@ object.logo {
 	flex: 0 0 200px;
 	margin-right: 1rem;
 	max-width: 200px;
+	max-height: 200px;
+	overflow: hidden;
+}
+
+.home-posts .posts article figure img {
+	max-width: 100%;
 }
 
 .home-posts .posts article a {
@@ -535,7 +547,7 @@ object.logo {
 }
 
 .home-posts .posts article div {
-	padding: .625rem 0;
+	padding: .5rem 0;
 	display: flex;
 	flex-flow: column nowrap;
 }
@@ -559,6 +571,7 @@ object.logo {
 }
 
 .home-posts .posts article p {
+	font-family: var(--basic);
 	font-size: .875rem;
 	line-height: 1.6;
 }
@@ -650,7 +663,11 @@ object.logo {
 	}
 }
 
-.sidebar .panel div {
+.sidebar .panel div.textWidget {
+	padding: 0;
+}
+
+.sidebar .panel .custom-html-widget div {
 	padding: 1rem 2rem;
 }
 
@@ -678,6 +695,7 @@ object.logo {
 /* footer */
 footer {
 	margin: 2rem 0 0;
+	padding-bottom: 2rem;
 	background-image: url('assets/footer-bg.png');
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -841,6 +859,10 @@ footer .split > div:nth-child(2) ul li a svg {
 	max-height: 32px;
 }
 
+footer .split > div:nth-child(2) object {
+	margin: 0 auto;
+}
+
 footer .split > div:nth-child(2) small {
 	font-size: .75rem;
 	font-weight: 400;
@@ -848,29 +870,35 @@ footer .split > div:nth-child(2) small {
 }
 
 /* page */
-.page main {
+.page main,
+.archive main {
 	max-width: 1080px;
 	margin: 2rem auto;
 }
 
-.page main .page-header,
-.single main .page-header {
+main .page-header {
 	margin: 2rem auto;
 }
 
+main .page-header a {
+	display: block;
+}
+
 .page main .page-header a object,
-.single main .page-header a object {
+.single main .page-header a object,
+main .page-header a object {
 	max-width: 160px;
 }
 
 .page main .page-meta,
-.single main .post-meta {
+.single main .post-meta,
+main .page-meta {
 	max-width: 900px;
-	margin: 0 auto 2rem;
+	margin: 0 auto 4rem;
 }
 
-.page main .page-meta h1,
-.single main .post-meta h1 {
+main .page-meta h1,
+main .post-meta h1 {
 	font-family: var(--title);
 	font-size: 4rem;
 	line-height: 1;
@@ -898,19 +926,22 @@ footer .split > div:nth-child(2) small {
 	}
 }
 
-.page main .page-meta h1 a,
-.single main .post-meta h1 a {
+main .page-meta h1 a,
+main .post-meta h1 a {
 	color: var(--wine);
 	text-decoration: none;
 }
 
 .page main article,
-.single main article {
+.single main article,
+.archive main article {
 	text-align: left;
+	margin-bottom: 2rem;
 }
 
 .page main article :is(p, div, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote),
-.single main article :is(p, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote),
+.single main article :is(p, div, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote),
+.archive main article :is(p, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote),
 .single main:not(figure, img, div, article, main) {
 	max-width: 940px;
 	margin-right: auto;
@@ -920,6 +951,7 @@ footer .split > div:nth-child(2) small {
 @media only screen and (max-width: 960px) {
 	.page main article :is(p, div, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote),
 	.single main article :is(p, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote),
+	.archive main article :is(p, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote),
 	.single main:not(figure, img, div, article, main) {
 		padding: 0 .625rem;
 	}
@@ -1277,23 +1309,23 @@ main article .content h5 {
 	background: linear-gradient(180deg, rgba(145, 206, 194, 0.1) 0%, rgba(145, 206, 194, 0) 100%);
 }
 
-.page.category .page-meta {
+.category .page-meta {
 	margin-bottom: 4rem;
 }
 
-.page.category .page-meta h1 {
+:is(.category, .tag) .page-meta h1 {
 	color: var(--green);
 	font-style: italic;
 }
 
-.page.search .page-meta h1 {
+.search .page-meta h1 {
 	color: var(--pink-two);
 	font-style: italic;
 	padding: 1.25rem;
 	border-bottom: 1px solid var(--green);
 }
 
-.page.category .page-meta h4 {
+main .page-meta h4 {
 	font-size: .875rem;
 	font-weight: 400;
 	color: #838383;
@@ -1347,3 +1379,11 @@ main article .content h5 {
 .blog.archive {
 	background: linear-gradient(180deg, rgba(139, 28, 92, 0.1) 0%, rgba(139, 28, 92, 0) 100%);
 }
+
+/* image styles */
+img.alignright {float:right; margin:10px 0 1em 1em}
+img.alignleft {float:left; margin:10px 1em 1em 0} 
+img.aligncenter {display: block; margin-left: auto; margin-right: auto} 
+a img.alignright {float:right; margin:0 0 1em 1em} 
+a img.alignleft {float:left; margin:0 1em 1em 0} 
+a img.aligncenter {display: block; margin-left: auto; margin-right: auto}

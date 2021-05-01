@@ -1,12 +1,6 @@
 <?php get_header(); ?>
     <main>
-      <div class="page-header">
-        <a href="<?php echo get_home_url(); ?>">
-          <object type="image/svg+xml" data="assets/rossi-logo.svg" class="logo">
-            no-fallback
-          </object>
-        </a>
-      </div>
+      <?php get_template_part('includes/logo', 'header'); ?>
       <div class="related">
         <ul>
           <?php
@@ -16,16 +10,16 @@
           $args=array(
           'tag__in' => array($first_tag),
           'post__not_in' => array($post->ID),
-          'posts_per_page'=>4,
-          'caller_get_posts'=>1
+          'posts_per_page'=> 4,
+          'caller_get_posts'=> 1
           );
           $my_query = new WP_Query($args);
           if( $my_query->have_posts() ) {
           while ($my_query->have_posts()) : $my_query->the_post(); ?>
           <li>
-            <a href=""<?php the_permalink(); ?>" rel="bookmark" <?php the_title_attribute(); ?>>
+            <a href="<?php the_permalink(); ?>" rel="bookmark" <?php the_title_attribute(); ?>>
               <figure>
-                <?php the_post_thumbnail(); ?>
+                <?php the_post_thumbnail('related-image'); ?>
               </figure>
               <div>
                 <?php the_title( '<h3>', '</h3>' ); ?>
@@ -42,7 +36,7 @@
          <?php if ( has_post_thumbnail() ) { ?>
          <figure>
            <a href="<?php echo get_the_post_thumbnail_url(); ?>" target="_blank" title="<?php echo get_the_title(); ?>" alt="<?php echo get_the_title(); ?>">
-              <?php the_post_thumbnail('full'); ?>
+              <?php the_post_thumbnail('single-post-image'); ?>
            </a>
          </figure>
          <?php } ?>

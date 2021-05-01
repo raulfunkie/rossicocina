@@ -47,3 +47,5 @@ strong { font-weight: bolder; }
 em { font-style: italic; }
 
 *:focus:not(.focus-visible) { outline: none; }
+
+p:empty { display: none !important; }
