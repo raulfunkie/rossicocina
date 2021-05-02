@@ -27,9 +27,10 @@ get_header(); ?>
         <ul>
           <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
           <li>
-            <?php $tags = get_the_tags(); foreach ( $tags as $tag ) { ?>
-            <a class="category"  href="<?php echo get_tag_link( $tag->term_id ); ?>" rel="tag"><?php echo $tag->name; ?></a>
-            <?php } ?>
+            <?php $categories = get_the_category();
+            if ( ! empty( $categories ) ) {
+                echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
+            }?>
             <figure>
              <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => __('Sigue leyendo: '), 'after' => ' &rarr;' ) ); ?>">
                 <?php if ( has_post_thumbnail() ) { the_post_thumbnail('sticky-post-image'); } ?>
