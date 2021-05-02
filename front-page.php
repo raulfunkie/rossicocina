@@ -29,7 +29,7 @@ get_header(); ?>
           <li>
             <?php $categories = get_the_category();
             if ( ! empty( $categories ) ) {
-                echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
+                echo '<a class="category" href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
             }?>
             <figure>
              <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => __('Sigue leyendo: '), 'after' => ' &rarr;' ) ); ?>">
@@ -67,11 +67,10 @@ get_header(); ?>
             </div>
           </article>
           <?php endwhile; ?>
-          <a class="btn" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">más Articulos</a>
+          <a class="btn" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">Más Articulos</a>
         <?php else:  ?>
           <!--<?php _e( 'Sorry, no posts matched your criteria.' ); ?>-->
         <?php endif; ?>
-        <?php $wp_query = NULL; $wp_query = $temp_query; ?>
         </section>
         <?php get_sidebar(); ?>
       </section>
