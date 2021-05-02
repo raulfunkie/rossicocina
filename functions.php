@@ -1,8 +1,7 @@
 <?php
-
 function load_css() {
-  wp_enqueue_style( 'reset', get_template_directory_uri() . '/reset.css' );
-  wp_enqueue_style( 'gfonts', 'https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono&family=Playfair+Display:ital,wght@0,600;0,700;1,700&display=swap', false ); 
+  wp_enqueue_style( 'reset', get_template_directory_uri() . '/reset.css', false );
+  wp_enqueue_style( 'gfonts', 'https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono&family=Playfair+Display:ital,wght@0,600;0,700;1,700&display=swap', array(), null ); 
   wp_enqueue_style( 'style', get_stylesheet_directory_uri() .'/style.css', array(), filemtime(get_stylesheet_directory() .'/style.css'), 'all' );
 }
 add_action( 'wp_enqueue_scripts', 'load_css' );

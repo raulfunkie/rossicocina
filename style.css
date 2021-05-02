@@ -655,6 +655,10 @@ object.logo {
 	}
 }
 
+.sidebar .panel .widgettitle {
+	display: none !important;
+}
+
 .sidebar .panel figure img {
 	margin: 0 auto;
 	text-align: center;
@@ -875,7 +879,6 @@ footer .split > div:nth-child(2) small {
 /* page */
 .page main,
 .archive main,
-.blog main,
 .search main {
 	max-width: 1080px;
 	margin: 2rem auto;
@@ -1004,6 +1007,7 @@ main article .content ol {
 }
 
 main article .content li {
+	line-height: 1.6;
 	padding: .5rem;
 }
 
@@ -1029,7 +1033,7 @@ main article .content h2 {
 
 main article .content h3 {
 	margin-top: 2rem;
-	font-family: var(--text);
+	font-family: var(--basic);
 	font-size: 2rem;
 	color: var(--dark-wine);
 }
