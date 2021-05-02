@@ -15,7 +15,7 @@ Text Domain: rossicocina
 	--darker: #001630;
 	--pink: #F174AC;
 	--dark-wine: #6C425E;
-	--pink-two: #F175AB;
+	--pink-two: #f075ab;
 	--yellow: #FFE52C;
 	--green: #83D0CF;
 	
@@ -973,10 +973,14 @@ main .post-meta h1 a {
 	}
 }
 
+main article .content  {
+	font-size: 1.125rem;
+	line-height: 1.8;
+}
+
 .page main article .content p,
 .single main article .content p {
 	margin: 1rem auto;
-	font-size: 1.125rem;
 	line-height: 1.6;
 	text-align: left;
 }
@@ -1419,4 +1423,13 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 
 .big-emoji {
 	font-size: 120px;
+}
+
+/* background styles */
+.light-pink {
+	background-color: rgba(240, 117, 171, 0.25);
+}
+
+.light-gray {
+	background-color: rgba(147, 147, 147, 0.25);
 }
