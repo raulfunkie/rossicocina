@@ -1427,9 +1427,16 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 
 /* background styles */
 .light-pink {
+	padding: 1rem;
 	background-color: rgba(240, 117, 171, 0.25);
 }
 
 .light-gray {
-	background-color: rgba(147, 147, 147, 0.25);
+	padding: 1rem;
+	background-color: rgba(147, 147, 147, 0.1);
+}
+
+/* margin adjust */
+.wp-block-column h3 {
+	margin-top: 0;
 }

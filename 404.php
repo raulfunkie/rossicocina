@@ -1,6 +1,4 @@
-<?php /*
-Template name: Front Page */
-get_header(); ?>
+<?php get_header(); ?>
     <main>
       <?php get_template_part('includes/logo', 'header'); ?>
       <article>
