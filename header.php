@@ -11,7 +11,5 @@
     <?php wp_body_open(); ?>
     <header>
       <?php get_search_form(); ?>
-      <nav>
-        <?php wp_nav_menu( array('menu' => '', 'theme_location' => 'head-menu', 'fallback_cb' => false, 'container' => false, 'items_wrap' => '<ul>%3$s</ul>' ) ); ?>
-      </nav>
+      <?php wp_nav_menu( array('container_aria_label' => 'navigation', 'container' => 'nav', 'menu' => '', 'theme_location' => 'head-menu', 'fallback_cb' => false, 'container' => false, 'items_wrap' => '<ul>%3$s</ul>' ) ); ?>
     </header>
