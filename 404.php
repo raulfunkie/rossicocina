@@ -3,7 +3,7 @@
       <?php get_template_part('includes/logo', 'header'); ?>
       <article>
         <section class="page-meta">
-          <h1>😥</h1>
+          <span class="big-emoji">😥</span>
           <h1>Oh oh!</h1>
           <h3>Ha ocurrido un error</h3>
         </section>

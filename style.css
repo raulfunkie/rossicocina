@@ -32,6 +32,37 @@ Text Domain: rossicocina
 }
 
 /* input styles */
+.form-wrap {
+	margin: .625rem;
+	padding: .625rem;
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+.form-wrap .input-container {
+	position: relative;
+	margin-bottom: 1rem;
+}
+
+.form-wrap .input-container > label {
+	position: absolute;
+	left: 8px;
+	top: -8px;
+	background-color: #ffffff;
+	padding: 0 4px;
+	font-size: .75rem;
+	font-weight: 700;
+	transition: color 100ms linear;
+}
+
+.form-wrap .btn {
+	min-width: 212px;
+}
+
+.input-container:hover label {
+	color: var(--wine);
+}
+
 .input-container input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]) {
 	-webkit-appearance: none;
 	outline: none;
@@ -43,8 +74,8 @@ Text Domain: rossicocina
 	line-height: 1;
 	font-weight: 400;
 	color: var(--dark);
-	border-radius: 4px;
-	border: 1px solid #CED0D7;
+	border-radius: 8px;
+	border: 2px solid #CED0D7;
 	transition: border 120ms linear;
 }
 
@@ -59,23 +90,22 @@ Text Domain: rossicocina
 .input-container select:hover,
 .input-container textarea:hover,
 .input-container input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):hover {
-	border-color: var(--txt);
-	box-shadow: 0 0 0 4px rgba(0,100,227,.08);
+	border-color: var(--wine);
 }
 
 select:focus,
 textarea:focus,
 input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):focus {
-	border: 1px solid var(--pink);
-	box-shadow: 0 0 0 1px rgba(0,100,227,.15);
+	border: 2px solid var(--pink);
 }
 
 /* btn */
-/* button */
 .btn {
 	-webkit-appearance: none;
 	-webkit-user-select: none;
 	user-select: none;
+	outline: 0;
+	border: 0;
 	padding: .875rem 4rem .875rem 1.5rem;
 	margin: 10px 4px 0 0;
 	text-decoration: none;
@@ -676,6 +706,10 @@ object.logo {
 
 .sidebar .panel .custom-html-widget div {
 	padding: 1rem 2rem;
+}
+
+.sidebar .panel .custom-html-widget div .form-wrap {
+	padding: 0;
 }
 
 @media only screen and (max-width: 320px) {

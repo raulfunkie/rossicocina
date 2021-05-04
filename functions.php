@@ -98,16 +98,21 @@ function shapeSpace_remove_toolbar_nodes($wp_admin_bar) {
 add_action('admin_bar_menu', 'shapeSpace_remove_toolbar_nodes', 999);
 
 function cf_google_analytics_tracking() { ?>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=asdfasdf"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YC2R3W3261"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
   
-    gtag('config', 'X');
+    gtag('config', 'G-YC2R3W3261');
   </script>
 <?php }
 add_action( 'wp_head', 'cf_google_analytics_tracking', 10 );
+
+function ci_mailchimp() { ?>
+  <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/46d59c8feb968ef2d02eca32e/f6afbb8ff825bc256eb0e5346.js");</script>
+<?php }
+add_action( 'wp_head', 'ci_mailchimp', 11 );
 
 function prefetch_links() { ?>
   <link rel="preconnect" href="https://fonts.gstatic.com"> 

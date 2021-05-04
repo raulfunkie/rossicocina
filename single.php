@@ -3,7 +3,8 @@
       <?php get_template_part('includes/logo', 'header'); ?>
       <div class="related">
         <ul>
-          <?php $popularpost = new WP_Query( array( 'posts_per_page' => 4, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'RAND'  ) ); while ( $popularpost->have_posts() ) : $popularpost->the_post(); ?>
+          <?php $popularpost = new WP_Query( array( 'posts_per_page' => 4, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'RAND'  ) );
+          while ( $popularpost->have_posts() ) : $popularpost->the_post(); ?>
           <li>
             <a href="<?php the_permalink(); ?>" rel="bookmark" <?php the_title_attribute(); ?>>
               <figure>
@@ -15,7 +16,7 @@
               </div>
             </a>
           </li>
-          <?php endwhile; } wp_reset_query(); } ?>
+          <?php endwhile; wp_reset_query(); ?>
         </ul>
       </div>
       <article>
