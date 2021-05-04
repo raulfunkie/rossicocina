@@ -851,7 +851,7 @@ footer .split > div > section {
 	}
 }
 
-footer .split div h4 {
+footer .split div {
 	font-family: var(--title);
 	font-size: 1.5rem;
 	font-weight: 600;
@@ -1033,6 +1033,15 @@ main .post-meta h1 a {
 main article .content  {
 	font-size: 1.125rem;
 	line-height: 1.8;
+}
+
+main article .content hr {
+	border: 0;
+	outline: 0;
+	height: 1px;
+	background-color: var(--dark);
+	width: 100%;
+	margin: 2rem auto;
 }
 
 .page main article .content p,
@@ -1498,3 +1507,9 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 .wp-block-column h3 {
 	margin-top: 0;
 }
+
+/* text styles */
+.has-text-align-center {
+	text-align: center;
+}
+
