@@ -50,10 +50,22 @@ remove_filter('the_content', 'wpautop');
 
 add_action( 'after_setup_theme', 'theme_functions' );
 function theme_functions() {
+  add_theme_support( 'custom-logo' );
+  add_theme_support( 'menus' );
+  add_theme_support( 'wp-block-styles' );
   add_theme_support( 'title-tag' );
   add_theme_support( 'post-thumbnails' );
   add_theme_support( 'responsive-embeds' );
+  add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );
 }
+
+add_action( 'after_setup_theme', 'rc_image_sizes' );
+function rc_image_sizes() {
+  add_image_size( 'single-post-image', 1080, 540, array( 'center', 'center' ) );
+  add_image_size( 'sticky-post-image', 480, 240, array( 'center', 'center' ) ); );
+  add_image_size( 'related-image', 100, 100, array( 'center', 'center' ) ); 
+}
+
 
 function remove_page_class($wp_list_pages) {
   $pattern = '/\<li class="page_item[^>]*>/';
@@ -159,14 +171,6 @@ add_filter('previous_posts_link_attributes', 'prev_class');
 
 function prev_class() { return 'class="btn btn-yellow"'; }
 function next_class() { return 'class="btn btn-magenta"'; }
-
-add_action( 'after_setup_theme', 'rc_image_sizes' );
-function rc_image_sizes() {
-  add_theme_support( 'post-thumbnails' );
-  add_image_size( 'single-post-image', 1080, 540, array( 'center', 'center' ) );
-  add_image_size( 'sticky-post-image', 480, 240 );
-  add_image_size( 'related-image', 100, 100, array( 'center', 'center' ) ); 
-}
 
 function wpb_track_post_views ($post_id) {
   if ( !is_single() ) return;
