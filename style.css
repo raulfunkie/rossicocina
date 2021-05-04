@@ -1334,6 +1334,10 @@ main article .content h5 {
 	padding: 0 1rem;
 }
 
+.post-meta-details ul li:nth-child(-n+2) {
+	flex: 0 0 180px;
+}
+
 @media only screen and (max-width: 640px) {
 	.post-meta-details ul li {
 		padding: .625rem;
