@@ -63,8 +63,8 @@ function theme_functions() {
 add_action( 'after_setup_theme', 'rc_image_sizes' );
 function rc_image_sizes() {
   add_image_size( 'single-post-image', 1080, 540, array( 'center', 'center' ) );
-  add_image_size( 'sticky-post-image', 480, 240, array( 'center', 'center' ) ); );
-  add_image_size( 'related-image', 100, 100, array( 'center', 'center' ) ); 
+  add_image_size( 'sticky-post-image', 480, 240, array( 'center', 'center' ) );
+  add_image_size( 'related-image', 100, 100, array( 'center', 'center' ) );
 }
 
 
