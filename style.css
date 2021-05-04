@@ -1498,6 +1498,21 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	background-color: rgba(240, 117, 171, 0.25);
 }
 
+.light-pink h3 {
+	line-height: 1;
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+
+.light-pink ol {
+	margin-bottom: 0;
+}
+
+.light-pink li {
+	padding-right: 0;
+	padding-left: 0;
+}
+
 .light-gray {
 	padding: 1rem;
 	background-color: rgba(147, 147, 147, 0.1);
@@ -1505,7 +1520,8 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 
 /* margin adjust */
 .wp-block-column h3 {
-	margin-top: 0;
+	margin-top: 1rem;
+	line-height: 1;
 }
 
 /* text styles */
@@ -1513,3 +1529,10 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	text-align: center;
 }
 
+.has-text-align-left {
+	text-align: left;
+}
+
+.has-text-align-right {
+	text-align: right;
+}
