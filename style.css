@@ -1272,6 +1272,7 @@ main article .content h5 {
 .single main article .content figure img {
 	margin: 1rem auto;
 	max-width: 100%;
+	height: auto;
 }
 
 .single main article .content figure figcaption {
