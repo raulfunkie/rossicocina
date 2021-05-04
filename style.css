@@ -1498,10 +1498,11 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	background-color: rgba(240, 117, 171, 0.25);
 }
 
-.light-pink h3 {
+.wp-block-column.light-pink h3 {
 	line-height: 1;
-	font-size: 1.25rem;
+	font-size: 1.75rem;
 	font-weight: 700;
+	margin-top: 1rem;
 }
 
 .light-pink ol {
