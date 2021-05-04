@@ -17,6 +17,16 @@ remove_action('wp_head', 'start_post_rel_link', 10, 0);
 remove_action('wp_head', 'parent_post_rel_link', 10, 0);
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
+remove_filter ('the_content', 'wpautop');
+remove_filter ('the_excerpt', 'wpautop');
+
+add_filter( 'the_content', 'njengah_remove_autop', 0 );
+
+function njengah_remove_autop($content) {
+  remove_filter( 'the_content', 'wpautop' );
+return $content;
+}
+
 function disable_wp_emojicons() {
   remove_action( 'admin_print_styles', 'print_emoji_styles' );
   remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
@@ -41,14 +51,11 @@ add_filter('the_content', 'filter_ptags_on_images');
 
 add_filter( 'post_thumbnail_html', 'remove_width_attribute', 10 );
 add_filter( 'image_send_to_editor', 'remove_width_attribute', 10 );
-
 function remove_width_attribute( $html ) {
    $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
    return $html;
 }
-remove_filter('the_content', 'wpautop');
 
-add_action( 'after_setup_theme', 'theme_functions' );
 function theme_functions() {
   add_theme_support( 'custom-logo' );
   add_theme_support( 'menus' );
@@ -59,13 +66,15 @@ function theme_functions() {
   add_theme_support( 'responsive-embeds' );
   add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );
 }
+add_action( 'after_setup_theme', 'theme_functions' );
 
-add_action( 'after_setup_theme', 'rc_image_sizes' );
 function rc_image_sizes() {
   add_image_size( 'single-post-image', 1080, 540, array( 'center', 'center' ) );
   add_image_size( 'sticky-post-image', 480, 240, array( 'center', 'center' ) );
+  add_image_size( 'home-post-image', 200, 200, array( 'center', 'center' ) );
   add_image_size( 'related-image', 100, 100, array( 'center', 'center' ) );
 }
+add_action( 'after_setup_theme', 'rc_image_sizes' );
 
 
 function remove_page_class($wp_list_pages) {
@@ -86,12 +95,6 @@ function html5_insert_image($html, $id, $caption, $title, $align, $url, $size) {
     return $html5;
   }
 add_filter( 'image_send_to_editor', 'html5_insert_image', 10, 9 );
-
-function better_wpautop($pee){
-  return wpautop($pee,false);
-}
-add_filter( 'the_content', 'better_wpautop' , 99);
-add_filter( 'the_content', 'shortcode_unautop',100 );
 
 add_action( 'init', 'my_custom_menus' );
 function my_custom_menus() {

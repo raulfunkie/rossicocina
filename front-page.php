@@ -23,7 +23,7 @@ get_header(); ?>
         <?php $sticky = get_option( 'sticky_posts' );
         rsort( $sticky );
         $sticky = array_slice( $sticky, 0, 2 );
-        $the_query = new WP_Query(array( 'post__in' => $sticky, 'ignore_sticky_posts' => 1, 'orderby' => 'modified' )); ?>
+        $the_query = new WP_Query(array( 'post__in' => $sticky, 'ignore_sticky_posts' => 1, 'orderby' => 'date', 'posts_per_page' => 5 )); ?>
         <ul>
           <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
           <li>
@@ -56,7 +56,7 @@ get_header(); ?>
           if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
           <article <?php post_class(); ?>>
             <figure>
-              <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+              <?php if ( has_post_thumbnail() ) { the_post_thumbnail('home-post-image'); } ?>
             </figure>
             <div>
               <time datetime="<?php echo get_the_date('c'); ?>" title="Fecha de Publicación: <?php echo get_the_date('M j, Y'); ?>"><?php echo get_the_date('m/d/y'); ?></time>

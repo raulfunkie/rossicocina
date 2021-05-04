@@ -75,7 +75,7 @@
             </li>
             <?php endif; ?>
           </ul>
-          <small>2019 - <?php echo date("Y"); ?><small>
+          <small>2019 - <?php echo date("Y"); ?></small>
           <small>Todos los derechos reservados.</small>
           <small>rossicocina.com</small>
         </div>

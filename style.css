@@ -33,8 +33,8 @@ Text Domain: rossicocina
 
 /* input styles */
 .sidebar .form-wrap {
-	margin: .625rem;
-	padding: 0 .625rem;
+	margin: 0;
+	padding: 0;
 	display: flex;
 	flex-flow: column nowrap;
 }
@@ -75,7 +75,7 @@ Text Domain: rossicocina
 .sidebar .form-wrap .input-container input:focus + label {
 	padding: 0 4px;
 	transform: translate(0.5rem, 0.6rem) scale(1);
-	background-color: #ffffff;
+	background-color: #FFF8D4;
 	font-weight: 700;
 	color: var(--wine);
 	cursor: pointer;
@@ -305,7 +305,7 @@ object.logo {
 }
 
 .homepage-hero > div:first-child p {
-	font-family: var(--title);
+	font-family: var(--basic);
 	font-size: 1.125rem;
 	line-height: 1.6;
 	color: var(--dark-wine);
@@ -630,6 +630,7 @@ object.logo {
 	font-family: var(--basic);
 	font-size: .875rem;
 	line-height: 1.6;
+	margin-top: .5rem;
 }
 
 .home-posts .posts article .btn.btn-reading {
@@ -792,6 +793,8 @@ footer .split {
 }
 
 footer .split > div ul  {
+	font-family: var(--basic);
+	font-size: 1rem;
 	padding-left: 1rem;
 	margin: .5rem 0 0 0;
 	list-style-type: none;
@@ -928,6 +931,7 @@ footer .split > div:nth-child(2) object {
 }
 
 footer .split > div:nth-child(2) small {
+	font-family: var(--basic);
 	font-size: .75rem;
 	font-weight: 400;
 	color: #ffffff;
