@@ -27,8 +27,8 @@ Text Domain: rossicocina
 }
 
 ::selection {
-	background: var(--lime);
-	color: var(--dark);
+	background: var(--yellow);
+	color: var(--text);
 }
 
 /* input styles */
@@ -1557,4 +1557,57 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 
 .has-text-align-right {
 	text-align: right;
+}
+
+/* wa-block */
+main article .content .wa-block {
+	max-width: 400px;
+	margin: 2rem auto;
+}
+
+main article .content .wa-block a {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: flex-start;
+	box-shadow: 0px 16px 33px rgba(8, 19, 115, 0.07), 0px 6.16296px 10.5111px rgba(8, 19, 115, 0.0425185), 0px 1.3037px 2.68889px rgba(8, 19, 115, 0.0274815);
+	border-radius: 18px;
+	border: 1px solid #EFEFEF;
+	padding: 1rem;
+}
+
+main article .content .wa-block a figure {
+	max-height: 56px;
+	margin-right: 1rem;
+}
+
+main article .content .wa-block a:hover {
+	background-color: #ffffff;
+	transform: translateY(-2px);
+}
+
+main article .content .wa-block a:active {
+	transform: scale(.95);
+}
+
+main article .content .wa-block a div {
+	margin: auto 0;
+}
+
+main article .content .wa-block a div h3 {
+	line-height: 1;
+	margin: 0 0 .5rem;
+	font-size: 1.125rem;
+	font-weight: 700;
+	color: #27AE60;
+	text-align: left;
+}
+
+main article .content .wa-block a div p {
+	line-height: 1;
+	margin: 0;
+	font-size: .875rem;
+	font-style: italic;
+	font-weight: 400;
+	color: #848484;
+	text-align: left;
 }
