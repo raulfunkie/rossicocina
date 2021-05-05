@@ -1632,3 +1632,12 @@ main article .content .payment-button {
 	justify-content: center;
 	max-width: 220px;
 }
+
+main article .content div.payment-button {
+	transition: all 120ms linear;
+}
+
+main article .content .payment-button svg {
+	max-height: 32px;
+	max-width: 100%;
+}
