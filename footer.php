@@ -27,10 +27,10 @@
               <?php endif; ?>
               </ul>
             </div>
-            <div>
+           <!--<div>
               <h4>Scones</h4>
               <?php wp_nav_menu( array('menu' => '', 'theme_location' => 'scones', 'fallback_cb' => false, 'container' => false, 'items_wrap' => '<ul>%3$s</ul>' ) ); ?>
-            </div>
+            </div>-->
           </section>
         </div>
         <div>
