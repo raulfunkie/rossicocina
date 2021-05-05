@@ -1616,7 +1616,7 @@ main article .content .wa-block a div p {
 }
 
 /* payment button styles */
-.payment-button {
+main article .content .payment-button {
 	-webkit-appearance: none;
 	-webkit-user-select: none;
 	user-select: none;
