@@ -1621,7 +1621,7 @@ main article .content .payment-button {
 	-webkit-user-select: none;
 	user-select: none;
 	outline: 0;
-	padding: 1rem;
+	padding: .75rem 1rem;
 	margin: 10px 4px 0 0;
 	text-decoration: none;
 	border: 1px solid #E1E2E9;
@@ -1638,6 +1638,6 @@ main article .content div.payment-button {
 }
 
 main article .content .payment-button svg {
-	max-height: 32px;
+	height: 32px;
 	max-width: 100%;
 }
