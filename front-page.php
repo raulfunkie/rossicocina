@@ -52,21 +52,23 @@ get_header(); ?>
       <section class="home-posts">
         <section class="posts">
           <h2>Lo último</h2>
-          <?php $the_query = new WP_Query( array( 'posts_per_page' => 6, 'post__not_in' => get_option( 'sticky_posts' ) ) );
-          if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-          <article <?php post_class(); ?>>
-            <figure>
-              <?php if ( has_post_thumbnail() ) { the_post_thumbnail('home-post-image'); } ?>
-            </figure>
-            <div>
-              <time datetime="<?php echo get_the_date('c'); ?>" title="Fecha de Publicación: <?php echo get_the_date('M j, Y'); ?>"><?php echo get_the_date('m/d/y'); ?></time>
-              <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => __('Sigue leyendo: '), 'after' => ' &rarr;' ) ); ?>">
-                <?php the_title( '<h2>', '</h2>' ); ?>
-              </a>
-              <p><?php the_excerpt(); ?></p>
-            </div>
-          </article>
-          <?php endwhile; ?>
+          <div class="home-post-list">
+            <?php $the_query = new WP_Query( array( 'posts_per_page' => 8, 'post__not_in' => get_option( 'sticky_posts' ) ) );
+            if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+            <article <?php post_class(); ?>>
+              <figure>
+                <?php if ( has_post_thumbnail() ) { the_post_thumbnail('home-post-image'); } ?>
+              </figure>
+              <div>
+                <time datetime="<?php echo get_the_date('c'); ?>" title="Fecha de Publicación: <?php echo get_the_date('M j, Y'); ?>"><?php echo get_the_date('m/d/y'); ?></time>
+                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => __('Sigue leyendo: '), 'after' => ' &rarr;' ) ); ?>">
+                  <?php the_title( '<h2>', '</h2>' ); ?>
+                </a>
+                <p><?php the_excerpt(); ?></p>
+              </div>
+            </article>
+            <?php endwhile; ?>
+          </div>
           <a class="btn" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">Más Articulos</a>
         <?php else:  ?>
           <!--<?php _e( 'Sorry, no posts matched your criteria.' ); ?>-->

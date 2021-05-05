@@ -1063,7 +1063,7 @@ main article .content hr {
 .page main article .content p,
 .single main article .content p {
 	margin: 1rem auto;
-	line-height: 1.6;
+	line-height: 1.8;
 	text-align: left;
 }
 
@@ -1529,7 +1529,8 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	margin-bottom: 0;
 }
 
-.light-pink li {
+.wp-block-column.light-pink li {
+	font-size: 1rem;
 	padding-right: 0;
 	padding-left: 0;
 }
