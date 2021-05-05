@@ -255,4 +255,9 @@ function new_excerpt_more( $more ) {
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
+function my_excerpt_length($length){
+  return 100;
+}
+add_filter(‘excerpt_length’, ‘my_excerpt_length’);
+
 ?>
