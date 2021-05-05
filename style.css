@@ -19,7 +19,7 @@ Text Domain: rossicocina
 	--yellow: #FFE52C;
 	--green: #83D0CF;
 	
-	--txt: #3E3E3E;
+	--txt: rgba(0,0,0,.75);
 	
 	--basic: 'Bitter', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
 	--title: 'Playfair Display', Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;

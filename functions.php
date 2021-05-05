@@ -73,6 +73,7 @@ function rc_image_sizes() {
   add_image_size( 'sticky-post-image', 480, 240, array( 'center', 'center' ) );
   add_image_size( 'home-post-image', 200, 200, array( 'center', 'center' ) );
   add_image_size( 'related-image', 100, 100, array( 'center', 'center' ) );
+  add_image_size( 'recipe-image', 480, 480, array( 'center', 'center' ) );
 }
 add_action( 'after_setup_theme', 'rc_image_sizes' );
 
