@@ -10,14 +10,14 @@ Text Domain: rossicocina
 */
 
 :root {
-	--wine: hsl(325.4,66.5%,32.7%);
+	--wine: hsl(326,66.5%,32.7%);
 	--dark: hsl(0,0%,7.1%);
-	--darker: hsl(212.5,100%,9.4%);
-	--pink: hsl(333.1,81.7%,70%);
+	--darker: hsl(213,100%,9.4%);
+	--pink: hsl(333,81.7%,70%);
 	--dark-wine: hsl(320,24.1%,34.1%);
-	--pink-two: hsl(333.7,80.4%,70%);
-	--yellow: hsl(52.6,100%,58.6%);
-	--green: hsl(179.2,45%,66.5%);
+	--pink-two: hsl(333,80.4%,70%);
+	--yellow: hsl(52,100%,58.6%);
+	--green: hsl(179,45%,66.5%);
 	
 	--txt: hsla(0,0%,0%,0.7);
 	--shadow: 0 16px 33px hsla(239,87%,24%, 0.07), 0 6.16296px 10.5111px hsla(239,87%,24%,0.0425185), 0 1.3037px 2.68889px hsla(239,87%,24%,0.0274815);
@@ -1760,12 +1760,61 @@ main article .content .payment-button svg {
 	margin: 0;
 }
 
+.recipe-post .tools-facts .tools ul {
+	padding-left: 2rem;
+}
+
+.recipe-post .tools-facts .tools ul li a {
+	display: inline-block;
+	padding: .25rem 0;
+	text-decoration: none;
+	color: var(--wine);
+	font-weight: 600;
+	transition: all 100ms linear;
+}
+
+.recipe-post .tools-facts .tools ul li a:hover {
+	color: hsl(0, 0%, 100%);
+	background-color: var(--wine);
+}
+
+.recipe-post .tools-facts .facts ul {
+	list-style-type: none;
+	display: flex;
+	flex-flow: row nowrap;
+	border: 1px solid hsl(0, 0%, 85%);
+}
+
+.recipe-post .tools-facts .facts ul li {
+	padding: .5rem 1rem;
+}
+
+.recipe-post .tools-facts .facts ul li:not(:last-child) {
+	border-right: 1px solid hsl(0, 0%, 85%);
+}
+
+.recipe-post .tools-facts .facts ul li h4 {
+	color: hsl(0, 0%, 45%);
+	font-family: var(--basic);
+	font-weight: 400;
+	font-size: .75rem;
+	margin-bottom: .25rem;
+}
+
+.recipe-post .tools-facts .facts ul li span {
+	font-family: var(--mono);
+	color: hsl(0, 0%, 0%);
+	font-size: 1.125rem;
+	line-height: 1;
+}
+
 .dulce .recipe-post .steps-ingredients .ingredients {
 	background-color: hsl(332, 87%, 97%);
 }
 
 .recipe-post .steps-ingredients .steps h2,
-.recipe-post .steps-ingredients .ingredients h3 {
+.recipe-post .steps-ingredients .ingredients h3,
+.recipe-post .tools-facts h3 {
 	margin-bottom: 1rem;
 	font-family: var(--title);
 	font-size: 1.5rem;
