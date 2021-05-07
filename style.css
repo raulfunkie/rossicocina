@@ -962,6 +962,12 @@ main .page-header {
 	margin: 2rem auto 3rem;
 }
 
+@media only screen and (max-width: 640px) {
+	main .page-header {
+		margin-top: 0;
+	}
+}
+
 main .page-header a {
 	width: 160px;
 	height: 55px;
@@ -979,7 +985,7 @@ main .page-header a object {
 .single main .post-meta,
 main .page-meta {
 	max-width: 900px;
-	margin: 0 auto 4rem;
+	margin: 0 auto 2rem;
 }
 
 main .page-meta h1,
@@ -1029,7 +1035,7 @@ main .post-meta h1 a {
 .page main article :is(p, div, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote),
 .single main article :is(p, div, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote),
 .archive main article :is(p, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote),
-.single main:not(figure, img, div, article, main) {
+.single main :not(figure, img, div, article, main, h1, h2, h3, h4, h5, ul) {
 	max-width: 940px;
 	margin-right: auto;
 	margin-left: auto;
@@ -1039,7 +1045,7 @@ main .post-meta h1 a {
 	.page main article :is(p, div, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote),
 	.single main article :is(p, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote),
 	.archive main article :is(p, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote),
-	.single main:not(figure, img, div, article, main) {
+	.single main:not(figure, img, div, article, main, time, ul) {
 		padding: 0 .625rem;
 	}
 	
@@ -1074,6 +1080,13 @@ main article .content hr {
 	font-size: 1.375rem;
 	font-style: italic;
 	margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 580px) {
+	.page main article .content > p:first-of-type,
+	.single main article .content > p:first-of-type {
+		font-size: 1.125rem;
+	}
 }
 
 main article .content .float-right {
@@ -1174,39 +1187,16 @@ main article .content h5 {
 .related ul li {
 	flex: 0 0 30%;
 	text-align: left;
+	margin: 0;
 }
 
 .related ul li:not(:last-child) {
 	margin-right: 1.25rem;
 }
 
-@media only screen and (max-width: 1080px) {
-	.related ul li {
-		flex: 0 1 60%;
-		max-width: 420px;
-		margin-bottom: 1.25rem;
-	}
-	
-	.related ul li:not(:last-child) {
-		margin-right: 0;
-	}
-	
-	.related ul li:nth-child(odd) {
-		margin-right: 1rem;
-	}
-	
-	.related ul li:nth-child(even) {
-		margin-right: 0;
-	}
-	
-	.related ul li:nth-last-child(-n+2) {
-		margin-bottom: 0;
-	}
-}
-
 @media only screen and (max-width: 720px) {
 	.related ul li {
-		flex: 0 0 90%;
+		flex: 0 0 60%;
 		margin-bottom: 0;
 	}
 }
@@ -1333,8 +1323,8 @@ main article .content h5 {
 
 .post-meta-details {
 	padding: .625rem 0;
-	border-top: 1px solid #91CEC2;
-	border-bottom: 1px solid #91CEC2;
+	border-top: 1px solid var(--green);
+	border-bottom: 1px solid var(--green);
 }
 
 @media only screen and (max-width: 640px) {
@@ -1352,12 +1342,6 @@ main article .content h5 {
 @media only screen and (max-width: 640px) {
 	.post-meta-details ul {
 		flex-wrap: wrap;
-	}
-}
-
-@media only screen and (max-width: 640px) {
-	.post-meta-details ul {
-		flex-flow: column;
 	}
 }
 
@@ -1383,6 +1367,10 @@ main article .content h5 {
 		border-bottom: 1px solid var(--green);
 	}
 	
+	.recipe-post .post-meta-details ul li:nth-child(-n+2) {
+		border-bottom: 0;
+	}
+	
 	.post-meta-details ul li:nth-child(2) {
 		border-right: 0;
 	}
@@ -1394,13 +1382,14 @@ main article .content h5 {
 
 @media screen and (max-width: 460px) {
 	.post-meta-details ul li:first-child {
-		border-right: 0;
+		border-right: 1px solid var(--yellow);
 	}
 }
 
 .post-meta-details ul li h5 {
 	margin-bottom: .25rem;
 	padding-left: 0;
+	padding-right: 0;
 	font-family: var(--title);
 	color: var(--wine);
 	font-size: .875rem;
@@ -1409,10 +1398,16 @@ main article .content h5 {
 
 .post-meta-details ul li time,
 .recipe-post .recipe-details .post-meta-details ul li span {
+	padding: 0;
 	line-height: 1.6;
 	font-size: 1rem;
 	color: var(--txt);
 	font-weight: 500;
+}
+
+.post-meta-details ul li time {
+	font-family: var(--mono);
+	font-size: .875rem;
 }
 
 .post-meta-details ul li .tag-list {
@@ -1670,13 +1665,24 @@ main article .content .payment-button svg {
 	}
 }
 
+@media only screen and (max-width: 580px) {
+	.recipe-post {
+		padding: 0;
+	}
+}
+
 .salado { background: linear-gradient(180deg, hsla(53, 100%, 59%, 0.25) 0%, hsla(53, 100%, 59%, 0) 50%); }
 .dulce { background: linear-gradient(180deg, hsla(334, 82%, 70%, 0.1) 0%, hsla(334, 82%, 70%, 0) 50%); }
 .healthy { background: linear-gradient(180deg, hsla(179, 45%, 67%, 0.25) 0%, hsla(179, 45%, 67%, 0) 100%); }
 
+.dulce .recipe-post .steps-ingredients .ingredients { background-color: hsl(332, 87%, 97%); }
+.salado .recipe-post .steps-ingredients .ingredients { background-color: hsl(53, 100%, 90%) }
+.healthy .recipe-post .steps-ingredients .ingredients { background-color: hsl(180, 44%, 92%); }
+
 .recipe-post .recipe-details,
 .recipe-post .tools-facts,
 .recipe-post .steps-ingredients {
+	padding: 0;
 	margin-right: auto;
 	max-width: 1080px;
 	display: flex;
@@ -1686,10 +1692,20 @@ main article .content .payment-button svg {
 }
 
 @media only screen and (max-width: 960px) {
-	.recipe-post .recipe-details,
-	.recipe-post .tools-facts,
-	.recipe-post .steps-ingredients {
+	.recipe-post .recipe-details {
 		flex-flow: column nowrap;
+	}	
+}
+
+@media only screen and (max-width: 800px) {
+	.recipe-post .tools-facts {
+		flex-flow: column nowrap;
+	}
+}
+
+@media only screen and (max-width: 580px) {
+	.recipe-post .steps-ingredients {
+		flex-direction: column;
 	}
 }
 
@@ -1699,6 +1715,13 @@ main article .content .payment-button svg {
 	flex: 0 1 560px;
 	max-width: 560px;
 	margin-left: 0;
+}
+
+@media only screen and (max-width: 580px) {
+	.recipe-post .recipe-details .recipe-meta,
+	.recipe-post .steps-ingredients {
+		padding: 0 .625rem;
+	}
 }
 
 @media only screen and (max-width: 1080px) {
@@ -1732,6 +1755,7 @@ main article .content .payment-button svg {
 	line-height: 1;
 	text-align: left;
 	margin-bottom: 1.5rem;
+	padding: 0;
 }
 
 @media only screen and (max-width: 1080px) {
@@ -1743,6 +1767,13 @@ main article .content .payment-button svg {
 .recipe-post .recipe-details .recipe-meta p {
 	font-size: 1.125rem;
 	line-height: 1.6;
+	padding: 0;
+}
+
+@media only screen and (max-width: 414px) {
+	.recipe-post .recipe-details .recipe-meta p {
+		font-size: 1rem;
+	}
 }
 
 .recipe-details .post-meta-details {
@@ -1752,6 +1783,7 @@ main article .content .payment-button svg {
 @media only screen and (max-width: 1070px ) {
 	.recipe-details .post-meta-details ul {
 		flex-wrap: wrap;
+		padding: .25rem 0;
 	}
 }
 
@@ -1766,12 +1798,12 @@ main article .content .payment-button svg {
 		position: relative;
 	}
 	
-	.recipe-details .post-meta-details ul li:nth-child(1) {
+	.recipe-details .post-meta-details ul li:nth-child(1),
+	.recipe-details .post-meta-details ul li:nth-child(2) {
 		margin-bottom: 1rem;
 	}
 	
 	.recipe-details .post-meta-details ul li:nth-child(2) {
-		margin-bottom: 1rem;
 		border-right: 0;
 	}
 	
@@ -1779,11 +1811,31 @@ main article .content .payment-button svg {
 	.recipe-details .post-meta-details ul > li:nth-child(2)::after {
 		position: absolute;
 		bottom: -9px;
-		left: 0;
+		left: 5px;
 		content: '';
-		width: 100%;
+		width: 96%;
 		height: 1px;
 		background-color: var(--green);
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	.recipe-details .post-meta-details ul li:nth-child(-n+3) {
+		flex: 1 1 auto;
+		padding: 0 .5rem;
+		margin: 0;
+	}
+	
+	.recipe-details .post-meta-details ul li::after {
+		display: none;
+	}
+	
+	.recipe-details .post-meta-details ul li:nth-child(2) {
+		border-right: 1px solid var(--yellow);
+	}
+	
+	.recipe-details .post-meta-details ul li:nth-child(3) {
+		border-right: 0;
 	}
 }
 
@@ -1800,6 +1852,30 @@ main article .content .payment-button svg {
 
 .recipe-details .post-meta-details .social-share ul li:after {
 	display: none;
+}
+
+@media only screen and (max-width: 650px) {
+	.recipe-details .post-meta-details .social-share ul {
+		flex-flow: row nowrap;
+	}
+	
+	.recipe-details .post-meta-details .social-share ul li:after {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	.recipe-details .post-meta-details ul li.social-share {
+		flex: 1 1 100%;
+		margin-top: .25rem;
+		padding-top: .25rem;
+		padding-bottom: 0;
+		border-top: 1px solid var(--green);
+	}
+	
+	.recipe-details .post-meta-details .social-share ul {
+		justify-content: center;
+	}
 }
 
 .recipe-details .post-meta-details .social-share ul li a {
@@ -1829,8 +1905,26 @@ main article .content .payment-button svg {
 
 @media only screen and (max-width: 960px) {
 	.recipe-post .recipe-details figure {
+		margin:  0 auto 2rem;
 		order: 1;
 		margin-bottom: 1.5rem;
+	}
+}
+
+@media only screen and (max-width: 580px) {
+	.recipe-post .recipe-details figure {
+		max-width: 100%;
+		flex: 1 1 100%;
+	}
+	
+	.recipe-post .recipe-details figure img {
+		max-width: 100%;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.recipe-post .recipe-details figure {
+		border-radius: 0;
 	}
 }
 
@@ -1838,11 +1932,44 @@ main article .content .payment-button svg {
 	margin: 4rem auto;
 }
 
+@media only screen and (max-width: 800px) {
+	.recipe-post .tools-facts {
+		align-items: unset;
+	}
+}
+
+@media only screen and (max-width: 580px) {
+	.recipe-post .tools-facts {
+		padding: 0 .625rem;
+	}
+}
+
 .recipe-post .tools-facts .facts,
 .recipe-post .steps-ingredients .ingredients {
 	flex: 0 1 480px;
 	max-width: 480px;
 	margin: 0;
+}
+
+@media only screen and (max-width: 960px) {
+	.recipe-post .tools-facts .tools {
+		flex: 0 1 35%;
+	}
+	
+	.recipe-post .tools-facts .facts {
+		flex: 0 1 65%;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	.recipe-post .tools-facts .tools {
+		margin-bottom: 3rem;
+	}
+	
+	.recipe-post.recipe-post .tools-facts div {
+		flex: 1 1 auto;
+		max-width: none;
+	}
 }
 
 .recipe-post .tools-facts .tools ul {
@@ -1864,21 +1991,66 @@ main article .content .payment-button svg {
 }
 
 .recipe-post .tools-facts .facts ul {
+	padding: 0;
 	list-style-type: none;
 	display: flex;
 	flex-flow: row nowrap;
 	border: 1px solid hsl(0, 0%, 85%);
 }
 
+@media only screen and (max-width: 414px) {
+	.recipe-post .tools-facts .facts ul {
+		flex-wrap: wrap;
+	}
+}
+
 .recipe-post .tools-facts .facts ul li {
+	flex: 1 1 auto;
 	padding: .5rem 1rem;
+}
+
+@media only screen and (max-width: 480px) {
+	.recipe-post .tools-facts .facts ul li {
+		padding: .5rem;
+		flex: 1 1 auto;
+	}
 }
 
 .recipe-post .tools-facts .facts ul li:not(:last-child) {
 	border-right: 1px solid hsl(0, 0%, 85%);
 }
 
+@media only screen and (max-width: 414px) {
+	.recipe-post .tools-facts .facts ul li {
+		flex: 1 1 30%;
+	}
+	
+	.recipe-post .tools-facts .facts ul li:nth-child(4) {
+		border-right: 0;
+	}
+	
+	.recipe-post .tools-facts .facts ul li:nth-child(1),
+	.recipe-post .tools-facts .facts ul li:nth-child(5) {
+		order: 1;
+		flex: 1 1 50%;
+		border-bottom: 1px solid hsl(0, 0%, 85%);
+	}
+	
+	.recipe-post .tools-facts .facts ul li:nth-child(2),
+	.recipe-post .tools-facts .facts ul li:nth-child(3),
+	.recipe-post .tools-facts .facts ul li:nth-child(4) {
+		flex: 1 1 30%;
+		order: 2;
+	}
+	
+	.recipe-post .tools-facts .facts ul li:nth-child(3) {
+		border-right: 1px solid hsl(0, 0%, 85%);
+	}
+
+}
+
 .recipe-post .tools-facts .facts ul li h4 {
+	padding: 0;
 	color: hsl(0, 0%, 45%);
 	font-family: var(--basic);
 	font-weight: 400;
@@ -1893,13 +2065,16 @@ main article .content .payment-button svg {
 	line-height: 1;
 }
 
-.dulce .recipe-post .steps-ingredients .ingredients {
-	background-color: hsl(332, 87%, 97%);
+@media only screen and (max-width: 580px) {
+	.recipe-post .steps-ingredients {
+		align-items: unset;
+	}
 }
 
 .recipe-post .steps-ingredients .steps h2,
 .recipe-post .steps-ingredients .ingredients h3,
 .recipe-post .tools-facts h3 {
+	padding-left: 0;
 	margin-bottom: 1rem;
 	font-family: var(--title);
 	font-size: 1.5rem;
@@ -1938,8 +2113,35 @@ main article .content .payment-button svg {
 	padding: 2rem 1rem 2rem 2.5rem;
 }
 
+@media only screen and (max-width: 1024px) {
+	.recipe-post .steps-ingredients .ingredients {
+		margin-left: 1rem;
+	}
+}
+
+@media only screen and (max-width: 960px) {
+	.recipe-post .steps-ingredients .ingredients {
+		padding: 1rem;
+	}
+}
+
+
+@media only screen and (max-width: 580px) {
+	.recipe-post .steps-ingredients .steps {
+		order: 2;
+	}
+	
+	.recipe-post .steps-ingredients .ingredients {
+		margin-left: 0;
+		margin-bottom: 2rem;
+		order: 1;
+		flex: 0 1 100%;
+		max-width: none;
+	}
+}
+
 .recipe-post .steps-ingredients .ingredients h3 {
-	color: var(--wine);
+	color: var(--txt);
 }
 
 .recipe-post .steps-ingredients .ingredients ul li:before {
