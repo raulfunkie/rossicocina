@@ -271,14 +271,30 @@ function get_custom_cat_template($single_template) {
 } 
 add_filter( "single_template", "get_custom_cat_template" ) ;
 
-add_filter( 'body_class', 'rt_bodyclass' );
-function rt_bodyclass( $classes ) {
-  if ( $rcrt = get_field( 'recipe_type', get_queried_object_id() ) ) & is_category('receta') {
-      $rcrt  = esc_attr( trim( strtolower( $rcrt ) ) );
-      $classes[] = $rcrt;
+add_filter('acf/settings/remove_wp_meta_box', '__return_false');
+
+add_filter('body_class','add_category_to_single');
+function add_category_to_single($classes) {
+  if (is_single() ) {
+    global $post;
+    foreach((get_the_category($post->ID)) as $category) {
+      // add category slug to the $classes array
+      $classes[] = $category->category_nicename;
+    }
   }
+  // return the $classes array
   return $classes;
 }
 
-add_filter('acf/settings/remove_wp_meta_box', '__return_false');
+add_filter( 'body_class', 'custom_body_class' );
+function custom_body_class( array $classes ) {
+  $new_class = is_single() & is_category('receta') ? get-the_field('recipe_type') : null;
+
+  if ( $new_class ) {
+    $classes[] = $new_class;
+  }
+
+  return $classes;
+}
+
 ?>
