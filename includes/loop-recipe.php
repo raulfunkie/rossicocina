@@ -1,4 +1,3 @@
-    <?php $rcf = get_field('recipe'); ob_start(); ?>
     <section class="recipe-details">
       <div class="recipe-meta">
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
@@ -6,10 +5,10 @@
         </a>
           <div class="post-meta-details">
             <ul>
-              <?php if( the_field('total_time') ): ?>
+              <?php if( get_field('total_time') ): ?>
               <li>
                 <h5>Tiempo</h5>
-                <time itemprop="cookTime"><?php the_field('recipe_type'); ?> min.</time>
+                <time itemprop="cookTime"><?php the_field('total_time'); ?> min.</time>
               </li>
               <?php endif; ?>
               <?php if( $rcf['prep_time'] ): ?>
