@@ -25,7 +25,6 @@
               </li>
               <?php endif; ?>
               <li class="social-share">
-              <?php global $post; $permalink = get_permalink($post->ID); $title = get_the_title(); ?>
                 <ul>
                   <li>
                     <a href="https://www.facebook.com/sharer?u=<?php echo get_the_permalink(); ?>t=<?php the_title(); ?>" target="_blank" rel="noopener noreferrer">
@@ -36,7 +35,7 @@
                     </a>
                    </li>
                    <li>
-                    <a title="Compartir en Twitter" href=&quot;http://twitter.com/share?text='.$title.'&amp;url='.$permalink.'&quot; target="_blank" rel="noopener noreferrer">
+                    <a title="Compartir en Twitter" href="http://twitter.com/intent/tweet?text="Que rica receta! <?php echo get_the_title(); ?>&url=<?php echo get_the_permalink(); ?>" target="_blank" rel="noopener noreferrer">
                       <svg width="32" height="26" viewBox="0 0 32 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.0634 26.0009C22.1389 26.0009 28.7437 15.9964 28.7437 7.32058C28.7437 7.03642 28.7437 6.75354 28.7245 6.47194C30.0094 5.54255 31.1185 4.39179 32 3.07354C30.8019 3.60474 29.5307 3.95295 28.2291 4.1065C29.5998 3.28609 30.6255 1.99555 31.1155 0.475141C29.8268 1.23995 28.4168 1.77891 26.9466 2.06874C25.9567 1.01618 24.6475 0.319197 23.2216 0.0856541C21.7957 -0.147888 20.3326 0.0950277 19.0586 0.776812C17.7847 1.4586 16.771 2.54124 16.1743 3.85721C15.5777 5.17317 15.4314 6.64909 15.7581 8.05658C13.1479 7.92564 10.5943 7.24729 8.26327 6.06555C5.9322 4.88381 3.87569 3.22509 2.2272 1.19706C1.38764 2.64239 1.1305 4.35337 1.50813 5.98162C1.88577 7.60988 2.86979 9.033 4.25984 9.96122C3.21498 9.93061 2.19286 9.64873 1.28 9.13946V9.22266C1.28041 10.7385 1.80513 12.2075 2.76516 13.3805C3.72519 14.5535 5.06141 15.3584 6.5472 15.6585C5.58064 15.9221 4.5665 15.9607 3.58272 15.7711C4.00242 17.0756 4.81924 18.2163 5.91899 19.0337C7.01873 19.8512 8.34644 20.3046 9.71648 20.3305C8.35525 21.4005 6.79642 22.1916 5.12917 22.6585C3.46191 23.1254 1.71895 23.2591 0 23.0518C3.00244 24.9785 6.4959 26.0005 10.0634 25.9958" fill="#1DA1F2"/>
                       </svg>
