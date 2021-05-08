@@ -124,6 +124,7 @@
         <h3>Ingredientes</h3>
         <?php echo $rcf['ingredients']; ?>
       </div>
+      <?php endif; ?>
     </section>
     <div class="content">
       <?php the_content(); ?>
