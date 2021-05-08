@@ -1076,7 +1076,7 @@ main article .content hr {
 }
 
 .page main article .content > p:first-of-type,
-.single main article .content > p:first-of-type {
+.single main article .content > p:first-child {
 	font-size: 1.375rem;
 	font-style: italic;
 	margin-bottom: 2rem;

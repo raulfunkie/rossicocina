@@ -60,7 +60,7 @@
             </ul>
           </div>
           <?php if( get_field('recipe_description') ): ?>
-          <p itemprop="abstract"><?php the_field('recipe_description'); ?></p>
+          <span itemprop="abstract"><?php the_field('recipe_description'); ?></span>
           <?php endif; ?>
         </div>
       <figure class="rc-main-picture" itemprop="image">
