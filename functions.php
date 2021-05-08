@@ -273,7 +273,7 @@ add_filter( "single_template", "get_custom_cat_template" ) ;
 
 add_filter( 'body_class', 'rt_bodyclass' );
 function rt_bodyclass( $classes ) {
-  if ( $rcrt = get_field( 'recipe_type', get_queried_object_id() ) ) {
+  if ( $rcrt = get_field( 'recipe_type', get_queried_object_id() ) ) & is_category('receta') {
       $rcrt  = esc_attr( trim( strtolower( $rcrt ) ) );
       $classes[] = $rcrt;
   }
