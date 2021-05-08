@@ -288,7 +288,7 @@ function add_category_to_single($classes) {
 
 add_filter( 'body_class', 'custom_body_class' );
 function custom_body_class( array $classes ) {
-  $new_class = is_single() & is_category('receta') ? get-the_field('recipe_type') : null;
+  $new_class = is_single() & is_category('receta') ? get_the_field('recipe_type') : null;
 
   if ( $new_class ) {
     $classes[] = $new_class;
