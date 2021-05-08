@@ -286,16 +286,12 @@ function add_category_to_single($classes) {
   return $classes;
 }
 
-add_filter( 'body_class', 'custom_body_class' );
-function custom_body_class( array $classes ) {
-  if ( is_single() & is_category('receta') ) {
-    $new_class = get_field('recipe_type');
-
-  if ( $new_class ) {
-    $classes[] = $new_class;
-  }
-}
-  return $classes;
+add_filter( 'body_class', 'custom_class' );
+function custom_class( $classes ) {
+    if ( is_single() & is_category( 'receta' ) ) {
+        $classes[] = get_field('recipe_type');
+    }
+    return $classes;
 }
 
 ?>
