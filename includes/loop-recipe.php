@@ -11,13 +11,13 @@
                 <time itemprop="cookTime"><?php the_field('total_time'); ?> min.</time>
               </li>
               <?php endif; ?>
-              <?php if( $rcf['prep_time'] ): ?>
+              <?php if( get_field('prep_time') ): ?>
               <li>
                 <h5>Preparación</h5>
-                <time itemprop="prepTime"><?php echo $rcf['prep_time']; ?> min.</time>
+                <time itemprop="prepTime"><?php the_field('prep_time'); ?> min.</time>
               </li>
               <?php endif; ?>
-              <?php if( $rcf['recipe_type'] ): ?>
+              <?php if( get_field('recipe_type') ): ?>
               <li>
                 <h5>Tipo</h5>
                 <p><?php the_field('recipe_type'); ?></p>
@@ -59,8 +59,8 @@
               </li>
             </ul>
           </div>
-          <?php if( $rcf['recipe_description'] ): ?>
-          <p itemprop="abstract"><?php echo $rcf['recipe_description']; ?></p>
+          <?php if( get_field('recipe_description') ): ?>
+          <p itemprop="abstract"><?php the_field('recipe_description'); ?></p>
           <?php endif; ?>
         </div>
       <figure class="rc-main-picture" itemprop="image">
@@ -70,36 +70,36 @@
       </figure>
     </section>
     <section class="tools-facts">
-      <?php if( $rcf['utensililos'] ): ?>
+      <?php if( get_field('utensililos') ): ?>
       <div class="tools" itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
         <h3>Utensilios</h3>
-        <?php echo $rcf['utensililos']; ?>
+        <?php the_field('utensililos'); ?>
       </div>
       <?php endif; ?>
-      <?php if( $rcf['facts_serving'] ): ?>
+      <?php if( get_field('facts_serving') ): ?>
       <div class="facts" itemscope itemtype="https://schema.org/NutritionInformation">
         <h3>Calorias & Macronutrientes</h3>
-        <h4>Tamaño de la porción: <span  itemprop="servingSize"><?php echo $rcf['facts_serving']; ?></span></h4>
+        <h4>Tamaño de la porción: <span  itemprop="servingSize"><?php the_field('facts_serving'); ?></span></h4>
         <ul>
           <li>
             <h4>Calorias</h4>
-            <span itemprop="calories"><?php echo $rcf['fact_kcal']; ?>kcal</span>
+            <span itemprop="calories"><?php the_field('fact_kcal'); ?>kcal</span>
           </li>
           <li>
             <h4>Proteinas</h4>
-            <span itemprop="proteinContent"><?php echo $rcf['fact_protein']; ?>g</span>
+            <span itemprop="proteinContent"><?php the_field('fact_protein'); ?>g</span>
           </li>
           <li>
             <h4>Grasas</h4>
-            <span itemprop="fatContent"><?php echo $rcf['fact_fats']; ?>g</span>
+            <span itemprop="fatContent"><?php the_field('fact_fats'); ?>g</span>
           </li>
           <li>
             <h4>Carbohidratos</h4>
-            <span itemprop="carbohydrateContent"><?php echo $rcf['fact_carbs']; ?>g</span>
+            <span itemprop="carbohydrateContent"><?php the_field('fact_carbs'); ?>g</span>
           </li>
           <li>
             <h4>Azucar</h4>
-            <span itemprop="sugarContent"><?php echo $rcf['fact_sugar']; ?>g</span>
+            <span itemprop="sugarContent"><?php the_field('fact_sugar'); ?>g</span>
           </li>
         </ul>
         <small>Valores aproximados.</small>
@@ -107,16 +107,16 @@
       <?php endif; ?>
     </section>
     <section class="steps-ingredients">
-      <?php if( $rcf['prep_steps'] ): ?>
+      <?php if( get_field('prep_steps') ): ?>
       <div class="steps" itemprop="recipeInstructions">
         <h2>¿Cómo se prepara?</h2>
-        <?php echo $rcf['prep_steps']; ?>
+        <?php the_field('prep_steps'); ?>
       </div>
       <?php endif; ?>
-      <?php if( $rcf['ingredients'] ): ?>
+      <?php if( get_field('ingredients') ): ?>
       <div class="ingredients" itemprop="recipeIngredient">
         <h3>Ingredientes</h3>
-        <?php echo $rcf['ingredients']; ?>
+        <?php the_field('ingredients'); ?>
       </div>
       <?php endif; ?>
     </section>
