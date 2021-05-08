@@ -1990,12 +1990,36 @@ main article .content .payment-button svg {
 	background-color: var(--wine);
 }
 
+.recipe-post .tools-facts .facts h4 {
+	margin-bottom: .625rem;
+	font-weight: 700;
+	color: var(--txt);
+}
+
+.recipe-post .tools-facts .facts h4 span {
+	font-family: var(--mono);
+	font-size: .875rem;
+	padding: 1px 6px;
+	font-weight: 700px;
+	color: #ffffff;
+	border-radius: 2px;
+	margin-left: 4px;
+	background-color: lightslategrey;
+}
+
+.recipe-post .tools-facts .facts small {
+	font-size: .875rem;
+	font-style: italic;
+	color: hsla(0,0%,0%,0.3);
+}
+
 .recipe-post .tools-facts .facts ul {
 	padding: 0;
 	list-style-type: none;
 	display: flex;
 	flex-flow: row nowrap;
 	border: 1px solid hsl(0, 0%, 85%);
+	margin-bottom: .625rem;
 }
 
 @media only screen and (max-width: 414px) {
