@@ -1671,9 +1671,9 @@ main article .content .payment-button svg {
 	}
 }
 
-.salado { background: linear-gradient(180deg, hsla(53, 100%, 59%, 0.25) 0%, hsla(53, 100%, 59%, 0) 50%); }
-.dulce { background: linear-gradient(180deg, hsla(334, 82%, 70%, 0.1) 0%, hsla(334, 82%, 70%, 0) 50%); }
-.healthy { background: linear-gradient(180deg, hsla(179, 45%, 67%, 0.25) 0%, hsla(179, 45%, 67%, 0) 100%); }
+.salado { background: linear-gradient(180deg, hsla(53, 100%, 59%, 0.25) 0%, hsla(53, 100%, 59%, 0) 20%); }
+.dulce { background: linear-gradient(180deg, hsla(334, 82%, 70%, 0.1) 0%, hsla(334, 82%, 70%, 0) 20%); }
+.healthy { background: linear-gradient(180deg, hsla(179, 45%, 67%, 0.25) 0%, hsla(179, 45%, 67%, 0) 20%); }
 
 .dulce .recipe-post .steps-ingredients .ingredients { background-color: hsl(332, 87%, 97%); }
 .salado .recipe-post .steps-ingredients .ingredients { background-color: hsl(53, 100%, 90%) }
@@ -2014,6 +2014,7 @@ main article .content .payment-button svg {
 }
 
 .recipe-post .tools-facts .facts ul {
+	background-color: hsl(0, 0%, 100%);
 	padding: 0;
 	list-style-type: none;
 	display: flex;
