@@ -37,8 +37,8 @@ get_header(); ?>
           <?php endwhile; ?>
           </section>
           <div class="pagination">
-                <?php next_posts_link( 'Posts Anteriores', $custom_query->max_num_pages ); previous_posts_link( 'Posts Recientes' ); ?>
-              </div>
+            <?php next_posts_link( 'Posts Anteriores', $custom_query->max_num_pages ); previous_posts_link( 'Posts Recientes' ); ?>
+          </div>
           <?php else: ?>
             <?php  _e( 'Sorry, no posts matched your criteria.', 'textdomain' ); ?>
           <?php endif; ?>
