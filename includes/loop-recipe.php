@@ -25,7 +25,7 @@
                 $value = $field['value'];
                 $label = $field['choices'][ $value ];
                 ?>
-                <span><<?php echo esc_html($label); ?></span>
+                <span><?php echo esc_html($label); ?></span>
               </li>
               <?php endif; ?>
               <li class="social-share">
