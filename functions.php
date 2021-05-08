@@ -279,4 +279,6 @@ function rt_bodyclass( $classes ) {
   }
   return $classes;
 }
+
+add_filter('acf/settings/remove_wp_meta_box', '__return_false');
 ?>
