@@ -6,10 +6,10 @@
         </a>
           <div class="post-meta-details">
             <ul>
-              <?php if( $rcf['total_time'] ): ?>
+              <?php if( the_field('total_time') ): ?>
               <li>
                 <h5>Tiempo</h5>
-                <time itemprop="cookTime"><?php echo $rcf['total_time']; ?> min.</time>
+                <time itemprop="cookTime"><?php the_field('recipe_type'); ?> min.</time>
               </li>
               <?php endif; ?>
               <?php if( $rcf['prep_time'] ): ?>
