@@ -1400,7 +1400,7 @@ main article .content h5 {
 .recipe-post .recipe-details .post-meta-details ul li span {
 	padding: 0;
 	line-height: 1.6;
-	font-size: 1rem;
+	font-size: .875rem;
 	color: var(--txt);
 	font-weight: 500;
 }
