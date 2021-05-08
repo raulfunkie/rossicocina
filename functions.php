@@ -259,7 +259,7 @@ add_filter('excerpt_more', 'new_excerpt_more');
 function my_excerpt_length($length){
   return 80;
 }
-add_filter(‘excerpt_length’, ‘my_excerpt_length’);
+add_filter('excerpt_length', 'my_excerpt_length');
 
 /* oh shit, recipe category, am I rite? */
 function get_custom_cat_template($single_template) {
@@ -278,20 +278,18 @@ function add_category_to_single($classes) {
   if (is_single() ) {
     global $post;
     foreach((get_the_category($post->ID)) as $category) {
-      // add category slug to the $classes array
       $classes[] = $category->category_nicename;
     }
   }
-  // return the $classes array
   return $classes;
 }
 
 add_filter( 'body_class', 'custom_class' );
 function custom_class( $classes ) {
-    if ( is_single() & is_category( 'receta' ) ) {
-        $classes[] = get_field('recipe_type');
-    }
-    return $classes;
+  if ( is_single() & is_category( 'receta' ) ) {
+    $classes[] = get_field('recipe_type', $post_id);
+  }
+  return $classes;
 }
 
 ?>
