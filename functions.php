@@ -287,7 +287,9 @@ function add_category_to_single($classes) {
 add_filter( 'body_class','my_body_classes' );
 function my_body_classes( $classes ) {
   if ( is_category(3) ) {
+    global $post;
     $classes[] = 'dulce';
+    $classes[] = get_field('recipe_type', $post->ID, false);
   }
   return $classes;
 }
