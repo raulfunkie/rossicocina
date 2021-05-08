@@ -284,14 +284,6 @@ function add_category_to_single($classes) {
   return $classes;
 }
 
-add_filter( 'body_class', 'custom_class' );
-function custom_class( $classes ) {
-  if ( is_single() && is_category( 'receta' ) ) {
-    $classes[] = get_field('recipe_type', $post_id);
-  }
-  return $classes;
-}
-
 function add_acf_body_class($class) {
   if ( is_single() && is_category( 'receta' ) ) {
     $queried_object_id = get_queried_object_id();
