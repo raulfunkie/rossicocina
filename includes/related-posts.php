@@ -7,9 +7,9 @@
         <figure>
           <?php the_post_thumbnail('related-image'); ?>
         </figure>
-        <div>
-          <?php the_title( '<h3>', '</h3>' ); ?>
+        <div class="related-meta">
           <time datetime="<?php echo get_the_date('c'); ?>" title="Originally published <?php echo get_the_date('M j, Y'); ?>"><?php echo get_the_date('m/d/y'); ?></time>
+          <?php the_title( '<h3>', '</h3>' ); ?>
         </div>
       </a>
     </li>
