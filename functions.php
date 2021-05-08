@@ -288,7 +288,6 @@ add_filter( 'body_class','my_body_classes' );
 function my_body_classes( $classes ) {
   if ( is_single() && in_category('receta') ) {
     global $post;
-    $classes[] = 'dulce';
     $classes[] = get_field('recipe_type', $post->ID, false);
   }
   return $classes;
