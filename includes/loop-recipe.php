@@ -20,12 +20,7 @@
               <?php if( get_field('recipe_type') ): ?>
               <li>
                 <h5>Tipo</h5>
-                <?php
-                $field = get_field_object( 'recipe_type' );
-                $value = $field['value'];
-                $label = $field['choices'][ $value ];
-                ?>
-                <span><?php echo esc_html($label); ?></span>
+                <span><?php the_field('recipe_type'); ?></span>
               </li>
               <?php endif; ?>
               <li class="social-share">
