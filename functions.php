@@ -288,8 +288,8 @@ add_filter( 'body_class','my_body_classes' );
 function my_body_classes( $classes ) {
   if ( is_category(3) ) {
     $classes[] = 'dulce';
-  return $classes;   
   }
+  return $classes;
 }
 
 ?>
