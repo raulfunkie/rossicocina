@@ -64,7 +64,9 @@ get_header(); ?>
                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => __('Sigue leyendo: '), 'after' => ' &rarr;' ) ); ?>">
                   <?php the_title( '<h2>', '</h2>' ); ?>
                 </a>
-                <span itemprop="abstract"><?php the_field('recipe_description'); ?></span>
+                <span itemprop="abstract">
+                  <?php echo wp_trim_words( get_field('recipe_description'), 40, '...' ); ?>
+                </span>
               </div>
             </article>
             <?php endwhile; ?>

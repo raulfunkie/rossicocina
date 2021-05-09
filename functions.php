@@ -271,8 +271,6 @@ function get_custom_cat_template($single_template) {
 } 
 add_filter( "single_template", "get_custom_cat_template" ) ;
 
-add_filter('acf/settings/remove_wp_meta_box', '__return_false');
-
 add_filter('body_class','add_category_to_single');
 function add_category_to_single($classes) {
   if (is_single() ) {
