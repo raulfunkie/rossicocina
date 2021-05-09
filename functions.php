@@ -69,14 +69,13 @@ function theme_functions() {
 add_action( 'after_setup_theme', 'theme_functions' );
 
 function rc_image_sizes() {
-  add_image_size( 'single-post-image', 1080, 540, array( 'center', 'center' ) );
-  add_image_size( 'sticky-post-image', 480, 240, array( 'center', 'center' ) );
-  add_image_size( 'home-post-image', 200, 200, array( 'center', 'center' ) );
-  add_image_size( 'related-image', 100, 100, array( 'center', 'center' ) );
-  add_image_size( 'recipe-image', 480, 480, array( 'center', 'center' ) );
+  add_image_size( 'single-post-image', 1080, 540, true );
+  add_image_size( 'sticky-post-image', 480, 240, true );
+  add_image_size( 'home-post-image', 200, 200, true );
+  add_image_size( 'related-image', 100, 100, true );
+  add_image_size( 'recipe-image', 480, 480, true );
 }
 add_action( 'after_setup_theme', 'rc_image_sizes' );
-
 
 function remove_page_class($wp_list_pages) {
   $pattern = '/\<li class="page_item[^>]*>/';
@@ -260,5 +259,35 @@ function my_excerpt_length($length){
   return 80;
 }
 add_filter('excerpt_length', 'my_excerpt_length');
+
+/* oh shit, recipe category, am I rite? */
+function get_custom_cat_template($single_template) {
+   global $post;
+   if ( in_category( 'receta' )) {
+      $single_template = dirname( __FILE__ ) . '/single-recipe.php';
+   }
+   return $single_template;
+} 
+add_filter( "single_template", "get_custom_cat_template" ) ;
+
+add_filter('body_class','add_category_to_single');
+function add_category_to_single($classes) {
+  if (is_single() ) {
+    global $post;
+    foreach((get_the_category($post->ID)) as $category) {
+      $classes[] = $category->category_nicename;
+    }
+  }
+  return $classes;
+}
+
+add_filter( 'body_class','my_body_classes' );
+function my_body_classes( $classes ) {
+  if ( is_single() && in_category('receta') ) {
+    global $post;
+    $classes[] = get_field('recipe_type', $post->ID, false);
+  }
+  return $classes;
+}
 
 ?>
