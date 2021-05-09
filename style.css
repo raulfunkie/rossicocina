@@ -962,6 +962,14 @@ main .page-header {
 	margin: 2rem auto 3rem;
 }
 
+.single main article hr {
+	margin: 1.25rem auto;
+	border: 0;
+	outline: 0;
+	height: 1px;
+	background-color: hsla(0, 0%, 85%, 0.25);
+}
+
 @media only screen and (max-width: 640px) {
 	main .page-header {
 		margin-top: 0;
