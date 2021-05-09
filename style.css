@@ -216,6 +216,12 @@ header nav {
 	margin: auto .625rem auto 0;
 }
 
+@media only screen and (max-width: 630px) {
+	header nav {
+		margin-right: 0;
+	}
+}
+
 header nav ul {
 	list-style-type: none;
 	display: flex;
@@ -286,6 +292,7 @@ header nav ul li a:focus-visible {
 	.homepage-hero {
 		padding-right: 0;
 		padding-left: 0;
+		margin-top: 0;
 	}
 }
 
@@ -315,12 +322,24 @@ object.logo {
 	}
 }
 
+@media only screen and (max-width: 480px) {
+	.homepage-hero > div:first-child {
+		margin-top: 0;
+	}
+}
+
 .homepage-hero > div:first-child p {
 	font-family: var(--basic);
 	font-size: 1.125rem;
 	line-height: 1.6;
 	color: var(--dark-wine);
 	max-width: 520px;
+}
+
+@media only screen and (max-width: 480px) {
+	.homepage-hero > div:first-child p {
+		font-size: .875rem;
+	}
 }
 
 @media only screen and (max-width: 680px) {
@@ -338,7 +357,8 @@ object.logo {
 
 @media only screen and (max-width: 480px) {
 	.homepage-hero div:last-child figure {
-		width: 90%;
+		width: 60%;
+		margin: 0 auto;
 	}
 }
 
@@ -507,6 +527,10 @@ object.logo {
 	color: var(--dark);
 }
 
+.sticky ul li div p {
+	font-size: .875rem;
+}
+
 /* posts home */
 .home-posts {
 	max-width: 1080px;
@@ -566,7 +590,7 @@ object.logo {
 }
 
 .home-posts .posts article figure {
-	flex: 0 0 200px;
+	flex: 0 0 180px;
 	margin-right: 1rem;
 	max-width: 200px;
 	max-height: 200px;
@@ -580,12 +604,12 @@ object.logo {
 .home-posts .posts article a {
 	color: var(--wine);
 	text-decoration: none;
-	margin: auto 0;
+	margin: .625rem 0;
 }
 
 @media only screen and (max-width: 1080px) {
 	.home-posts .posts article figure {
-		flex: 0 1 160px;
+		flex: 0 0 160px;
 	}
 }
 
@@ -613,10 +637,16 @@ object.logo {
 }
 
 .home-posts .posts article div {
-	padding: .5rem 0;
+	padding: 0;
 	display: flex;
 	flex-flow: column nowrap;
-	justify-content: space-between;
+	justify-content: flex-start;
+}
+
+.home-posts .posts article a h2 {
+	color: var(--wine);
+	text-decoration: none;
+	margin-bottom: .5rem;
 }
 
 .home-posts .posts article h2 {
@@ -632,12 +662,7 @@ object.logo {
 	}
 }
 
-.home-posts .posts article a h2 {
-	color: var(--wine);
-	text-decoration: none;
-}
-
-.home-posts .posts article p {
+.home-posts .posts article span {
 	font-family: var(--basic);
 	font-size: .875rem;
 	line-height: 1.6;
@@ -962,8 +987,8 @@ main .page-header {
 	margin: 2rem auto 3rem;
 }
 
-.single main article hr {
-	margin: 1.25rem auto;
+main hr {
+	margin: 1.25rem auto 4rem;
 	border: 0;
 	outline: 0;
 	height: 1px;
