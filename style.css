@@ -553,6 +553,12 @@ object.logo {
 	}
 }
 
+@media only screen and (max-width: 480px) {
+	.home-posts {
+		padding: 0;
+	}
+}
+
 .home-posts .posts {
 	flex: 0 1 680px;
 }
@@ -564,12 +570,25 @@ object.logo {
 	}
 }
 
+@media only screen and (max-width: 960px) {
+	.home-posts .posts {
+		margin-right: 0;
+	}
+}
+
 .home-posts .posts > h2 {
 	font-family: var(--title);
 	font-size: 2rem;
 	font-weight: 700;
 	color: var(--dark);
 	margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 480px) {
+	.home-posts .posts > h2,
+	.home-posts .posts .btn {
+		padding-left: 1rem;
+	}
 }
 
 .home-posts .posts article {
@@ -597,16 +616,6 @@ object.logo {
 	overflow: hidden;
 }
 
-.home-posts .posts article figure img {
-	max-width: 100%;
-}
-
-.home-posts .posts article a {
-	color: var(--wine);
-	text-decoration: none;
-	margin: .625rem 0;
-}
-
 @media only screen and (max-width: 1080px) {
 	.home-posts .posts article figure {
 		flex: 0 0 160px;
@@ -618,13 +627,26 @@ object.logo {
 		flex: 0 1 100%;
 		max-width: 100%;
 		margin-right: 0;
+		margin-bottom: .625rem;
 		overflow: hidden;
 		max-height: 200px;
 	}
-	
+}
+
+.home-posts .posts article figure img {
+	max-width: 100%;
+}
+
+@media only screen and (max-width: 480px) {
 	.home-posts .posts article figure img {
 		width: 100%;
 	}
+}
+
+.home-posts .posts article a {
+	color: var(--wine);
+	text-decoration: none;
+	margin: .625rem 0;
 }
 
 .home-posts .posts article time,
@@ -643,6 +665,12 @@ object.logo {
 	justify-content: flex-start;
 }
 
+@media only screen and (max-width: 480px) {
+	.home-posts .posts article div {
+		padding: 0 .625rem;
+	}
+}
+
 .home-posts .posts article a h2 {
 	color: var(--wine);
 	text-decoration: none;
@@ -651,7 +679,7 @@ object.logo {
 
 .home-posts .posts article h2 {
 	font-family: var(--title);
-	font-size: 2rem;
+	font-size: calc(1.5rem + 2vw);
 	font-weight: 700;
 	line-height: 1;
 }
