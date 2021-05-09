@@ -261,14 +261,4 @@ function my_excerpt_length($length){
 }
 add_filter('excerpt_length', 'my_excerpt_length');
 
-/* oh shit, recipe category, am I rite? */
-function get_custom_cat_template($single_template) {
-   global $post;
-   if ( in_category( 'receta' )) {
-      $single_template = dirname( __FILE__ ) . '/single-recipe.php';
-   }
-   return $single_template;
-} 
-add_filter( "single_template", "get_custom_cat_template" ) ;
-
 ?>
