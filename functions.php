@@ -271,24 +271,4 @@ function get_custom_cat_template($single_template) {
 } 
 add_filter( "single_template", "get_custom_cat_template" ) ;
 
-add_filter('body_class','add_category_to_single');
-function add_category_to_single($classes) {
-  if (is_single() ) {
-    global $post;
-    foreach((get_the_category($post->ID)) as $category) {
-      $classes[] = $category->category_nicename;
-    }
-  }
-  return $classes;
-}
-
-add_filter( 'body_class','my_body_classes' );
-function my_body_classes( $classes ) {
-  if ( is_single() && in_category('receta') ) {
-    global $post;
-    $classes[] = get_field('recipe_type', $post->ID, false);
-  }
-  return $classes;
-}
-
 ?>
