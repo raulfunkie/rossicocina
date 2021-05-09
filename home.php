@@ -8,6 +8,7 @@ get_header(); ?>
       <section class="page-meta">
         <h1>Articulos</h1>
       </section>
+      <?php get_template_part('includes/loop', 'basic'); ?>
       <section class="post-list">
       <?php $custom_query_args = array( 'posts_per_page' => 10, 'ignore_sticky_posts' => 1 );
       // Get current page and append to custom query parameters array
