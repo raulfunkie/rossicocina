@@ -59,9 +59,9 @@
               </li>
             </ul>
           </div>
-          <?php if( get_field('recipe_description') ): ?>
+        <?php if( get_field('recipe_description') ): ?>
           <span itemprop="abstract"><?php the_field('recipe_description'); ?></span>
-          <?php endif; ?>
+        <?php endif; ?>
         </div>
       <figure class="rc-main-picture" itemprop="image">
         <?php if ( has_post_thumbnail() ) { ?>

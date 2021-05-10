@@ -10,7 +10,15 @@
             <div>
               <?php the_title( '<h2>', '</h2>' ); ?>
               <time datetime="<?php echo get_the_date('c'); ?>" title="Fecha de Publicación: <?php echo get_the_date('M j, Y'); ?>"><?php echo get_the_date('m/d/y'); ?></time>
-              <p><?php the_excerpt(); ?></p>
+               <?php if (  get_field('recipe_description') ) { ?>
+                <span itemprop="abstract">
+                  <?php echo wp_trim_words( get_field('recipe_description'), 40, '...' ); ?>
+                </span>
+                <?php } else { ?>
+                <p>
+                  <?php the_excerpt(); ?>
+                </p>
+                <?php } ?>
             </div>
           </a>
         </article>
@@ -19,6 +27,6 @@
         <?php endif; ?>
       </section>
       <div class="pagination">
-        <?php next_posts_link( 'Posts Anteriores', $custom_query->max_num_pages );
+        <?php next_posts_link( 'Posts Anteriores' );
          previous_posts_link( 'Posts Recientes' ); ?>
       </div>

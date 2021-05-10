@@ -62,11 +62,11 @@ get_header(); ?>
               <div>
                 <span class="time-cat">
                   <time datetime="<?php echo get_the_date('c'); ?>" title="Fecha de Publicación: <?php echo get_the_date('M j, Y'); ?>"><?php echo get_the_date('m/d/y'); ?></time>
-                  -
+                  //
                   <?php $categories = get_the_category();
                   if ( ! empty( $categories ) ) {
                       echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
-                  }?>
+                  } ?>
                 </span>
                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => __('Sigue leyendo: '), 'after' => ' &rarr;' ) ); ?>">
                   <?php the_title( '<h2>', '</h2>' ); ?>
