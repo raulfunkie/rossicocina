@@ -880,7 +880,7 @@ footer .split > div ul li a {
 
 footer .split > div ul li a:hover,
 footer .split > div ul li a:focus {
-	color: var(--pink);
+	color: var(--yellow);
 }
 
 footer .split > div {
@@ -985,6 +985,11 @@ footer .split > div:nth-child(2) ul li:not(:last-child) {
 footer .split > div:nth-child(2) ul li a svg {
 	max-width: 32px;
 	max-height: 32px;
+	transition: transform 100ms linear;
+}
+
+footer .split > div:nth-child(2) ul li a:hover svg {
+	transform: scale(1.1);
 }
 
 footer .split > div:nth-child(2) object {
@@ -996,6 +1001,13 @@ footer .split > div:nth-child(2) small {
 	font-size: .75rem;
 	font-weight: 400;
 	color: hsl(0,0%,100%);
+	margin-bottom: .5rem;
+}
+
+footer .split > div:nth-child(2) small a {
+	font-weight: 700;
+	text-decoration: none;
+	color: var(--yellow);
 }
 
 /* page */
