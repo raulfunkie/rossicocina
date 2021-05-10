@@ -665,6 +665,10 @@ object.logo {
 	justify-content: flex-start;
 }
 
+.home-posts .posts article div .time-cat a {
+	font-weight: 500;
+}
+
 @media only screen and (max-width: 480px) {
 	.home-posts .posts article div {
 		padding: 0 .625rem;
@@ -674,7 +678,6 @@ object.logo {
 .home-posts .posts article a h2 {
 	color: var(--wine);
 	text-decoration: none;
-	margin-bottom: .5rem;
 }
 
 .home-posts .posts article h2 {
@@ -998,7 +1001,7 @@ footer .split > div:nth-child(2) object {
 
 footer .split > div:nth-child(2) small {
 	font-family: var(--basic);
-	font-size: .75rem;
+	font-size: .875rem;
 	font-weight: 400;
 	color: hsl(0,0%,100%);
 	margin-bottom: .5rem;
@@ -1008,6 +1011,7 @@ footer .split > div:nth-child(2) small a {
 	font-weight: 700;
 	text-decoration: none;
 	color: var(--yellow);
+	letter-spacing: 2px;
 }
 
 /* page */

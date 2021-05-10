@@ -60,7 +60,14 @@ get_header(); ?>
                 <?php if ( has_post_thumbnail() ) { the_post_thumbnail('home-post-image'); } ?>
               </figure>
               <div>
-                <time datetime="<?php echo get_the_date('c'); ?>" title="Fecha de Publicación: <?php echo get_the_date('M j, Y'); ?>"><?php echo get_the_date('m/d/y'); ?></time>
+                <span class="time-cat">
+                  <time datetime="<?php echo get_the_date('c'); ?>" title="Fecha de Publicación: <?php echo get_the_date('M j, Y'); ?>"><?php echo get_the_date('m/d/y'); ?></time>
+                  -
+                  <?php $categories = get_the_category();
+                  if ( ! empty( $categories ) ) {
+                      echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
+                  }?>
+                </span>
                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => __('Sigue leyendo: '), 'after' => ' &rarr;' ) ); ?>">
                   <?php the_title( '<h2>', '</h2>' ); ?>
                 </a>
@@ -71,7 +78,7 @@ get_header(); ?>
             </article>
             <?php endwhile; ?>
           </div>
-          <a class="btn" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">Más Articulos</a>
+          <a class="btn btn-magenta" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">Más Articulos</a>
         <?php else:  ?>
           <!--<?php _e( 'Sorry, no posts matched your criteria.' ); ?>-->
         <?php endif; ?>
