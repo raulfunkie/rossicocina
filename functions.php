@@ -176,8 +176,8 @@ add_action( 'widgets_init', 'wpb_widgets_init' );
 add_filter('next_posts_link_attributes', 'next_class');
 add_filter('previous_posts_link_attributes', 'prev_class');
 
-function prev_class() { return 'class="btn btn-yellow"'; }
-function next_class() { return 'class="btn btn-magenta"'; }
+function prev_class() { return 'class="btn btn-magenta"'; }
+function next_class() { return 'class="btn btn-yellow"'; }
 
 function wpb_track_post_views ($post_id) {
   if ( !is_single() ) return;
