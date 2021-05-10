@@ -100,7 +100,10 @@ add_action( 'init', 'my_custom_menus' );
 function my_custom_menus() {
   register_nav_menus (
     array (
-      'head-menu' => 'Header Navigation'
+      'head-menu' => __( 'Header Navigation', 'text_domain' ),
+      'rossicocina'  => __( 'Footer - RossiCocina', 'text_domain' ),
+      'tips'  => __( 'Footer - Recetas & Tips', 'text_domain' ),
+      'product-showcase'  => __( 'Footer - Producto', 'text_domain' ),
     )
   );
 }

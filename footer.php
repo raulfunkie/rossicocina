@@ -7,7 +7,7 @@
           </section>
           <section>
             <h4>Recetas & Tips</h4>
-            <?php wp_nav_menu( array('menu' => '', 'theme_location' => 'recetas', 'fallback_cb' => false, 'container' => false, 'items_wrap' => '<ul>%3$s</ul>' ) ); ?>
+            <?php wp_nav_menu( array('menu' => '', 'theme_location' => 'tips', 'fallback_cb' => false, 'container' => false, 'items_wrap' => '<ul>%3$s</ul>' ) ); ?>
           </section>
           <section class="split-column">
             <div>
@@ -29,7 +29,7 @@
             </div>
            <!--<div>
               <h4>Scones</h4>
-              <?php wp_nav_menu( array('menu' => '', 'theme_location' => 'scones', 'fallback_cb' => false, 'container' => false, 'items_wrap' => '<ul>%3$s</ul>' ) ); ?>
+              <?php wp_nav_menu( array('menu' => '', 'theme_location' => 'product-showcase', 'fallback_cb' => false, 'container' => false, 'items_wrap' => '<ul>%3$s</ul>' ) ); ?>
             </div>-->
           </section>
         </div>
