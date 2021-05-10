@@ -72,7 +72,11 @@ get_header(); ?>
                   <?php the_title( '<h2>', '</h2>' ); ?>
                 </a>
                 <span itemprop="abstract">
+                <?php if (  get_field('recipe_description') ) { ?>  
                   <?php echo wp_trim_words( get_field('recipe_description'), 40, '...' ); ?>
+                <?php } else { ?>
+                  <?php the_excerpt(); ?>
+                <?php } ?>
                 </span>
               </div>
             </article>
