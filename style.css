@@ -679,7 +679,7 @@ object.logo {
 
 .home-posts .posts article h2 {
 	font-family: var(--title);
-	font-size: calc(1.5rem + 2vw);
+	font-size: calc(1rem + .75vw);
 	font-weight: 700;
 	line-height: 1;
 }
