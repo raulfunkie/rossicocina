@@ -128,14 +128,14 @@ Text Domain: rossicocina
 .wpcf7 .form-wrap .input-container select,
 .wpcf7 .form-wrap .input-conatiner textarea {
 	width: 100%;
-	box-shadow: 0 1px 0 var(--wine);
+	box-shadow: 0 2px 0 hsla(354, 83%, 96%, 1);
 }
 
 .wpcf7 .form-wrap .input-container select:focus,
 .wpcf7 .form-wrap .input-container textarea:focus,
 .wpcf7 .form-wrap .input-container input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):focus {
 	background-color: hsla(333, 82%, 70%, 0.1);
-	box-shadow: 0 2px 0 hsla(354, 83%, 96%, 1);
+	box-shadow: 0 1px 0 var(--wine);
 }
 
 .form-wrap .input-container select {
@@ -146,6 +146,10 @@ Text Domain: rossicocina
 }
 
 .input-container select option { font-weight:normal; }
+
+.wpcf7 br {
+	display: none !important;
+}
 
 /* btn */
 .btn {
