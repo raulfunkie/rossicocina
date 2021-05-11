@@ -18,7 +18,7 @@ Text Domain: rossicocina
 	--pink-two: hsl(333,80.4%,70%);
 	--yellow: hsl(52,100%,58.6%);
 	--green: hsl(179,45%,66.5%);
-	--newspaper: hsl(264, 15%, 95%);
+	--newspaper: hsla(264, 14%, 95%, 0.4);
 	
 	--txt: hsla(0,0%,0%,0.7);
 	--shadow: 0 16px 33px hsla(239,87%,24%, 0.07), 0 6.16296px 10.5111px hsla(239,87%,24%,0.0425185), 0 1.3037px 2.68889px hsla(239,87%,24%,0.0274815);
