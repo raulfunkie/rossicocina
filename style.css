@@ -33,21 +33,21 @@ Text Domain: rossicocina
 }
 
 /* input styles */
-.form-wrap {
+.sidebar .form-wrap {
 	margin: 0;
 	padding: 0;
 	display: flex;
 	flex-flow: column nowrap;
 }
 
-.form-wrap label,
-.form-wrap input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]) {
+.sidebar .form-wrap label,
+.sidebar .form-wrap input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]) {
 	touch-action: manipulation;
 	transition: all 0.2s;
 	background-color: hsl(0,0%,100%);
 }
 
-.form-wrap .input-container {
+.sidebar .form-wrap .input-container {
 	position: relative;
 	display: flex;
 	flex-flow: column-reverse;
@@ -55,13 +55,13 @@ Text Domain: rossicocina
 	margin-bottom: .875rem;
 }
 
-.form-wrap .input-container label {
+.sidebar .form-wrap .input-container label {
 	position: absolute;
 	top: 8px;
 	left: 8px;
 }
 
-.form-wrap .input-container input:placeholder-shown + label {
+.sidebar .form-wrap .input-container input:placeholder-shown + label {
 	padding: 0 4px;
 	cursor: text;
 	transform-origin: left bottom;
@@ -72,17 +72,17 @@ Text Domain: rossicocina
 	left: 6px;
 }
 
-::-webkit-input-placeholder {
+.sidebar ::-webkit-input-placeholder {
 	opacity: 0;
 	transition: all .2s;
 }
 
-.form-wrap .input-container input:focus::-webkit-input-placeholder {
+.sidebar .form-wrap .input-container input:focus::-webkit-input-placeholder {
 	opacity: 1;
 }
 
-.form-wrap .input-container input:not(:placeholder-shown) + label,
-.form-wrap .input-container input:focus + label {
+.sidebar .form-wrap .input-container input:not(:placeholder-shown) + label,
+.sidebar .form-wrap .input-container input:focus + label {
 	padding: 0 4px;
 	/*transform: translate(0.5rem, 0.6rem) scale(1);*/
 	background-color: hsl(0,0%,100%);
