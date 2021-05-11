@@ -32,12 +32,19 @@ Text Domain: rossicocina
 	color: var(--txt);
 }
 
-/* input styles */
-.sidebar .form-wrap {
+/* input & form styles */
+.sidebar .form-wrap,
+.form-wrap {
 	margin: 0;
 	padding: 0;
 	display: flex;
 	flex-flow: column nowrap;
+}
+
+.wpcf7 .form-wrap .input-container label {
+	font-weight: 700;
+	color: var(--wine);
+	font-size: .875rem;
 }
 
 .sidebar .form-wrap label,
@@ -97,7 +104,8 @@ Text Domain: rossicocina
 	min-width: 212px;
 }
 
-.input-container input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]) {
+.input-container input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
+.input-container select {
 	cursor: text;
 	-webkit-appearance: none;
 	outline: none;
@@ -112,6 +120,10 @@ Text Domain: rossicocina
 	border-radius: 0;
 	border: 0;
 	transition: all 120ms linear;
+}
+
+.wpcf7 .form-wrap .input-container input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]) {
+	box-shadow: 0 1px 0 var(--wine);
 }
 
 .form-wrap .input-container select {
