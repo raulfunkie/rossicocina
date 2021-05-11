@@ -105,7 +105,8 @@ Text Domain: rossicocina
 }
 
 .input-container input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
-.input-container select {
+.input-container select,
+.input-conatiner textarea {
 	cursor: text;
 	-webkit-appearance: none;
 	outline: none;
@@ -122,8 +123,17 @@ Text Domain: rossicocina
 	transition: all 120ms linear;
 }
 
-.wpcf7 .form-wrap .input-container input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]) {
+.wpcf7 .form-wrap .input-container input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
+.wpcf7 .form-wrap .input-container select,
+.wpcf7 .form-wrap .input-conatiner textarea {
+	width: 100%;
 	box-shadow: 0 1px 0 var(--wine);
+}
+
+.wpcf7 .form-wrap .input-conatiner select:focus,
+.wpcf7 .form-wrap .input-conatiner textarea:focus,
+.wpcf7 .form-wrap .input-conatiner input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):focus {
+	background-color: hsla(333, 82%, 70%, 0.1);
 }
 
 .form-wrap .input-container select {
@@ -134,17 +144,6 @@ Text Domain: rossicocina
 }
 
 .input-container select option { font-weight:normal; }
-
-.input-container select:hover,
-.input-container textarea:hover,
-.input-container input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):hover {
-}
-
-select:focus,
-textarea:focus,
-input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):focus {
-	box-shadow: 0 2px 0 hsla(348, 100%, 76%, 0.5);
-}
 
 /* btn */
 .btn {
