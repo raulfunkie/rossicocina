@@ -124,6 +124,16 @@ Text Domain: rossicocina
 	transition: all 120ms linear;
 }
 
+.wpcf7 .form-wrap .input-container {
+	margin: 0 0 .625rem 0;
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+.wpcf7 .form-wrap .input-container label {
+	margin-bottom: .5rem;
+}
+
 .wpcf7 .form-wrap .input-container input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
 .wpcf7 .form-wrap .input-container select,
 .wpcf7 .form-wrap .input-conatiner textarea {
