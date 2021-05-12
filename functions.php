@@ -139,6 +139,8 @@ function prefetch_links() { ?>
 add_action( 'wp_head', 'prefetch_links', 10 );
 
 function favico() { ?>
+  <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/fav/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/fav/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/fav/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/fav/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/fav/apple-icon-72x72.png">
