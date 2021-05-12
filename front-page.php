@@ -65,7 +65,7 @@ get_header(); ?>
               </figure>
               <div>
                 <span class="time-cat">
-                  <time itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>" title="Fecha de Publicación: <?php echo get_the_date('M j, Y'); ?>"><?php echo get_the_date('m/d/y'); ?></time>
+                  <time itemprop="" datetime="<?php echo get_the_date('c'); ?>" title="Fecha de Publicación: <?php echo get_the_date('M j, Y'); ?>"><?php echo get_the_date('m/d/y'); ?></time>
                   //
                   <?php $categories = get_the_category();
                   if ( ! empty( $categories ) ) {
