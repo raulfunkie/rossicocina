@@ -1083,7 +1083,7 @@ main .page-header {
 main hr {
 	margin: 1.25rem auto 4rem;
 	width: 80%;
-	max-width: 420px;
+	max-width: 420px !important;
 	border: 0;
 	outline: 0;
 	height: 1px;
@@ -1186,9 +1186,19 @@ main .post-meta h1 a {
 	}
 }
 
-main article .content  {
+main article .content {
 	font-size: 1.125rem;
 	line-height: 1.8;
+}
+
+.receta .content {
+	margin-top: 4rem;
+}
+
+@media only screen and (max-width: 680px) {
+	.receta .content {
+		margin-top: 2rem;
+	}
 }
 
 main article .content hr {
