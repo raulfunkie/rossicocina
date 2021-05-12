@@ -3,14 +3,18 @@
   <ul>
     <?php $popularpost = new WP_Query( array( 'posts_per_page' => 3, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'RAND'  ) );
     while ( $popularpost->have_posts() ) : $popularpost->the_post(); ?>
-    <li>
+    <?php if ( in_category ('receta') ) { ?>
+    <li <?php post_class(); ?> itemscope itemtype="https://schema.org/Recipe">
+    <? } else { ?>
+    <li <?php post_class(); ?>>
+    <?php } ?>
       <a href="<?php the_permalink(); ?>" rel="bookmark" <?php the_title_attribute(); ?>>
-        <figure>
+        <figure itemprop="image">
           <?php the_post_thumbnail('related-image'); ?>
         </figure>
         <div class="related-meta">
-          <time datetime="<?php echo get_the_date('c'); ?>" title="Originally published <?php echo get_the_date('M j, Y'); ?>"><?php echo get_the_date('m/d/y'); ?></time>
-          <?php the_title( '<h3>', '</h3>' ); ?>
+          <time itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>" title="Publicado <?php echo get_the_date('M j, Y'); ?>"><?php echo get_the_date('m/d/y'); ?></time>
+          <?php the_title( '<h3 itemprop="name">', '</h3>' ); ?>
         </div>
       </a>
     </li>

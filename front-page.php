@@ -55,21 +55,25 @@ get_header(); ?>
           <div class="home-post-list">
             <?php $the_query = new WP_Query( array( 'posts_per_page' => 8, 'post__not_in' => get_option( 'sticky_posts' ) ) );
             if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+            <?php if ( in_category ('receta') ) { ?>
+            <article <?php post_class(); ?> itemscope itemtype="https://schema.org/Recipe">
+            <? } else { ?>
             <article <?php post_class(); ?>>
-              <figure>
+            <?php } ?>
+              <figure itemprop="image">
                 <?php if ( has_post_thumbnail() ) { the_post_thumbnail('home-post-image'); } ?>
               </figure>
               <div>
                 <span class="time-cat">
-                  <time datetime="<?php echo get_the_date('c'); ?>" title="Fecha de Publicación: <?php echo get_the_date('M j, Y'); ?>"><?php echo get_the_date('m/d/y'); ?></time>
+                  <time itemprop="datePublished" datetime="<?php echo get_the_date('c'); ?>" title="Fecha de Publicación: <?php echo get_the_date('M j, Y'); ?>"><?php echo get_the_date('m/d/y'); ?></time>
                   //
                   <?php $categories = get_the_category();
                   if ( ! empty( $categories ) ) {
                       echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
                   } ?>
                 </span>
-                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => __('Sigue leyendo: '), 'after' => ' &rarr;' ) ); ?>">
-                  <?php the_title( '<h2>', '</h2>' ); ?>
+                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => __('Sigue leyendo: '), 'after' => ' &rarr;' ) ); ?>" >
+                  <?php the_title( '<h2 itemprop="name">', '</h2>' ); ?>
                 </a>
                 <span itemprop="abstract">
                 <?php if (  get_field('recipe_description') ) { ?>  
