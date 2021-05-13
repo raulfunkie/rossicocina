@@ -2347,3 +2347,21 @@ main article .content .payment-button svg {
 	width: 20px;
 	height: 20px;
 }
+
+/* learnPress */
+.course-extra-box__content-inner,
+.course-title,
+.course-item,
+.meta-item__value,
+.learn-press-breadcrumb {
+	text-align: left;
+}
+
+#learn-press-course-tabs .course-nav label {
+	color: var(--wine);
+}
+
+.course-meta-primary,
+.course-instructor {
+	display: none;
+}
