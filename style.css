@@ -2353,15 +2353,31 @@ main article .content .payment-button svg {
 .course-title,
 .course-item,
 .meta-item__value,
-.learn-press-breadcrumb {
+.learn-press-breadcrumb,
+.course-tab-panel-faqs {
 	text-align: left;
+}
+
+.course-title {
+	font-family: var(--title);
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: var(--wine);
+}
+
+.lp-archive-courses .learn-press-courses[data-layout="list"] .course .course-item .course-content .course-permalink .course-title:hover {
+	color: var(--pink);
 }
 
 #learn-press-course-tabs .course-nav label {
 	color: var(--wine);
 }
 
-.course-meta-primary,
+.course-meta.course-meta-primary,
 .course-instructor {
 	display: none;
+}
+
+.lp-archive-courses .learn-press-courses[data-layout="list"] .course .course-item .course-content .course-wrap-meta .meta-item::before {
+	color: var(--wine);
 }

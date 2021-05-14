@@ -302,4 +302,12 @@ add_filter('wpcf7_form_elements', function($content) {
   return $content;
 });
 
+// LearnPress Actions
+add_filter( 'learn-press/course-tabs', 'theme_prefix_lp_course_tab_remove' );
+
+function theme_prefix_lp_course_tab_remove( $tabs ) {
+    unset( $tabs['instructor'] );
+    return $tabs;
+}
+
 ?>
