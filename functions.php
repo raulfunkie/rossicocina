@@ -363,7 +363,7 @@ function custom_checkout_fields( $fields ) {
   
   return $fields;
 }
-add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+add_filter( 'woocommerce_checkout_fields' , 'custom_checkout_fields' );
 
 function custom_wc_checkout_fields_no_label($fields) {
     foreach ($fields as $category => $value) {
