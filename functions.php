@@ -309,32 +309,7 @@ function theme_prefix_lp_course_tab_remove( $tabs ) {
 }
 add_filter( 'learn-press/course-tabs', 'theme_prefix_lp_course_tab_remove' );
 
-// WooCommerce Actions
-function bbloomer_simplify_checkout_virtual( $fields ) {
-    
-   $only_virtual = true;
-    
-   foreach( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-      if ( ! $cart_item['data']->is_virtual() ) $only_virtual = false;   
-   }
-     
-    if( $only_virtual ) {
-       unset($fields['billing']['billing_company']);
-       unset($fields['billing']['billing_address_1']);
-       unset($fields['billing']['billing_address_2']);
-       unset($fields['billing']['billing_city']);
-       unset($fields['billing']['billing_postcode']);
-       unset($fields['billing']['billing_country']);
-       unset($fields['billing']['billing_state']);
-       unset($fields['billing']['billing_phone']);
-       unset($fields['order']['order_comments']);
-       add_filter( 'woocommerce_enable_order_notes_field', '__return_false' );
-     }
-     
-     return $fields;
-}
-add_filter( 'woocommerce_checkout_fields' , 'bbloomer_simplify_checkout_virtual' );
-  
+// WooCommerce Actions=
 function bbloomer_required_woo_checkout_fields( $fields ) {
   $fields['billing']['billing_company']['required'] = false;
   $fields['billing']['billing_address_1']['required'] = false;
@@ -344,6 +319,17 @@ function bbloomer_required_woo_checkout_fields( $fields ) {
   $fields['billing']['billing_state']['required'] = false;
   $fields['billing']['billing_phone']['required'] = false;
   $fields['billing']['billing_phone']['required'] = false;
+  
+  unset($fields['billing']['billing_company']);
+  unset($fields['billing']['billing_address_1']);
+  unset($fields['billing']['billing_address_2']);
+  unset($fields['billing']['billing_city']);
+  unset($fields['billing']['billing_postcode']);
+  unset($fields['billing']['billing_country']);
+  unset($fields['billing']['billing_state']);
+  unset($fields['billing']['billing_phone']);
+  unset($fields['order']['order_comments']);
+  
   return $fields;
 }
 add_filter( 'woocommerce_checkout_fields', 'bbloomer_required_woo_checkout_fields' );
