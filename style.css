@@ -580,6 +580,18 @@ object.logo {
 	font-size: .875rem;
 }
 
+/* sticky grid */
+.sticky-grid {
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: 100px 100px 100px;
+}
+
+.sticky-grid > div:first-child {
+	grid-column: 1 / 3;
+	grid-row: 2;
+}
+
 /* posts home */
 .home-posts {
 	max-width: 1080px;
@@ -2354,7 +2366,8 @@ main article .content .payment-button svg {
 .course-item,
 .meta-item__value,
 .learn-press-breadcrumb,
-.course-tab-panel-faqs {
+.course-tab-panel-faqs,
+.course-description {
 	text-align: left;
 }
 

@@ -303,11 +303,76 @@ add_filter('wpcf7_form_elements', function($content) {
 });
 
 // LearnPress Actions
-add_filter( 'learn-press/course-tabs', 'theme_prefix_lp_course_tab_remove' );
-
 function theme_prefix_lp_course_tab_remove( $tabs ) {
     unset( $tabs['instructor'] );
     return $tabs;
 }
+add_filter( 'learn-press/course-tabs', 'theme_prefix_lp_course_tab_remove' );
+
+// WooCommerce Actions
+function bbloomer_simplify_checkout_virtual( $fields ) {
+    
+   $only_virtual = true;
+    
+   foreach( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+      if ( ! $cart_item['data']->is_virtual() ) $only_virtual = false;   
+   }
+     
+    if( $only_virtual ) {
+       unset($fields['billing']['billing_company']);
+       unset($fields['billing']['billing_address_1']);
+       unset($fields['billing']['billing_address_2']);
+       unset($fields['billing']['billing_city']);
+       unset($fields['billing']['billing_postcode']);
+       unset($fields['billing']['billing_country']);
+       unset($fields['billing']['billing_state']);
+       unset($fields['billing']['billing_phone']);
+       unset($fields['order']['order_comments']);
+       add_filter( 'woocommerce_enable_order_notes_field', '__return_false' );
+     }
+     
+     return $fields;
+}
+add_filter( 'woocommerce_checkout_fields' , 'bbloomer_simplify_checkout_virtual' );
+  
+function bbloomer_required_woo_checkout_fields( $fields ) {
+  $fields['billing']['billing_company']['required'] = false;
+  $fields['billing']['billing_address_1']['required'] = false;
+  $fields['billing']['billing_address_2']['required'] = false;
+  $fields['billing']['billing_city']['required'] = false;
+  $fields['billing']['billing_postcode']['required'] = false;
+  $fields['billing']['billing_state']['required'] = false;
+  $fields['billing']['billing_phone']['required'] = false;
+  $fields['billing']['billing_phone']['required'] = false;
+  return $fields;
+}
+add_filter( 'woocommerce_checkout_fields', 'bbloomer_required_woo_checkout_fields' );
+
+function custom_checkout_fields( $fields ) {
+  $fields['billing']['billing_first_name']['placeholder'] = 'Nombre';
+  $fields['billing']['billing_email']['placeholder'] = 'Email';
+  $fields['billing']['billing_last_name']['placeholder'] = 'Apellido';
+  $fields['billing']['billing_country']['placeholder'] = 'Pais';
+  $fields['billing']['billing_country']['placeholder'] = 'Pais';
+  $fields['account']['account_username']['placeholder'] = 'Usuario';
+  $fields['account']['account_password']['placeholder'] = 'Contraseña';
+  $fields['account']['account_password-2']['placeholder'] = 'Repetir Contraseña';
+  
+  $fields['billing']['billing_country']['priority'] = '3';
+  $fields['billing']['billing_email']['priority'] = '1';
+  
+  return $fields;
+}
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+
+function custom_wc_checkout_fields_no_label($fields) {
+    foreach ($fields as $category => $value) {
+        foreach ($fields[$category] as $field => $property) {
+            unset($fields[$category][$field]['label']);
+        }
+    }
+     return $fields;
+}
+add_filter('woocommerce_checkout_fields','custom_wc_checkout_fields_no_label');
 
 ?>
