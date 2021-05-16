@@ -108,7 +108,10 @@ Text Domain: rossicocina
 
 .input-container input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
 .input-container select,
-.input-container textarea {
+.input-container textarea,
+.woocommerce-page input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
+.woocommerce-page select,
+.woocommerce-page textarea {
 	cursor: text;
 	-webkit-appearance: none;
 	outline: none;

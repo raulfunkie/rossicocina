@@ -22,11 +22,6 @@ remove_filter ('the_excerpt', 'wpautop');
 
 add_filter( 'the_content', 'remove_autop', 0 );
 
-function remove_autop($content) {
-  remove_filter( 'the_content', 'wpautop' );
-return $content;
-}
-
 function disable_wp_emojicons() {
   remove_action( 'admin_print_styles', 'print_emoji_styles' );
   remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
@@ -325,7 +320,6 @@ function bbloomer_required_woo_checkout_fields( $fields ) {
   unset($fields['billing']['billing_address_2']);
   unset($fields['billing']['billing_city']);
   unset($fields['billing']['billing_postcode']);
-  unset($fields['billing']['billing_country']);
   unset($fields['billing']['billing_state']);
   unset($fields['billing']['billing_phone']);
   unset($fields['order']['order_comments']);
