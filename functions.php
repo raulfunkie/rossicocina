@@ -20,8 +20,6 @@ remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 remove_filter ('the_content', 'wpautop');
 remove_filter ('the_excerpt', 'wpautop');
 
-add_filter( 'the_content', 'remove_autop', 0 );
-
 function disable_wp_emojicons() {
   remove_action( 'admin_print_styles', 'print_emoji_styles' );
   remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
