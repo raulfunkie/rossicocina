@@ -50,6 +50,7 @@ function remove_width_attribute( $html ) {
 }
 
 function theme_functions() {
+  add_theme_support( 'woocommerce' );
   add_theme_support( 'custom-logo' );
   add_theme_support( 'menus' );
   add_theme_support( 'wp-block-styles' );
@@ -302,6 +303,9 @@ function theme_prefix_lp_course_tab_remove( $tabs ) {
 add_filter( 'learn-press/course-tabs', 'theme_prefix_lp_course_tab_remove' );
 
 // WooCommerce Actions=
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+
 function bbloomer_required_woo_checkout_fields( $fields ) {
   $fields['billing']['billing_company']['required'] = false;
   $fields['billing']['billing_address_1']['required'] = false;
@@ -365,8 +369,6 @@ function bbloomer_redirect_empty_cart_checkout_to_home() {
    }
 }
 add_action( 'template_redirect', 'bbloomer_redirect_empty_cart_checkout_to_home' );
-
-remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
 
 function bbloomer_redirect_checkout_add_cart() {
    return wc_get_checkout_url();
