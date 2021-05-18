@@ -17,7 +17,7 @@ remove_action('wp_head', 'start_post_rel_link', 10, 0);
 remove_action('wp_head', 'parent_post_rel_link', 10, 0);
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
-remove_filter ('the_content', 'wpautop');
+// remove_filter ('the_content', 'wpautop');
 remove_filter ('the_excerpt', 'wpautop');
 
 function disable_wp_emojicons() {
@@ -76,7 +76,6 @@ function remove_page_class($wp_list_pages) {
   return preg_replace($pattern, $replace_with, $wp_list_pages);
 }
 add_filter('wp_list_pages', 'remove_page_class');
-
 
 function html5_insert_image($html, $id, $caption, $title, $align, $url, $size) {
     $src = wp_get_attachment_image_src( $id, $size, false );
@@ -358,3 +357,18 @@ add_filter('woocommerce_checkout_fields','custom_wc_checkout_fields_no_label');
     echo do_shortcode('[woocommerce_cart]');
 }
 add_action( 'woocommerce_before_checkout_form', 'bbloomer_cart_on_checkout_page_only', 5 );
+
+function bbloomer_redirect_empty_cart_checkout_to_home() {
+   if ( is_cart() && is_checkout() && 0 == WC()->cart->get_cart_contents_count() && ! is_wc_endpoint_url( 'order-pay' ) && ! is_wc_endpoint_url( 'order-received' ) ) {
+      wp_safe_redirect( home_url() );
+      exit;
+   }
+}
+add_action( 'template_redirect', 'bbloomer_redirect_empty_cart_checkout_to_home' );
+
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+
+function bbloomer_redirect_checkout_add_cart() {
+   return wc_get_checkout_url();
+}
+add_filter( 'woocommerce_add_to_cart_redirect', 'bbloomer_redirect_checkout_add_cart' );
