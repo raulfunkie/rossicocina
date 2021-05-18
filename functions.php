@@ -362,7 +362,7 @@ add_action( 'woocommerce_before_checkout_form', 'bbloomer_cart_on_checkout_page_
 add_action( 'template_redirect', 'bbloomer_redirect_empty_cart_checkout_to_home' );
 function bbloomer_redirect_empty_cart_checkout_to_home() {
    if ( is_cart() && is_checkout() && 0 == WC()->cart->get_cart_contents_count() && ! is_wc_endpoint_url( 'order-pay' ) && ! is_wc_endpoint_url( 'order-received' ) ) {
-      wp_safe_redirect( home_url() );
+      wp_safe_redirect( wc_get_checkout_url() );
       exit;
    }
 }

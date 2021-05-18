@@ -129,6 +129,12 @@ Text Domain: rossicocina
 	background-color: hsl(0,0%,100%);
 }
 
+.woocommerce-page input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
+.woocommerce-page select,
+.woocommerce-page textarea {
+	background-color: var(--newspaper);
+}
+
 .wpcf7 .form-wrap .input-container {
 	margin: 0 0 1rem 0;
 	display: flex;
