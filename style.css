@@ -2464,3 +2464,17 @@ form.woocommerce-checkout {
 	grid-template-rows: 1fr;
 	gap: 1rem;
 }
+
+.woocommerce-billing-fields h3 {
+	font-size: 1.25rem;
+	margin-top: 0;
+	font-weight: 700;
+}
+
+.woocommerce #customer_details .col-1 {
+	width: 100%;
+}
+
+.woocommerce-billing-fields__field-wrapper p {
+	margin: 0 0 .625rem 0;
+}
