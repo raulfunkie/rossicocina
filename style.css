@@ -2555,3 +2555,11 @@ form.woocommerce-checkout {
 	display: block;
 	margin: .25rem 0;
 }
+
+.woocommerce form .form-row label {
+	font-size: .875rem;
+	font-weight: 600;
+	color: var(--dark-wine);
+	line-height: 1;
+	margin-bottom: .25rem;
+}
