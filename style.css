@@ -2506,4 +2506,6 @@ form.woocommerce-checkout {
 	font-size: .875rem;
 	color: red;
 	font-weight: 500;
+	display: block;
+	margin: .25rem 0;
 }
