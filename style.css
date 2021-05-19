@@ -2537,11 +2537,14 @@ form.woocommerce-checkout {
 	margin-bottom: .5rerm;
 }
 
-.woocommerce-checkout-payment {
+#add_payment_method #payment,
+.woocommerce-cart #payment,
+.woocommerce-checkout #payment {
 	background-color: var(--newspaper);
 }
 
-.woocommerce-info {
+.woocommerce-info,
+.woocommerce-error {
 	border-top: 0;
 	background-color: var(--newspaper);
 	border-radius: 1rem;
@@ -2563,4 +2566,28 @@ form.woocommerce-checkout {
 	line-height: 1;
 	margin-bottom: .25rem;
 	display: none !important;
+}
+
+.woocommerce-NoticeGroup.woocommerce-NoticeGroup-checkout {
+	grid-column: 1/-1;
+	width: 100%;
+	font-size: .875rem;
+	line-height: 1.25;
+}
+
+.woocommerce-NoticeGroup.woocommerce-NoticeGroup-checkout ul {
+	padding-left: 3.5rem;
+}
+
+.woocommerce-NoticeGroup.woocommerce-NoticeGroup-checkout li {
+	padding: 0;
+}
+
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+	font-size: .875rem;
+	font-weight: 500;
+	font-family: var(--txt);
 }
