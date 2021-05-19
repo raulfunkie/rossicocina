@@ -2552,7 +2552,7 @@ form.woocommerce-checkout {
 }
 
 .woocommerce-checkout p.woocommerce-invalid-required-field span.error {
-	font-size: .875rem;
+	font-size: .75rem;
 	color: hsla(360, 100%, 50%, 1);
 	font-weight: 500;
 	display: block !important;
@@ -2590,4 +2590,21 @@ form.woocommerce-checkout {
 	font-size: .875rem;
 	font-weight: 500;
 	font-family: var(--txt);
+}
+
+.woocommerce .woocommerce-cart-form__contents {
+	background-color: var(--newspaper);
+}
+
+.woocommerce .woocommerce-cart-form__contents thead tr th {
+	font-family: var(--title);
+	color: var(--dark-wine);
+}
+
+.woocommerce #place_order {
+	font-size: 1rem;
+	font-weight: 700;
+	background-color: var(--yellow);
+	color: var(--txt);
+	min-width: 320px;
 }
