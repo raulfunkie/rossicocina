@@ -379,7 +379,7 @@ add_filter( 'woocommerce_add_to_cart_redirect', 'bbloomer_redirect_checkout_add_
 add_filter( 'woocommerce_form_field', 'bbloomer_checkout_fields_in_label_error', 10, 4 );
  
 function bbloomer_checkout_fields_in_label_error( $field, $key, $args, $value ) {
-   if ( strpos( $field, '</label>' ) !== false && $args['required'] ) {
+   if ( strpos( $field, '</span>' ) !== false && $args['required'] ) {
       $error = '<span class="error" style="display:none">';
       $error .= sprintf( __( '%s is a required field.', 'woocommerce' ), $args['label'] );
       $error .= '</span>';

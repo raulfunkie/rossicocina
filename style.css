@@ -2499,10 +2499,10 @@ form.woocommerce-checkout {
 	border-top: 0;
 	background-color: var(--newspaper);
 	border-radius: 1rem;
-	font-size: .875rerm;
+	font-size: .875rem;
 }
 
-.woocommerce form.woocommerce-checkout .error {
+.woocommerce-checkout p.woocommerce-invalid-required-field span.error {
 	font-size: .875rem;
 	color: red;
 	font-weight: 500;
