@@ -347,16 +347,6 @@ function custom_checkout_fields( $fields ) {
 }
 add_filter( 'woocommerce_checkout_fields' , 'custom_checkout_fields' );
 
-function custom_wc_checkout_fields_no_label($fields) {
-    foreach ($fields as $category => $value) {
-        foreach ($fields[$category] as $field => $property) {
-            unset($fields[$category][$field]['label']);
-        }
-    }
-     return $fields;
-}
-add_filter('woocommerce_checkout_fields','custom_wc_checkout_fields_no_label');
-
   function bbloomer_cart_on_checkout_page_only() {
     if ( is_wc_endpoint_url( 'order-received' ) ) return;
     echo do_shortcode('[woocommerce_cart]');

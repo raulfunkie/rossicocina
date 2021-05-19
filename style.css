@@ -2377,7 +2377,7 @@ main article .content .payment-button svg {
 	height: 20px;
 }
 
-/* learnPress & WooCommerce */
+/* learnPress */
 .course-extra-box__content-inner,
 .course-title,
 .course-item,
@@ -2386,6 +2386,20 @@ main article .content .payment-button svg {
 .course-tab-panel-faqs,
 .course-description {
 	text-align: left;
+}
+
+.learnpress .section-header .section-left p {
+	max-width: 640px;
+	margin: 1rem auto;
+}
+
+#learn-press-course .course-summary-sidebar .course-sidebar-preview .lp-course-buttons button.button-enroll-course,
+.lp-archive-courses .learn-press-courses[data-layout="list"] .course .course-item .course-content .course-readmore a,
+#popup-course #popup-content .lp-button {
+	background-color: var(--dark-wine);
+	color: hsla(0, 0%, 100%, 1);
+	font-size: .875rem;
+	text-transform: uppercase;
 }
 
 .course-title {
@@ -2403,20 +2417,52 @@ main article .content .payment-button svg {
 	color: var(--wine);
 }
 
+.content-item-summary .course-item-title.question-title {
+	font-family: var(--title);
+	color: var(--dark-wine);
+}
+
+#popup-course #popup-sidebar .course-curriculum .section .section-header {
+	text-align: left;
+}
+
+#popup-course #popup-sidebar .course-curriculum .section .section-header h5.section-title {
+	font-weight: 700;
+	color: var(--dark-wine);
+	margin-bottom: .625rem;
+}
+
+.#popup-course #popup-content #learn-press-content-item .content-item-wrap {
+	text-align: left;
+}
+
+#learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-header .section-desc {
+	font-style: normal;
+	color: var(--txt);
+}
+
 .course-meta.course-meta-primary,
 .course-instructor,
 .woocommerce-checkout .col-2,
 .woocommerce-checkout .col-2.woocommerce-shipping-fields,
 .woocommerce-checkout .col2-set::after,
 .woocommerce-result-count,
-h3#order_review_heading {
+h3#order_review_heading,
+.learnpress .meta-item.meta-item-quiz,
+.learnpress .meta-item.meta-item-student,
+.learnpress .course-featured-review {
 	display: none;
+}
+
+#learn-press-course .course-summary-sidebar .course-sidebar-preview {
+	margin-bottom: 1rem;
 }
 
 .lp-archive-courses .learn-press-courses[data-layout="list"] .course .course-item .course-content .course-wrap-meta .meta-item::before {
 	color: var(--wine);
 }
 
+/* WooCommerce */
 .woocommerce-Price-amount {
 	font-family: var(--mono);
 	font-weight: 400;
@@ -2504,7 +2550,7 @@ form.woocommerce-checkout {
 
 .woocommerce-checkout p.woocommerce-invalid-required-field span.error {
 	font-size: .875rem;
-	color: red;
+	color: hsla(360, 100%, 50%, 1);
 	font-weight: 500;
 	display: block;
 	margin: .25rem 0;
