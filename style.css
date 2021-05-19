@@ -2552,7 +2552,7 @@ form.woocommerce-checkout {
 	font-size: .875rem;
 	color: hsla(360, 100%, 50%, 1);
 	font-weight: 500;
-	display: block;
+	display: block !important;
 	margin: .25rem 0;
 }
 
@@ -2562,4 +2562,5 @@ form.woocommerce-checkout {
 	color: var(--dark-wine);
 	line-height: 1;
 	margin-bottom: .25rem;
+	display: none !important;
 }
