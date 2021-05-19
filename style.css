@@ -2480,7 +2480,7 @@ form.woocommerce-checkout {
 	margin: 0 0 .5rem 0 !important;
 }
 
-.woocommerce-billing-fields__field-wrapper p input {
+#customer_details p input {
 	width: 100% !important;
 }
 
