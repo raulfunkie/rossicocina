@@ -132,6 +132,7 @@ Text Domain: rossicocina
 .woocommerce-page input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
 .woocommerce-page select,
 .woocommerce-page textarea {
+	width: auto !important;
 	background-color: var(--newspaper);
 }
 
@@ -1148,7 +1149,8 @@ main .page-meta {
 
 main .page-meta h1,
 main .post-meta h1,
-.recipe-meta h1 {
+.recipe-meta h1,
+.woocommerce .page-title {
 	font-family: var(--title);
 	color: var(--wine);
 	font-size: 4rem;
@@ -2402,8 +2404,10 @@ main article .content .payment-button svg {
 
 .course-meta.course-meta-primary,
 .course-instructor,
-.woocommerce-shipping-fields,
-.woocommerce-checkout .col2-set::after {
+.woocommerce-checkout .col-2,
+.woocommerce-checkout .col-2.woocommerce-shipping-fields,
+.woocommerce-checkout .col2-set::after,
+.woocommerce-result-count {
 	display: none;
 }
 
@@ -2413,11 +2417,42 @@ main article .content .payment-button svg {
 
 .woocommerce-Price-amount {
 	font-family: var(--mono);
-	font-size: .875rem;
-	font-weight: 700;
+	font-weight: 400;
 }
 
 .woocommerce ul.products li.product .price {
 	margin-bottom: 0;
 }
 
+.woocommerce ul.products li.product .woocommerce-loop-category__title,
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.woocommerce ul.products li.product h3 {
+	font-weight: 700;
+	color: var(--dark-wine);
+}
+
+.woocommerce .page-title {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.woocommerce .added_to_cart {
+	font-size: 1rem;
+	font-weight: 700;
+	padding: .625rem;
+	background-color: var(--dark-wine);
+	color: var(--yellow);
+	text-align: center;
+}
+
+.woocommerce-privacy-policy-text p {
+	font-size: .75rem;
+	font-style: italic;
+	line-height: 1.4;
+}
+
+.woocommerce table.shop_table tbody th,
+.woocommerce table.shop_table tfoot td,
+.woocommerce table.shop_table tfoot th {
+	font-size: .875rem;
+}
