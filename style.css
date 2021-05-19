@@ -2408,7 +2408,7 @@ main article .content .payment-button svg {
 .woocommerce-checkout .col-2.woocommerce-shipping-fields,
 .woocommerce-checkout .col2-set::after,
 .woocommerce-result-count,
-.order_review_heading {
+h3#order_review_heading {
 	display: none;
 }
 
