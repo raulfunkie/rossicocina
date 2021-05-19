@@ -2631,8 +2631,15 @@ form.woocommerce-checkout {
 	justify-content: flex-start;
 }
 
+.woocommerce-page .wc_payment_method input {
+	inline-size: 1rem;
+	block-size: 1rem;
+	margin: auto 1rem auto 0;
+}
+
 .woocommerce-page .wc_payment_method.payment_method_paypal label img,
 .woocommerce-page .wc_payment_method.payment_method_payulatam label img {
-	order: 1;
-	margin-right: .5rem;
+	margin: 0 .5rem 0 0;
+	order: -1;
+	max-height: 32px;
 }
