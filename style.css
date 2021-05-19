@@ -2476,5 +2476,9 @@ form.woocommerce-checkout {
 }
 
 .woocommerce-billing-fields__field-wrapper p {
-	margin: 0 0 .625rem 0;
+	margin: 0 0 .625rem 0 !important;
+}
+
+.woocommerce-billing-fields__field-wrapper p input {
+	width: 100%;
 }
