@@ -305,6 +305,7 @@ add_filter( 'learn-press/course-tabs', 'theme_prefix_lp_course_tab_remove' );
 // WooCommerce Actions=
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+add_filter( 'woocommerce_enable_order_notes_field', '__return_false' );
 
 function bbloomer_required_woo_checkout_fields( $fields ) {
   $fields['billing']['billing_company']['required'] = false;
