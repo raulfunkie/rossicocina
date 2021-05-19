@@ -2447,10 +2447,12 @@ h3#order_review_heading {
 	text-align: center;
 }
 
-.woocommerce-privacy-policy-text p {
+.woocommerce-privacy-policy-text p,
+.woocommerce-checkout #payment div.payment_box p:last-child {
 	font-size: .75rem;
 	font-style: italic;
 	line-height: 1.4;
+	margin-top: 0;
 }
 
 .woocommerce table.shop_table tbody th,
@@ -2487,4 +2489,21 @@ form.woocommerce-checkout {
 .woocommerce form .form-row {
 	padding: 0;
 	margin-bottom: .5rerm;
+}
+
+.woocommerce-checkout-payment {
+	background-color: var(--newspaper);
+}
+
+.woocommerce-info {
+	border-top: 0;
+	background-color: var(--newspaper);
+	border-radius: 1rem;
+	font-size: .875rerm;
+}
+
+.woocommerce form.woocommerce-checkout .error {
+	font-size: .875rem;
+	color: red;
+	font-weight: 500;
 }
