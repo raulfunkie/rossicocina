@@ -2450,7 +2450,9 @@ main article .content .payment-button svg {
 h3#order_review_heading,
 .learnpress .meta-item.meta-item-quiz,
 .learnpress .meta-item.meta-item-student,
-.learnpress .course-featured-review {
+.learnpress .course-featured-review,
+.woocommerce-page .about_paypal,
+.woocommerce-checkout #payment div.payment_box {
 	display: none;
 }
 
@@ -2611,4 +2613,26 @@ form.woocommerce-checkout {
 	font-size: 1rem;
 	font-weight: 700;
 	color: var(--dark-wine);
+}
+
+.woocommerce-page .wc_payment_method.payment_method_paypal,
+.woocommerce-page .wc_payment_method.payment_method_payulatam {
+	display: flex;
+	flex-flow: row nowrap;
+	align-content: center;
+	justify-content: flex-start;
+}
+
+.woocommerce-page .wc_payment_method.payment_method_paypal label,
+.woocommerce-page .wc_payment_method.payment_method_payulatam label {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.woocommerce-page .wc_payment_method.payment_method_paypal label img,
+.woocommerce-page .wc_payment_method.payment_method_payulatam label img {
+	order: 1;
+	margin-right: .5rem;
 }
