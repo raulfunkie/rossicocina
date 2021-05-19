@@ -2592,13 +2592,11 @@ form.woocommerce-checkout {
 	font-family: var(--txt);
 }
 
-.woocommerce .woocommerce-cart-form__contents {
-	background-color: var(--newspaper);
-}
-
-.woocommerce .woocommerce-cart-form__contents thead tr th {
+.woocommerce .woocommerce-cart-form__contents thead tr th,
+.woocommerce .woocommerce-checkout-review-order-table thead tr th {
 	font-family: var(--title);
 	color: var(--dark-wine);
+	background-color: var(--newspaper);
 }
 
 .woocommerce #place_order {
@@ -2607,4 +2605,10 @@ form.woocommerce-checkout {
 	background-color: var(--yellow);
 	color: var(--txt);
 	min-width: 320px;
+}
+
+.woocommerce .shop_table.woocommerce-checkout-review-order-table .order-total .woocommerce-Price-amount {
+	font-size: 1rem;
+	font-weight: 700;
+	color: var(--dark-wine);
 }
