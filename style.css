@@ -163,7 +163,6 @@ Text Domain: rossicocina
 .woocommerce-page textarea:focus,
 .woocommerce-page input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):focus {
 	background-color: hsla(333, 82%, 70%, 0.1);
-	box-shadow: 0 1px 0 var(--wine);
 }
 
 .form-wrap .input-container select {
@@ -2428,18 +2427,28 @@ main article .content .payment-button svg {
 	text-align: left;
 }
 
+#popup-course #popup-sidebar .course-curriculum .section.closed .section-header .section-left .section-title {
+	color: var(--dark);
+}
+
+#learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-content .course-item .section-item-link::before {
+	color: var(--pink);
+}
+
 #popup-course #popup-sidebar .course-curriculum .section .section-header .section-left .section-title,
 #learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-header .section-left .section-title {
 	font-family: var(--title);
-	font-weight: 700;
-	color: var(--dark-wine);
+	font-weight: 700 !important;
+	color: var(--dark-wine) !important;
 	margin-bottom: .625rem;
 }
 
 #learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-header .section-left .section-title p.section-desc {
-	font-family: var(--txt);
+	font-family: var(--basic);
+	line-height: 1.6;
 	margin-top: .625rem;
 	font-style: normal;
+	color: var(--txt);
 }
 
 #popup-course #popup-content #learn-press-content-item .content-item-wrap {
@@ -2479,24 +2488,21 @@ ul.curriculum-sections .section .section-header .section-meta {
 	color: var(--wine);
 }
 
-#learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-content .course-item .section-item-link:hover .item-name,
+
 #popup-course #popup-sidebar .course-curriculum .section .section-content .course-item .section-item-link .item-name {
 	color: var(--dark-wine);
 }
 
+#learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-content .course-item .section-item-link:hover .item-name {
+	color: var(--green);
+}
+
 #popup-course #sidebar-toggle {
-	background-color: var(--dark-wine);
+	background-color: var(--dark-wine) !important;
 }
 
 #popup-course #sidebar-toggle::before {
-	color: var(--yellow);
-}
-
-#popup-course #popup-footer .course-item-nav .prev:hover a,
-#popup-course #popup-footer .course-item-nav .prev:hover::before,
-#popup-course #popup-footer .course-item-nav .next:hover a,
-#popup-course #popup-footer .course-item-nav .next:hover::before {
-	color: var(--green);
+	color: var(--yellow) !important;
 }
 
 #popup-course #popup-footer .course-item-nav .next:hover .course-item-nav__name,
@@ -2606,6 +2612,10 @@ form.woocommerce-checkout {
 	background-color: var(--newspaper);
 }
 
+.woocommerce-checkout .woocommerce-checkout-payment {
+	padding: 1rem;
+}
+
 .woocommerce-info,
 .woocommerce-error {
 	border-top: 0;
@@ -2670,7 +2680,7 @@ form.woocommerce-checkout {
 #add_payment_method #payment ul.payment_methods,
 .woocommerce-cart #payment ul.payment_methods,
 .woocommerce-checkout #payment ul.payment_methods {
-	border: 1px solid hsl(0deg 0% 77% / 35%);
+	border-bottom: 1px solid hsl(0deg 0% 77% / 35%);
 }
 
 .woocommerce-page .wc_payment_method {
@@ -2690,11 +2700,20 @@ form.woocommerce-checkout {
 .woocommerce-page .wc_payment_method input {
 	inline-size: 1rem;
 	block-size: 1rem;
-	margin: auto 1rem auto 0;
+	margin: auto 1rem auto 0 !important;
 }
 
 .woocommerce-page .wc_payment_method label img {
 	margin: 0 .5rem 0 0;
 	order: -1;
 	max-height: 32px;
+}
+
+.woocommerce-password-strength.short {
+	background-color: transparent;
+	border: 0;
+	text-align: left;
+	font-size: .75rem;
+	font-weight: 700;
+	font-style: italic;
 }
