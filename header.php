@@ -1,10 +1,15 @@
 <!doctype html>
+<<<<<<< HEAD
 <html lang="es" itemscope itemtype="https://schema.org/Blog">
+=======
+<html <?php language_attributes(); ?> itemscope itemtype="https://schema.org/Blog">
+>>>>>>> 4d5070dcb409d40c6e13b392cd70dbfc6bb91698
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta name="description" content="<?php bloginfo('description'); ?>" />
+    <link rel="profile" href="https://gmpg.org/xfn/11">
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>

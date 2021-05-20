@@ -20,13 +20,6 @@ remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 remove_filter ('the_content', 'wpautop');
 remove_filter ('the_excerpt', 'wpautop');
 
-add_filter( 'the_content', 'remove_autop', 0 );
-
-function remove_autop($content) {
-  remove_filter( 'the_content', 'wpautop' );
-return $content;
-}
-
 function disable_wp_emojicons() {
   remove_action( 'admin_print_styles', 'print_emoji_styles' );
   remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
@@ -57,6 +50,7 @@ function remove_width_attribute( $html ) {
 }
 
 function theme_functions() {
+  add_theme_support( 'woocommerce' );
   add_theme_support( 'custom-logo' );
   add_theme_support( 'menus' );
   add_theme_support( 'wp-block-styles' );
@@ -83,7 +77,6 @@ function remove_page_class($wp_list_pages) {
   return preg_replace($pattern, $replace_with, $wp_list_pages);
 }
 add_filter('wp_list_pages', 'remove_page_class');
-
 
 function html5_insert_image($html, $id, $caption, $title, $align, $url, $size) {
     $src = wp_get_attachment_image_src( $id, $size, false );
@@ -277,7 +270,7 @@ add_filter( "single_template", "get_custom_cat_template" ) ;
 
 add_filter('body_class','add_category_to_single');
 function add_category_to_single($classes) {
-  if (is_single() ) {
+  if ( is_single() ) {
     global $post;
     foreach((get_the_category($post->ID)) as $category) {
       $classes[] = $category->category_nicename;
@@ -302,4 +295,85 @@ add_filter('wpcf7_form_elements', function($content) {
   return $content;
 });
 
-?>
+// LearnPress Actions
+function theme_prefix_lp_course_tab_remove( $tabs ) {
+    unset( $tabs['instructor'] );
+    return $tabs;
+}
+add_filter( 'learn-press/course-tabs', 'theme_prefix_lp_course_tab_remove' );
+
+// WooCommerce Actions
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+add_filter( 'woocommerce_enable_order_notes_field', '__return_false' );
+
+function bbloomer_required_woo_checkout_fields( $fields ) {
+  $fields['billing']['billing_company']['required'] = false;
+  $fields['billing']['billing_address_1']['required'] = false;
+  $fields['billing']['billing_address_2']['required'] = false;
+  $fields['billing']['billing_city']['required'] = false;
+  $fields['billing']['billing_postcode']['required'] = false;
+  $fields['billing']['billing_state']['required'] = false;
+  $fields['billing']['billing_phone']['required'] = false;
+  $fields['billing']['billing_phone']['required'] = false;
+  
+  unset($fields['billing']['billing_company']);
+  unset($fields['billing']['billing_address_1']);
+  unset($fields['billing']['billing_address_2']);
+  unset($fields['billing']['billing_city']);
+  unset($fields['billing']['billing_postcode']);
+  unset($fields['billing']['billing_state']);
+  unset($fields['billing']['billing_phone']);
+  unset($fields['order']['order_comments']);
+  
+  return $fields;
+}
+add_filter( 'woocommerce_checkout_fields', 'bbloomer_required_woo_checkout_fields' );
+
+function custom_checkout_fields( $fields ) {
+  $fields['billing']['billing_first_name']['placeholder'] = 'Nombre';
+  $fields['billing']['billing_email']['placeholder'] = 'Email';
+  $fields['billing']['billing_last_name']['placeholder'] = 'Apellido';
+  $fields['billing']['billing_country']['placeholder'] = 'Pais';
+  $fields['billing']['billing_country']['placeholder'] = 'Pais';
+  $fields['account']['account_username']['placeholder'] = 'Usuario';
+  $fields['account']['account_password']['placeholder'] = 'Contraseña';
+  $fields['account']['account_password-2']['placeholder'] = 'Repetir Contraseña';
+  
+  $fields['billing']['billing_country']['priority'] = '1';
+  $fields['billing']['billing_email']['priority'] = '2';
+  
+  return $fields;
+}
+add_filter( 'woocommerce_checkout_fields' , 'custom_checkout_fields' );
+
+  function bbloomer_cart_on_checkout_page_only() {
+    if ( is_wc_endpoint_url( 'order-received' ) ) return;
+    echo do_shortcode('[woocommerce_cart]');
+}
+add_action( 'woocommerce_before_checkout_form', 'bbloomer_cart_on_checkout_page_only', 5 );
+
+function bbloomer_redirect_empty_cart_checkout_to_home() {
+   if ( is_cart() && is_checkout() && 0 == WC()->cart->get_cart_contents_count() && ! is_wc_endpoint_url( 'order-pay' ) && ! is_wc_endpoint_url( 'order-received' ) ) {
+      wp_safe_redirect( home_url() );
+      exit;
+   }
+}
+add_action( 'template_redirect', 'bbloomer_redirect_empty_cart_checkout_to_home' );
+
+function bbloomer_redirect_checkout_add_cart() {
+   return wc_get_checkout_url();
+}
+add_filter( 'woocommerce_add_to_cart_redirect', 'bbloomer_redirect_checkout_add_cart' );
+ 
+function bbloomer_checkout_fields_in_label_error( $field, $key, $args, $value ) {
+   if ( strpos( $field, '</label>' ) !== false && $args['required'] ) {
+      $error = '<span class="error" style="display:none">';
+      $error .= sprintf( __( '%s is a required field.', 'woocommerce' ), $args['label'] );
+      $error .= '</span>';
+      $field = substr_replace( $field, $error, strpos( $field, '</span>' ), 0);
+   }
+   return $field;
+}
+
+add_filter( 'woocommerce_form_field', 'bbloomer_checkout_fields_in_label_error', 10, 4 );

@@ -108,7 +108,10 @@ Text Domain: rossicocina
 
 .input-container input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
 .input-container select,
-.input-container textarea {
+.input-container textarea,
+.woocommerce-page input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
+.woocommerce-page select,
+.woocommerce-page textarea {
 	cursor: text;
 	-webkit-appearance: none;
 	outline: none;
@@ -123,6 +126,16 @@ Text Domain: rossicocina
 	border-radius: 0;
 	border: 0;
 	transition: all 120ms linear;
+	background-color: hsl(0,0%,100%);
+}
+
+.woocommerce-page input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
+.woocommerce-page select,
+.woocommerce-page textarea {
+	width: auto;
+	min-width: 100px;
+	background-color: var(--newspaper);
+	border-radius: 1rem;
 }
 
 .wpcf7 .form-wrap .input-container {
@@ -145,9 +158,11 @@ Text Domain: rossicocina
 
 .wpcf7 .form-wrap .input-container select:focus,
 .wpcf7 .form-wrap .input-container textarea:focus,
-.wpcf7 .form-wrap .input-container input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):focus {
+.wpcf7 .form-wrap .input-container input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):focus,
+.woocommerce-page select:focus,
+.woocommerce-page textarea:focus,
+.woocommerce-page input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):focus {
 	background-color: hsla(333, 82%, 70%, 0.1);
-	box-shadow: 0 1px 0 var(--wine);
 }
 
 .form-wrap .input-container select {
@@ -164,7 +179,8 @@ Text Domain: rossicocina
 }
 
 /* btn */
-.btn {
+.btn,
+.woocommerce ul.products li.product .button {
 	-webkit-appearance: none;
 	-webkit-user-select: none;
 	user-select: none;
@@ -578,6 +594,18 @@ object.logo {
 
 .sticky ul li div p {
 	font-size: .875rem;
+}
+
+/* sticky grid */
+.sticky-grid {
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: 100px 100px 100px;
+}
+
+.sticky-grid > div:first-child {
+	grid-column: 1 / 3;
+	grid-row: 2;
 }
 
 /* posts home */
@@ -1122,7 +1150,8 @@ main .page-meta {
 
 main .page-meta h1,
 main .post-meta h1,
-.recipe-meta h1 {
+.recipe-meta h1,
+.woocommerce .page-title {
 	font-family: var(--title);
 	color: var(--wine);
 	font-size: 4rem;
@@ -1205,7 +1234,7 @@ main article .content hr {
 	border: 0;
 	outline: 0;
 	height: 1px;
-	background-color: var(--dark);
+	background-color: hsla(333, 82%, 70%, 0.35);
 	width: 100%;
 	margin: 2rem auto;
 }
@@ -2346,4 +2375,345 @@ main article .content .payment-button svg {
 	background-size: 20px 20px;
 	width: 20px;
 	height: 20px;
+}
+
+/* learnPress */
+.course-extra-box__content-inner,
+.course-title,
+.course-item,
+.meta-item__value,
+.learn-press-breadcrumb,
+.course-tab-panel-faqs,
+.course-description {
+	text-align: left;
+}
+
+.learnpress .section-header .section-left p {
+	max-width: 640px;
+	margin: 1rem auto;
+}
+
+#learn-press-course .course-summary-sidebar .course-sidebar-preview .lp-course-buttons button.button-enroll-course,
+.lp-archive-courses .learn-press-courses[data-layout="list"] .course .course-item .course-content .course-readmore a,
+#popup-course #popup-content .lp-button {
+	background-color: var(--dark-wine);
+	color: hsla(0, 0%, 100%, 1);
+	font-size: .875rem;
+	text-transform: uppercase;
+}
+
+.course-title {
+	font-family: var(--title);
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: var(--wine);
+}
+
+.lp-archive-courses .learn-press-courses[data-layout="list"] .course .course-item .course-content .course-permalink .course-title:hover {
+	color: var(--pink);
+}
+
+#learn-press-course-tabs .course-nav label {
+	color: var(--wine);
+}
+
+.content-item-summary .course-item-title.question-title {
+	font-family: var(--title);
+	color: var(--dark-wine);
+}
+
+#popup-course #popup-sidebar .course-curriculum .section .section-header,
+#learn-press-course-curriculum.course-curriculum ul.curriculum-sections {
+	text-align: left;
+}
+
+#popup-course #popup-sidebar .course-curriculum .section.closed .section-header .section-left .section-title {
+	color: var(--dark);
+}
+
+#learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-content .course-item .section-item-link::before {
+	color: var(--pink);
+}
+
+#popup-course #popup-sidebar .course-curriculum .section .section-header .section-left .section-title,
+#learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-header .section-left .section-title {
+	font-family: var(--title);
+	font-weight: 700 !important;
+	color: var(--dark-wine) !important;
+	margin-bottom: .625rem;
+}
+
+#learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-header .section-left .section-title p.section-desc {
+	font-family: var(--basic);
+	line-height: 1.6;
+	margin-top: .625rem;
+	font-style: normal;
+	color: var(--txt);
+}
+
+#popup-course #popup-content #learn-press-content-item .content-item-wrap {
+	text-align: left;
+}
+
+#learn-press-course .course-summary-sidebar .course-sidebar-preview .course-time .course-time-row time,
+#learn-press-course .course-summary-sidebar .course-sidebar-preview .course-results-progress .items-progress .number,
+#learn-press-course .course-summary-sidebar .course-sidebar-preview .course-results-progress .course-progress .number {
+	font-family: var(--mono);
+}
+
+ul.learn-press-nav-tabs .course-nav.active::before,
+.course-summary #popup-header .items-progress .learn-press-progress,
+.course-meta.course-meta-primary,
+.course-instructor,
+.woocommerce-checkout .col-2,
+.woocommerce-checkout .col-2.woocommerce-shipping-fields,
+.woocommerce-checkout .col2-set::after,
+.woocommerce-result-count,
+h3#order_review_heading,
+.learnpress .meta-item.meta-item-quiz,
+.learnpress .meta-item.meta-item-student,
+.learnpress .course-featured-review,
+.woocommerce-page .about_paypal,
+.woocommerce-checkout #payment div.payment_box,
+.woocommerce-page .shop_table .actions .coupon,
+ul.curriculum-sections .section .section-header .section-meta {
+	display: none !important;
+}
+
+#learn-press-course .course-summary-sidebar .course-sidebar-preview {
+	margin-bottom: 1rem;
+}
+
+.lp-archive-courses .learn-press-courses[data-layout="list"] .course .course-item .course-content .course-wrap-meta .meta-item::before {
+	color: var(--wine);
+}
+
+
+#popup-course #popup-sidebar .course-curriculum .section .section-content .course-item .section-item-link .item-name {
+	color: var(--dark-wine);
+}
+
+#learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-content .course-item .section-item-link:hover .item-name {
+	color: var(--green);
+}
+
+#popup-course #sidebar-toggle {
+	background-color: var(--dark-wine) !important;
+}
+
+#popup-course #sidebar-toggle::before {
+	color: var(--yellow) !important;
+}
+
+#popup-course #popup-footer .course-item-nav .next:hover .course-item-nav__name,
+#popup-course #popup-footer .course-item-nav .prev:hover .course-item-nav__name {
+	background-color: var(--newspaper);
+	color: var(--dark-wine);
+}
+
+#learn-press-course-tabs input[name="learn-press-course-tab-radio"]:nth-child(1):checked ~ .learn-press-nav-tabs .course-nav {
+	background-color: var(--newspaper);
+}
+
+#learn-press-course-tabs input[name="learn-press-course-tab-radio"]:nth-child(1):checked ~ .learn-press-nav-tabs .course-nav label {
+	color: var(--dark-wine);
+}
+
+/* WooCommerce */
+.woocommerce-Price-amount {
+	font-family: var(--mono);
+	font-weight: 400;
+}
+
+.woocommerce ul.products li.product .price {
+	margin-bottom: 0;
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-category__title,
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.woocommerce ul.products li.product h3 {
+	font-weight: 700;
+	color: var(--dark-wine);
+}
+
+.woocommerce .page-title {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.woocommerce .added_to_cart {
+	font-size: 1rem;
+	font-weight: 700;
+	padding: .625rem;
+	background-color: var(--dark-wine);
+	color: var(--yellow);
+	text-align: center;
+}
+
+.woocommerce-privacy-policy-text p,
+.woocommerce-checkout #payment div.payment_box p:last-child {
+	font-size: .75rem;
+	font-style: italic;
+	line-height: 1.4;
+	margin-top: 0;
+}
+
+.woocommerce table.shop_table tbody th,
+.woocommerce table.shop_table tfoot td,
+.woocommerce table.shop_table tfoot th {
+	font-size: .875rem;
+}
+
+form.woocommerce-checkout {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(450px, 100%), 1fr));
+	grid-template-rows: 1fr;
+	gap: 1rem;
+}
+
+.woocommerce-page .woocommerce .woocommerce-billing-fields h3 {
+	font-size: 1.25rem;
+	margin-top: 0;
+	font-weight: 700;
+}
+
+.woocommerce #customer_details .col-1 {
+	width: 100%;
+}
+
+#customer_details p {
+	margin: 0 0 .5rem 0 !important;
+}
+
+#customer_details p input {
+	width: 100% !important;
+}
+
+.woocommerce form .form-row,
+#add_payment_method #payment div.form-row,
+.woocommerce-cart #payment div.form-row,
+.woocommerce-checkout #payment div.form-row {
+	padding: 0;
+	margin-bottom: .5rerm;
+}
+
+.woocommerce form .form-row label {
+	font-size: .875rem;
+	font-weight: 600;
+	color: var(--dark-wine);
+	line-height: 1;
+	margin-bottom: .25rem;
+	display: none !important;
+}
+
+#add_payment_method #payment,
+.woocommerce-cart #payment,
+.woocommerce-checkout #payment {
+	background-color: var(--newspaper);
+}
+
+.woocommerce-checkout .woocommerce-checkout-payment {
+	padding: 1rem;
+}
+
+.woocommerce-info,
+.woocommerce-error {
+	border-top: 0;
+	background-color: var(--newspaper);
+	border-radius: 1rem;
+	font-size: .875rem;
+}
+
+.woocommerce-checkout p.woocommerce-invalid-required-field span.error {
+	font-size: .75rem;
+	color: hsla(360, 100%, 50%, 1);
+	font-weight: 500;
+	display: block !important;
+	margin: .25rem 0;
+}
+
+.woocommerce-NoticeGroup.woocommerce-NoticeGroup-checkout {
+	grid-column: 1/-1;
+	width: 100%;
+	font-size: .875rem;
+	line-height: 1.25;
+}
+
+.woocommerce-NoticeGroup.woocommerce-NoticeGroup-checkout ul {
+	padding-left: 3.5rem;
+}
+
+.woocommerce-NoticeGroup.woocommerce-NoticeGroup-checkout li {
+	padding: 0;
+}
+
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+	font-size: .875rem;
+	font-weight: 500;
+	font-family: var(--txt);
+}
+
+.woocommerce .woocommerce-cart-form__contents thead tr th,
+.woocommerce .woocommerce-checkout-review-order-table thead tr th {
+	font-family: var(--title);
+	color: var(--dark-wine);
+	background-color: var(--newspaper);
+}
+
+.woocommerce #place_order {
+	font-size: 1rem;
+	font-weight: 700;
+	background-color: var(--yellow);
+	color: var(--txt);
+	min-width: 320px;
+}
+
+.woocommerce .shop_table.woocommerce-checkout-review-order-table .order-total .woocommerce-Price-amount {
+	font-size: 1rem;
+	font-weight: 700;
+	color: var(--dark-wine);
+}
+
+#add_payment_method #payment ul.payment_methods,
+.woocommerce-cart #payment ul.payment_methods,
+.woocommerce-checkout #payment ul.payment_methods {
+	border-bottom: 1px solid hsl(0deg 0% 77% / 35%);
+}
+
+.woocommerce-page .wc_payment_method {
+	display: flex;
+	flex-flow: row nowrap;
+	align-content: center;
+	justify-content: flex-start;
+}
+
+.woocommerce-page .wc_payment_method label {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.woocommerce-page .wc_payment_method input {
+	inline-size: 1rem;
+	block-size: 1rem;
+	margin: auto 1rem auto 0 !important;
+}
+
+.woocommerce-page .wc_payment_method label img {
+	margin: 0 .5rem 0 0;
+	order: -1;
+	max-height: 32px;
+}
+
+.woocommerce-password-strength.short {
+	background-color: transparent;
+	border: 0;
+	text-align: left;
+	font-size: .75rem;
+	font-weight: 700;
+	font-style: italic;
 }
