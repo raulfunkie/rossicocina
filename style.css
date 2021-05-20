@@ -2436,14 +2436,14 @@ main article .content .payment-button svg {
 	margin-bottom: .625rem;
 }
 
-#popup-course #popup-content #learn-press-content-item .content-item-wrap {
-	text-align: left;
-}
-
-#learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-header .section-desc {
+#learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-header .section-left .section-title p.section-desc {
+	font-family: var(--txt);
 	margin-top: .625rem;
 	font-style: normal;
-	color: var(--txt);
+}
+
+#popup-course #popup-content #learn-press-content-item .content-item-wrap {
+	text-align: left;
 }
 
 #learn-press-course .course-summary-sidebar .course-sidebar-preview .course-time .course-time-row time,
@@ -2452,6 +2452,7 @@ main article .content .payment-button svg {
 	font-family: var(--mono);
 }
 
+ul.learn-press-nav-tabs .course-nav.active::before,
 .course-summary #popup-header .items-progress .learn-press-progress,
 .course-meta.course-meta-primary,
 .course-instructor,
@@ -2467,7 +2468,7 @@ h3#order_review_heading,
 .woocommerce-checkout #payment div.payment_box,
 .woocommerce-page .shop_table .actions .coupon,
 ul.curriculum-sections .section .section-header .section-meta {
-	display: none;
+	display: none !important;
 }
 
 #learn-press-course .course-summary-sidebar .course-sidebar-preview {
@@ -2478,7 +2479,8 @@ ul.curriculum-sections .section .section-header .section-meta {
 	color: var(--wine);
 }
 
-#learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-content .course-item .section-item-link:hover .item-name {
+#learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-content .course-item .section-item-link:hover .item-name,
+#popup-course #popup-sidebar .course-curriculum .section .section-content .course-item .section-item-link .item-name {
 	color: var(--dark-wine);
 }
 
@@ -2497,18 +2499,18 @@ ul.curriculum-sections .section .section-header .section-meta {
 	color: var(--green);
 }
 
-#popup-course #popup-footer .course-item-nav .course-item-nav__name {
+#popup-course #popup-footer .course-item-nav .next:hover .course-item-nav__name,
+#popup-course #popup-footer .course-item-nav .prev:hover .course-item-nav__name {
 	background-color: var(--newspaper);
 	color: var(--dark-wine);
 }
 
 #learn-press-course-tabs input[name="learn-press-course-tab-radio"]:nth-child(1):checked ~ .learn-press-nav-tabs .course-nav {
-	border: 0;
 	background-color: var(--newspaper);
 }
 
 #learn-press-course-tabs input[name="learn-press-course-tab-radio"]:nth-child(1):checked ~ .learn-press-nav-tabs .course-nav label {
-	color: 
+	color: var(--dark-wine);
 }
 
 /* WooCommerce */
