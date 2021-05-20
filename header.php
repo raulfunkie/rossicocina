@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es" itemscope itemtype="https://schema.org/Blog">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
