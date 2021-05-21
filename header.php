@@ -1,9 +1,5 @@
 <!doctype html>
-<<<<<<< HEAD
-<html lang="es" itemscope itemtype="https://schema.org/Blog">
-=======
-<html <?php language_attributes(); ?> itemscope itemtype="https://schema.org/Blog">
->>>>>>> 4d5070dcb409d40c6e13b392cd70dbfc6bb91698
+<html <?php language_attributes(); ?> itemscope itemtype="https://schema.org/Blog">=
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
