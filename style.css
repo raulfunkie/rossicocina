@@ -1278,12 +1278,15 @@ main article .content .float-left {
 }
 
 main article .content ul,
-main article .content ol {
+main article .content ol,
+.wp-block-column ul,
+.wp-block-column ol {
 	margin: 1.25rem auto;
 	padding-left: 2rem;
 }
 
-main article .content li {
+main article .content li,
+.wp-block-column li {
 	line-height: 1.6;
 	padding: .5rem;
 }
@@ -1301,7 +1304,8 @@ main article .content a:hover {
 	color: hsl(0,0%,100%);
 }
 
-main article .content h2 {
+main article .content h2,
+.learnpress .course-description h2 {
 	margin-top: 2rem;
 	font-family: var(--title);
 	font-size: 2.25rem;
