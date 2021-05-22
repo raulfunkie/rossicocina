@@ -1737,6 +1737,12 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	margin-top: 1rem;
 }
 
+.learnpress .wp-block-column h3 {
+	font-size: 1.5rem;
+	color: var(--green);
+	margin-bottom: .25rem;
+}
+
 .wp-block-column.light-pink ol {
 	margin-bottom: 0;
 }
@@ -2449,6 +2455,10 @@ main article .content .payment-button svg {
 #popup-course #popup-sidebar .course-curriculum .section.closed .section-header .section-left .section-title {
 	margin-bottom: 0;
 	color: var(--dark);
+}
+
+#learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section {
+	padding-bottom: 0;
 }
 
 #learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-content .course-item .section-item-link::before {
