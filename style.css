@@ -2303,7 +2303,9 @@ main article .content .payment-button svg {
 }
 
 .recipe-post .steps-ingredients .steps ol,
-.recipe-post .steps-ingredients .ingredients ul {
+.recipe-post .steps-ingredients .ingredients ul,
+.learnpress .steps ol,
+.learnpress .ingredients ul {
 	margin: 1rem 0;
 	list-style: none;
 	counter-reset: my-awesome-counter;
@@ -2311,13 +2313,16 @@ main article .content .payment-button svg {
 }
 
 .recipe-post .steps-ingredients .steps ol li,
-.recipe-post .steps-ingredients .ingredients ul li {
+.recipe-post .steps-ingredients .ingredients ul li,
+.learnpress .ingredients ul li,
+.learnpress .steps ol li {
 	counter-increment: my-awesome-counter;
 	position: relative;
 	line-height: 1.6;
 	margin-bottom: .875rem;
 }
 
+.learnpress .steps ol li::before,
 .recipe-post .steps-ingredients .steps ol li::before {
 	content: counter(my-awesome-counter);
 	color: var(--wine);
@@ -2331,7 +2336,8 @@ main article .content .payment-button svg {
 	top: -10px;
 }
 
-.recipe-post .steps-ingredients .ingredients {
+.recipe-post .steps-ingredients .ingredients,
+.learnpress .ingredients {
 	border-radius: 2rem;
 	padding: 2rem 1rem 2rem 2.5rem;
 }
@@ -2373,6 +2379,7 @@ main article .content .payment-button svg {
 	color: var(--wine);
 }
 
+.learnpress .ingredients ul li::before,
 .recipe-post .steps-ingredients .ingredients ul li:before {
 	content: '';
 	position: absolute;
@@ -2572,6 +2579,9 @@ ul.curriculum-sections .section .section-header .section-meta {
 	padding: .25rem 0;
 }
 
+.learpress .ingredients {
+	background-color: var(--newspaper);
+}
 
 /* WooCommerce */
 .woocommerce-Price-amount {
