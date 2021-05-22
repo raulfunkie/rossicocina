@@ -2442,7 +2442,7 @@ main article .content .payment-button svg {
 }
 
 #popup-course #popup-sidebar .course-curriculum .section .section-header {
-	padding: 1rem;
+	padding: 1rem !important;
 	height: auto !important;
 }
 
@@ -2544,7 +2544,7 @@ ul.curriculum-sections .section .section-header .section-meta {
 
 .learnpress figure video {
 	max-height: 640px;
-	margin: 1rem auto;
+	margin: 1rem auto 3rem;
 }
 
 #popup-course #popup-sidebar .course-curriculum .section .section-content .course-item,
