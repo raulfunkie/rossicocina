@@ -1280,13 +1280,16 @@ main article .content .float-left {
 main article .content ul,
 main article .content ol,
 .wp-block-column ul,
-.wp-block-column ol {
+.wp-block-column ol,
+.course-description ul,
+.course-description ol {
 	margin: 1.25rem auto;
 	padding-left: 2rem;
 }
 
 main article .content li,
-.wp-block-column li {
+.wp-block-column li,
+.course-description li {
 	line-height: 1.6;
 	padding: .5rem;
 }
@@ -2431,7 +2434,12 @@ main article .content .payment-button svg {
 	text-align: left;
 }
 
+#popup-course #popup-sidebar .course-curriculum .section .section-header {
+	height: auto !important;
+}
+
 #popup-course #popup-sidebar .course-curriculum .section.closed .section-header .section-left .section-title {
+	margin-bottom: 0;
 	color: var(--dark);
 }
 
@@ -2444,7 +2452,6 @@ main article .content .payment-button svg {
 	font-family: var(--title);
 	font-weight: 700 !important;
 	color: var(--dark-wine) !important;
-	margin-bottom: .625rem;
 }
 
 #learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-header .section-left .section-title p.section-desc {
@@ -2492,7 +2499,6 @@ ul.curriculum-sections .section .section-header .section-meta {
 	color: var(--wine);
 }
 
-
 #popup-course #popup-sidebar .course-curriculum .section .section-content .course-item .section-item-link .item-name {
 	color: var(--dark-wine);
 }
@@ -2522,6 +2528,49 @@ ul.curriculum-sections .section .section-header .section-meta {
 #learn-press-course-tabs input[name="learn-press-course-tab-radio"]:nth-child(1):checked ~ .learn-press-nav-tabs .course-nav label {
 	color: var(--dark-wine);
 }
+
+.learnprerss figure {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.learnpress figure video {
+	max-height: 640px;
+	margin: 1rem auto;
+}
+
+#popup-course #popup-sidebar .course-curriculum .section .section-content .course-item,
+#popup-course #popup-sidebar .course-curriculum .section .section-content .course-item .section-item-link {
+	height: auto;
+}
+
+#popup-course #popup-content #learn-press-content-item .content-item-wrap .content-item-summary .content-item-description h2,
+#popup-course #popup-content #learn-press-content-item .content-item-wrap .content-item-summary .content-item-description h3,
+#popup-course #popup-content #learn-press-content-item .content-item-wrap .content-item-summary .content-item-description h4,
+#popup-course #popup-content #learn-press-content-item .content-item-wrap .content-item-summary .content-item-description h5,
+#popup-course #popup-content #learn-press-content-item .content-item-wrap .content-item-summary .content-item-description h6 {
+	margin-top: 1rem;
+	line-height: 1.6;
+}
+
+#popup-course #popup-content #learn-press-content-item .content-item-wrap .content-item-summary .content-item-description h2 {
+	font-family: var(--title);
+	color: var(--dark-wine);
+	margin-bottom: 1rem;
+}
+
+#popup-course #popup-content #learn-press-content-item .content-item-wrap .content-item-summary .content-item-description ul,
+#popup-course #popup-content #learn-press-content-item .content-item-wrap .content-item-summary .content-item-description ol {
+	padding-left: 2rem;
+}
+
+#popup-course #popup-content #learn-press-content-item .content-item-wrap .content-item-summary .content-item-description li {
+	color: var(--txt);
+	font-size: 1rem;
+	line-height: 1.6;
+	padding: .25rem 0;
+}
+
 
 /* WooCommerce */
 .woocommerce-Price-amount {
