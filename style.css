@@ -2435,6 +2435,7 @@ main article .content .payment-button svg {
 }
 
 #popup-course #popup-sidebar .course-curriculum .section .section-header {
+	padding: 1rem;
 	height: auto !important;
 }
 
