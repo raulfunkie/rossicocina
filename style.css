@@ -1955,7 +1955,8 @@ main article .content .payment-button svg {
 	color: var(--wine);
 }
 
-.recipe-post .recipe-details .recipe-meta h1 {
+.recipe-post .recipe-details .recipe-meta h1,
+.woocommerce div.product .product_title {
 	font-size: 3rem;
 	line-height: 1;
 	text-align: left;
@@ -2304,7 +2305,8 @@ main article .content .payment-button svg {
 
 .recipe-post .steps-ingredients .steps h2,
 .recipe-post .steps-ingredients .ingredients h3,
-.recipe-post .tools-facts h3 {
+.recipe-post .tools-facts h3,
+.woocommerce .woocommerce-Tabs-panel h2 {
 	padding-left: 0;
 	margin-bottom: 1rem;
 	font-family: var(--title);
@@ -2821,4 +2823,7 @@ form.woocommerce-checkout {
 	font-style: italic;
 }
 
-.woocommerce 
+.woocommerce .summary .cart {
+	display: flex;
+	flex-flow: column nowrap;
+}
