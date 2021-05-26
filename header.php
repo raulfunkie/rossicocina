@@ -1,5 +1,5 @@
 <!doctype html>
-<html <?php language_attributes(); ?> itemscope itemtype="https://schema.org/Blog">=
+<html <?php language_attributes(); ?> itemscope itemtype="https://schema.org/Blog">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />

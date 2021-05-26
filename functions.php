@@ -377,3 +377,15 @@ function bbloomer_checkout_fields_in_label_error( $field, $key, $args, $value ) 
 }
 
 add_filter( 'woocommerce_form_field', 'bbloomer_checkout_fields_in_label_error', 10, 4 );
+
+if ( ! current_user_can( 'manage_options' ) ) {
+  add_filter('show_admin_bar', '__return_false', 1000);
+}
+
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+function woo_remove_product_tabs( $tabs ) {
+    unset( $tabs['description'] );      	// Remove the description tab
+    unset( $tabs['reviews'] ); 			// Remove the reviews tab
+    unset( $tabs['additional_information'] );  	// Remove the additional information tab
+    return $tabs;
+}

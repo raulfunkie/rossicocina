@@ -1743,6 +1743,10 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	margin-bottom: .25rem;
 }
 
+.learnpress .wp-block-column .light-pink {
+	align-self: flex-start;
+}
+
 .wp-block-column.light-pink ol {
 	margin-bottom: 0;
 }
@@ -2490,6 +2494,7 @@ main article .content .payment-button svg {
 	font-family: var(--mono);
 }
 
+.woocommerce .summary .product_meta .posted_in,
 ul.learn-press-nav-tabs .course-nav.active::before,
 .course-summary #popup-header .items-progress .learn-press-progress,
 .course-meta.course-meta-primary,
@@ -2553,8 +2558,8 @@ ul.curriculum-sections .section .section-header .section-meta {
 }
 
 .learnpress figure video {
-	max-height: 640px;
-	margin: 1rem auto 3rem;
+	max-height: 480px;
+	margin: 1rem auto 2.5rem;
 }
 
 #popup-course #popup-sidebar .course-curriculum .section .section-content .course-item,
@@ -2667,6 +2672,10 @@ form.woocommerce-checkout {
 	width: 100% !important;
 }
 
+#customer_details p.form-row-wide.mailchimp-newsletter input[type="checkbox"] {
+	width: auto !important;
+}
+
 .woocommerce form .form-row,
 #add_payment_method #payment div.form-row,
 .woocommerce-cart #payment div.form-row,
@@ -2684,6 +2693,15 @@ form.woocommerce-checkout {
 	display: none !important;
 }
 
+.woocommerce form .form-row.mailchimp-newsletter {
+	display: flex !important;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	padding: .625rem;
+	background-color: var(--newsletter);
+	border-radius: 1rem;
+}
+
 #add_payment_method #payment,
 .woocommerce-cart #payment,
 .woocommerce-checkout #payment {
@@ -2695,7 +2713,8 @@ form.woocommerce-checkout {
 }
 
 .woocommerce-info,
-.woocommerce-error {
+.woocommerce-error,
+.woocommerce-message {
 	border-top: 0;
 	background-color: var(--newspaper);
 	border-radius: 1rem;
@@ -2795,3 +2814,5 @@ form.woocommerce-checkout {
 	font-weight: 700;
 	font-style: italic;
 }
+
+.woocommerce 
