@@ -2698,8 +2698,12 @@ form.woocommerce-checkout {
 	flex-flow: row nowrap;
 	justify-content: flex-start;
 	padding: .625rem;
-	background-color: var(--newsletter);
+	background-color: var(--newspaper);
 	border-radius: 1rem;
+}
+
+.woocommerce form .form-row.mailchimp-newsletter label {
+	display: block !important;
 }
 
 #add_payment_method #payment,
