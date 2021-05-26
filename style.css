@@ -2824,6 +2824,26 @@ form.woocommerce-checkout {
 }
 
 .woocommerce .summary .cart {
+	margin: 1.25rem 0;
 	display: flex;
 	flex-flow: column nowrap;
+}
+
+.woocommerce .summary .cart .quantity input {
+	width: 100%;
+	margin-bottom: .625rem;
+}
+
+.woocommerce div.product form.cart .button {
+	border-radius: 0;
+	background-color: var(--yellow);
+	color: var(--dark-wine);
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.woocommerce div.product .woocommerce-Price-amount {
+	font-size: 2rem;
+	font-weight: 400;
+	margin-bottom: 1rem;
 }
