@@ -2781,6 +2781,7 @@ form.woocommerce-checkout {
 #add_payment_method #payment ul.payment_methods,
 .woocommerce-cart #payment ul.payment_methods,
 .woocommerce-checkout #payment ul.payment_methods {
+	padding: 0;
 	border-bottom: 1px solid hsl(0deg 0% 77% / 35%);
 }
 
@@ -2804,8 +2805,9 @@ form.woocommerce-checkout {
 	margin: auto 1rem auto 0 !important;
 }
 
-.woocommerce-page .wc_payment_method label img {
-	margin: 0 .5rem 0 0;
+.woocommerce-page .wc_payment_method label img,
+.woocommerce-checkout #payment ul.payment_methods li img {
+	margin: 0 .5rem 0 0 !important;
 	order: -1;
 	max-height: 32px;
 }
