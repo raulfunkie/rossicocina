@@ -388,10 +388,3 @@ function woo_remove_product_tabs( $tabs ) {
     unset( $tabs['additional_information'] );  	// Remove the additional information tab
     return $tabs;
 }
-
-add_filter( 'learn-press/course-tabs', 'theme_prefix_lp_course_tab_remove' );
-
-function theme_prefix_lp_course_tab_remove( $tabs ) {
-    unset( $tabs['curriculum'] );
-    return $tabs;
-}
