@@ -1728,6 +1728,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	border-radius: 16px;
 	padding: 1rem;
 	background-color: hsla(334, 80%, 70%, 0.25);
+	align-self: flex-start;
 }
 
 .wp-block-column.light-pink h3 {
@@ -1738,8 +1739,8 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 }
 
 .learnpress .wp-block-column h3 {
+	font-family: var(--title);
 	font-size: 1.5rem;
-	color: var(--green);
 	margin-bottom: .25rem;
 }
 
@@ -2412,6 +2413,20 @@ main article .content .payment-button svg {
 .course-tab-panel-faqs,
 .course-description {
 	text-align: left;
+}
+
+#learn-press-course-tabs .course-tab-panels .course-tab-panel .course-description {
+	font-size: 1.125rem;
+	line-height: 1.8;
+	color: var(--txt);
+}
+
+.lp-archive-courses .course-summary .course-summary-content .course-detail-info .course-info-left .course-title {
+	font-size: 2rem;
+}
+
+.lp-archive-courses .course-summary .course-summary-content .course-detail-info {
+	margin-bottom: 2rem;
 }
 
 .learnpress .section-header .section-left p {
