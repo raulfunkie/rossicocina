@@ -2506,6 +2506,14 @@ div.payment-button {
 	color: var(--pink);
 }
 
+#learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-content .course-item {
+	transition: background-color 100ms linear;
+}
+
+#learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-content .course-item:hover {
+	background-color: hsla(168, 39%, 98%, 1) !important;
+}
+
 #popup-course #popup-sidebar .course-curriculum .section .section-header .section-left .section-title,
 #learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-header .section-left .section-title {
 	font-family: var(--title);
