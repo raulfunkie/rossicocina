@@ -1827,7 +1827,8 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	text-align: left;
 }
 
-.wa-block a div p {
+.wa-block a div p,
+.wa-block.wa-block a div p {
 	line-height: 1;
 	margin: 0;
 	font-size: .875rem;
@@ -2415,6 +2416,11 @@ div.payment-button {
 	text-align: left;
 }
 
+.learnpress .course-tab-panel-overview.course-tab-panel ul,
+.learnpress .course-tab-panel-overview.course-tab-panel ol {
+	margin-top: 0;
+}
+
 #learn-press-course-tabs .course-tab-panels .course-tab-panel .course-description,
 #learn-press-course-tabs .course-tab-panels .course-tab-panel .course-description p {
 	font-size: 1.125rem;
@@ -2423,11 +2429,11 @@ div.payment-button {
 }
 
 .lp-archive-courses .course-summary .course-summary-content .course-detail-info .course-info-left .course-title {
-	font-size: 2rem;
+	font-size: 2rem !important;
 }
 
 .lp-archive-courses .course-summary .course-summary-content .course-detail-info {
-	margin-bottom: 2rem;
+	margin-bottom: 1rem !important;
 }
 
 .learnpress .section-header .section-left p {
@@ -2630,7 +2636,8 @@ ul.curriculum-sections .section .section-header .section-meta {
 }
 
 /* WooCommerce */
-.woocommerce-Price-amount {
+.woocommerce-Price-amount,
+#learn-press-course .course-summary-sidebar .course-sidebar-preview .course-price {
 	font-family: var(--mono);
 	font-weight: 400;
 }
