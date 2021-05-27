@@ -1783,12 +1783,12 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 }
 
 /* wa-block */
-main article .content .wa-block {
+.wa-block {
 	max-width: 400px;
 	margin: 2rem auto;
 }
 
-main article .content .wa-block a {
+.wa-block a {
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: flex-start;
@@ -1798,27 +1798,27 @@ main article .content .wa-block a {
 	padding: 1rem;
 }
 
-main article .content .wa-block a figure {
+.wa-block a figure {
 	max-height: 56px;
 	margin-right: 1rem;
 }
 
-main article .content .wa-block a:hover,
-main article .content .payment-button:hover {
+.wa-block a:hover,
+.payment-button:hover {
 	background-color: hsl(0,0%,100%);
 	transform: translateY(-2px);
 }
 
-main article .content .wa-block a:active,
-main article .content .payment-button:active {
+.wa-block a:active,
+.payment-button:active {
 	transform: scale(.95);
 }
 
-main article .content .wa-block a div {
+.wa-block a div {
 	margin: auto 0;
 }
 
-main article .content .wa-block a div h3 {
+.wa-block a div h3 {
 	line-height: 1;
 	margin: 0 0 .5rem;
 	font-size: 1.125rem;
@@ -1827,7 +1827,7 @@ main article .content .wa-block a div h3 {
 	text-align: left;
 }
 
-main article .content .wa-block a div p {
+.wa-block a div p {
 	line-height: 1;
 	margin: 0;
 	font-size: .875rem;
@@ -1838,7 +1838,7 @@ main article .content .wa-block a div p {
 }
 
 /* payment button styles */
-main article .content .payment-button {
+.payment-button {
 	-webkit-appearance: none;
 	-webkit-user-select: none;
 	user-select: none;
@@ -1855,11 +1855,11 @@ main article .content .payment-button {
 	max-width: 220px;
 }
 
-main article .content div.payment-button {
+div.payment-button {
 	transition: all 120ms linear;
 }
 
-main article .content .payment-button svg {
+.payment-button svg {
 	height: 32px;
 	max-width: 100%;
 }
@@ -2415,7 +2415,8 @@ main article .content .payment-button svg {
 	text-align: left;
 }
 
-#learn-press-course-tabs .course-tab-panels .course-tab-panel .course-description {
+#learn-press-course-tabs .course-tab-panels .course-tab-panel .course-description,
+#learn-press-course-tabs .course-tab-panels .course-tab-panel .course-description p {
 	font-size: 1.125rem;
 	line-height: 1.8;
 	color: var(--txt);
@@ -2456,6 +2457,11 @@ main article .content .payment-button svg {
 
 #learn-press-course-tabs .course-nav label {
 	color: var(--wine);
+}
+
+#learn-press-course-tabs input[name="learn-press-course-tab-radio"]:nth-child(1):checked ~ .learn-press-nav-tabs .course-nav:nth-child(1) label,
+#learn-press-course-tabs input[name="learn-press-course-tab-radio"]:nth-child(2):checked ~ .learn-press-nav-tabs .course-nav:nth-child(2) label {
+	color: var(--dark-wine) !important;
 }
 
 .content-item-summary .course-item-title.question-title {
@@ -2543,8 +2549,12 @@ ul.curriculum-sections .section .section-header .section-meta {
 	color: var(--dark-wine);
 }
 
+#learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-content .course-item .section-item-link .item-name {
+	transition: color 100ms linear;
+}
+
 #learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-content .course-item .section-item-link:hover .item-name {
-	color: var(--green);
+	color: var(--dark-wine) !important;
 }
 
 #popup-course #sidebar-toggle {
@@ -2566,7 +2576,7 @@ ul.curriculum-sections .section .section-header .section-meta {
 }
 
 #learn-press-course-tabs input[name="learn-press-course-tab-radio"]:nth-child(1):checked ~ .learn-press-nav-tabs .course-nav label {
-	color: var(--dark-wine);
+	color: var(--dark-wine) !important;
 }
 
 .learnprerss figure {
