@@ -1742,7 +1742,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 .learnpress .wp-block-column h3 {
 	font-family: var(--title);
 	font-size: 1.5rem;
-	margin-bottom: .25rem;
+	margin: 0 0 .25rem 0;
 }
 
 .learnpress .wp-block-column .light-pink {
@@ -2425,11 +2425,11 @@ div.payment-button {
 	margin-top: 0;
 }
 
-#learn-press-course-tabs .course-tab-panels .course-tab-panel .course-description,
-#learn-press-course-tabs .course-tab-panels .course-tab-panel .course-description p {
-	font-size: 1.125rem !important;
-	line-height: 1.8 !important;
-	color: var(--txt) !important;
+.learnpress #learn-press-course-tabs .course-tab-panels .course-tab-panel .course-description,
+.learnpress #learn-press-course-tabs .course-tab-panels .course-tab-panel .course-description p {
+	font-size: 1.125rem;
+	line-height: 1.8;
+	color: var(--txt);
 }
 
 .lp-archive-courses .course-summary .course-summary-content .course-detail-info .course-info-left .course-title {
