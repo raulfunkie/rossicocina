@@ -180,7 +180,8 @@ Text Domain: rossicocina
 
 /* btn */
 .btn,
-.woocommerce ul.products li.product .button {
+.woocommerce ul.products li.product .button,
+#learn-press-course .course-summary-sidebar .course-sidebar-preview .lp-course-buttons button {
 	-webkit-appearance: none;
 	-webkit-user-select: none;
 	user-select: none;
@@ -1827,14 +1828,13 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	text-align: left;
 }
 
-.wa-block a div p,
-.wa-block.wa-block a div p {
-	line-height: 1;
+.wa-block a div p {
+	line-height: 1 !important;
 	margin: 0;
-	font-size: .875rem;
+	font-size: .875rem !important;
 	font-style: italic;
-	font-weight: 400;
-	color: #848484;
+	font-weight: 400 !important;
+	color: #848484 !important;
 	text-align: left;
 }
 
@@ -2416,6 +2416,10 @@ div.payment-button {
 	text-align: left;
 }
 
+#learn-press-course-tabs.course-tabs {
+	margin-top: 1rem !important;
+}
+
 .learnpress .course-tab-panel-overview.course-tab-panel ul,
 .learnpress .course-tab-panel-overview.course-tab-panel ol {
 	margin-top: 0;
@@ -2423,13 +2427,13 @@ div.payment-button {
 
 #learn-press-course-tabs .course-tab-panels .course-tab-panel .course-description,
 #learn-press-course-tabs .course-tab-panels .course-tab-panel .course-description p {
-	font-size: 1.125rem;
-	line-height: 1.8;
-	color: var(--txt);
+	font-size: 1.125rem !important;
+	line-height: 1.8 !important;
+	color: var(--txt) !important;
 }
 
 .lp-archive-courses .course-summary .course-summary-content .course-detail-info .course-info-left .course-title {
-	font-size: 2rem !important;
+	font-size: 3rem !important;
 }
 
 .lp-archive-courses .course-summary .course-summary-content .course-detail-info {
@@ -2439,6 +2443,10 @@ div.payment-button {
 .learnpress .section-header .section-left p {
 	max-width: 640px;
 	margin: 1rem auto;
+}
+
+#learn-press-course .course-summary-sidebar .course-sidebar-preview {
+	margin-bottom: 0 !important;
 }
 
 #learn-press-course .course-summary-sidebar .course-sidebar-preview .lp-course-buttons button.button-enroll-course,
