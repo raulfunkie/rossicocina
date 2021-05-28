@@ -2449,6 +2449,10 @@ div.payment-button {
 	margin-bottom: 0 !important;
 }
 
+#learn-press-course .course-summary-sidebar .course-sidebar-preview .media-preview {
+	margin-bottom: 24px;
+}
+
 #learn-press-course .course-summary-sidebar .course-sidebar-preview .lp-course-buttons button.button-enroll-course,
 .lp-archive-courses .learn-press-courses[data-layout="list"] .course .course-item .course-content .course-readmore a,
 #popup-course #popup-content .lp-button {
@@ -2474,7 +2478,8 @@ div.payment-button {
 }
 
 #learn-press-course-tabs input[name="learn-press-course-tab-radio"]:nth-child(1):checked ~ .learn-press-nav-tabs .course-nav:nth-child(1) label,
-#learn-press-course-tabs input[name="learn-press-course-tab-radio"]:nth-child(2):checked ~ .learn-press-nav-tabs .course-nav:nth-child(2) label {
+#learn-press-course-tabs input[name="learn-press-course-tab-radio"]:nth-child(2):checked ~ .learn-press-nav-tabs .course-nav:nth-child(2) label,
+.lp-archive-courses .learn-press-courses[data-layout="list"] .course .course-item .course-content .course-readmore a {
 	color: var(--dark-wine) !important;
 }
 
@@ -2894,4 +2899,29 @@ form.woocommerce-checkout {
 	font-size: 2rem;
 	font-weight: 400;
 	margin-bottom: 1rem;
+}
+
+/* testimonials */
+.testimonials {
+	
+}
+
+.testimonials .testimonial {
+	border-radius: 2rem;
+}
+
+.testimonials .testimonial:first-child {
+	background: linear-gradient(142.49deg, #FFE1D7 16.52%, rgba(255, 225, 215, 0) 81.27%);
+}
+
+.testimonials .testimonial:nth-child(2) {
+	background: linear-gradient(142.49deg, #FFF1CE 16.52%, rgba(255, 241, 207, 0) 81.27%);
+}
+
+.testimonials .testimonial figure {
+	margin-top: -130px;
+	height: 320px;
+	width: 320px;
+	border-radius: 50%;
+	overflow: hidden;
 }
