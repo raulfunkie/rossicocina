@@ -1330,7 +1330,8 @@ main article .content h4 {
 	color: var(--dark);
 }
 
-main article .content h5 {
+main article .content h5,
+.learnpress .course-description h5 {
 	margin-top: 2rem;
 	font-size: 1.25rem;
 	color: var(--wine);
@@ -2905,7 +2906,7 @@ form.woocommerce-checkout {
 /* testimonials */
 .testimonials {
 	padding: 0 1rem;
-	margin-top: 8rem;
+	margin: 8rem 0 4rem 0;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr));
 	grid-template-rows: 1fr;
@@ -2987,4 +2988,8 @@ form.woocommerce-checkout {
 		font-size: .875rem;
 		line-height: 1.6;
 	}
+}
+
+.learnpress .course-description .p-methods {
+	margin: 2rem auto 3rem;
 }
