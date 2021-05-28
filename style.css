@@ -1231,13 +1231,14 @@ main article .content {
 	}
 }
 
-main article .content hr {
+main article .content hr,
+.wp-block-separator {
 	border: 0;
 	outline: 0;
 	height: 1px;
 	background-color: hsla(333, 82%, 70%, 0.35);
 	width: 100%;
-	margin: 2rem auto;
+	margin: 3rem auto;
 }
 
 .page main article .content p,
