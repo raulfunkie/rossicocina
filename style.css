@@ -2906,13 +2906,19 @@ form.woocommerce-checkout {
 	padding: 0 1rem;
 	margin-top: 8rem;
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(min(420px, 100%), 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr));
 	grid-template-rows: 1fr;
 	gap: 1rem;
 }
 
+@media only screen and (max-width: 720px) {
+	.testimonials {
+		margin-top: 10rem;
+	}
+}
+
 .testimonials .testimonial {
-	padding: 0 2.5rem 2rem;
+	padding: 0 1rem 1rem;
 	text-align: center;
 	border-radius: 2rem;
 }
@@ -2927,12 +2933,6 @@ form.woocommerce-checkout {
 	}
 }
 
-@media only screen and (max-width: 420px) {
-	.testimonials .testimonial {
-		padding: 0 1rem 1rem;
-	}
-}
-
 .testimonials .testimonial:first-child {
 	background: linear-gradient(142.49deg, #FFE1D7 16.52%, rgba(255, 225, 215, 0) 81.27%);
 }
@@ -2943,8 +2943,7 @@ form.woocommerce-checkout {
 
 .testimonials .testimonial picture {
 	display: block;
-	margin-top: -120px;
-	margin-bottom: 1rem;
+	margin: -120px auto 1rem auto;
 	max-width: 320px;
 	border-radius: 50%;
 	overflow: hidden;
@@ -2977,7 +2976,7 @@ form.woocommerce-checkout {
 .testimonials .testimonial p {
 	margin-top: 1rem;
 	font-size: 1rem;
-	line-height: 1.8;
+	line-height: 1.6;
 	font-style: italic;
 	color: var(--text);
 }
