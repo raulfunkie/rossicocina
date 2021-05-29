@@ -762,7 +762,7 @@ object.logo {
 }
 
 .home-posts .posts article time,
-.home-posts .posts article div .time-cat a { {
+.home-posts .posts article div .time-cat a {
 	padding: 2px 4px;
 	border-radius: 4px;
 	background-color: var(--newspaper);
