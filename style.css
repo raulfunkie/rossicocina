@@ -1291,8 +1291,10 @@ main article .content ul,
 main article .content ol,
 .wp-block-column ul,
 .wp-block-column ol,
-.course-description ul,
-.course-description ol {
+.learnpress .wp-block-column ul,
+.learnpress .wp-block-column ol,
+.learnpress .course-description ul,
+.learnpress .course-description ol {
 	margin: 1.25rem auto;
 	padding-left: 2rem;
 }
@@ -1737,7 +1739,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 /* background styles */
 .light-pink {
 	border-radius: 16px;
-	padding: 1rem;
+	padding: 1rem 1.25rem;
 	background-color: hsla(334, 80%, 70%, 0.25);
 	align-self: flex-start;
 }
@@ -1747,6 +1749,13 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	font-size: 1.75rem;
 	font-weight: 700;
 	margin-top: 1rem;
+}
+
+.learnpress .wp-block-column h2 {
+	margin-top: 0;
+	line-height: 1;
+	font-size: 2rem;
+	margin-bottom: 1rem;
 }
 
 .learnpress .wp-block-column h3 {
