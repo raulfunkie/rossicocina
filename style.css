@@ -671,9 +671,12 @@ object.logo {
 }
 
 @media only screen and (max-width: 480px) {
-	.home-posts .posts > h2,
-	.home-posts .posts .btn {
+	.home-posts .posts > h2 {
 		margin-left: 1rem;
+	}
+	
+	.home-posts .posts .btn {
+		margin-left: .625rem;
 	}
 }
 
@@ -715,7 +718,7 @@ object.logo {
 		margin-right: 0;
 		margin-bottom: .625rem;
 		overflow: hidden;
-		max-height: 200px;
+		max-height: 340px;
 	}
 }
 
@@ -726,6 +729,8 @@ object.logo {
 @media only screen and (max-width: 480px) {
 	.home-posts .posts article figure img {
 		width: 100%;
+		position: relative;
+		bottom: 70px;
 	}
 }
 
