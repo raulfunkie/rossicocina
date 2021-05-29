@@ -1807,6 +1807,8 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	border-radius: 18px;
 	border: 1px solid hsla(0, 0%, 94%, 1);
 	padding: 1rem;
+	user-select: none;
+	transition: transform 100ms linear;
 }
 
 .wa-block a figure {
