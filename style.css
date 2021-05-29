@@ -211,8 +211,9 @@ Text Domain: rossicocina
 .woocommerce ul.products li.product .button,
 #learn-press-course .course-summary-sidebar .course-sidebar-preview .lp-course-buttons button {
 	background-image: none;
+	width: 100%;
 	text-align: center;
-	padding: .875rem; 1.5rem;
+	padding: .875rem 1.5rem;
 }
 
 .wpcf7 .btn {
@@ -2468,7 +2469,9 @@ div.payment-button {
 	background-color: var(--dark-wine);
 	color: hsla(0, 0%, 100%, 1);
 	font-size: .875rem;
+	font-weight: 500;
 	text-transform: uppercase;
+	border-radius: 0;
 }
 
 .course-title {
@@ -2513,7 +2516,7 @@ div.payment-button {
 }
 
 #learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section {
-	padding-bottom: 0;
+	padding-bottom: 0 !important;
 }
 
 #learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-content .course-item .section-item-link::before {
@@ -2526,6 +2529,10 @@ div.payment-button {
 
 #learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-content .course-item:hover {
 	background-color: hsla(168, 39%, 98%, 1) !important;
+}
+
+#learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-header {
+	padding-bottom: 1rem !important;
 }
 
 #popup-course #popup-sidebar .course-curriculum .section .section-header .section-left .section-title,
@@ -2577,7 +2584,8 @@ ul.curriculum-sections .section .section-header .section-meta {
 	margin-bottom: 1rem;
 }
 
-.lp-archive-courses .learn-press-courses[data-layout="list"] .course .course-item .course-content .course-wrap-meta .meta-item::before {
+.lp-archive-courses .learn-press-courses[data-layout="list"] .course .course-item .course-content .course-wrap-meta .meta-item::before,
+.learn-press-breadcrumb li a:hover {
 	color: var(--wine);
 }
 
@@ -2667,8 +2675,14 @@ ul.curriculum-sections .section .section-header .section-meta {
 
 /* WooCommerce */
 .woocommerce-Price-amount,
-#learn-press-course .course-summary-sidebar .course-sidebar-preview .course-price {
+#learn-press-course .course-summary-sidebar .course-sidebar-preview .course-price,
+.learnpress .course-price {
 	font-family: var(--mono);
+	font-weight: 400;
+}
+
+.learnpress .course-info .course-footer .course-price .price {
+	font-size: 1.25rem;
 	font-weight: 400;
 }
 
@@ -2972,7 +2986,7 @@ form.woocommerce-checkout {
 	font-weight: 700;
 	color: var(--dark-wine);
 	font-size: 1.125rem;
-	margin: 0 0 .625rem 0;
+	margin: 0;
 }
 
 .testimonials .testimonial h5 {
