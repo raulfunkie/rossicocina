@@ -734,6 +734,18 @@ object.logo {
 	}
 }
 
+@media only screen and (max-width: 375px) {
+	.home-posts .posts article figure img {
+		bottom: 35px;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	.home-posts .posts article figure img {
+		bottom: 0;
+	}
+}
+
 .home-posts .posts article a {
 	color: var(--wine);
 	text-decoration: none;
@@ -749,15 +761,24 @@ object.logo {
 	color: hsla(0, 0%, 73%, 1);
 }
 
+.home-posts .posts article time,
+.home-posts .posts article div .time-cat a { {
+	padding: 2px 4px;
+	border-radius: 4px;
+	background-color: var(--newspaper);
+	margin-right: .5rem;
+	color: #7B7B7B;
+}
+
+.home-posts .posts article div .time-cat a {
+	color: var(--wine);
+}
+
 .home-posts .posts article div {
 	padding: 0;
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: flex-start;
-}
-
-.home-posts .posts article div .time-cat a {
-	font-weight: 500;
 }
 
 @media only screen and (max-width: 480px) {
