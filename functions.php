@@ -346,24 +346,24 @@ function custom_checkout_fields( $fields ) {
 }
 add_filter( 'woocommerce_checkout_fields' , 'custom_checkout_fields' );
 
-  function bbloomer_cart_on_checkout_page_only() {
-    if ( is_wc_endpoint_url( 'order-received' ) ) return;
-    echo do_shortcode('[woocommerce_cart]');
-}
-add_action( 'woocommerce_before_checkout_form', 'bbloomer_cart_on_checkout_page_only', 5 );
-
-function bbloomer_redirect_empty_cart_checkout_to_home() {
-   if ( is_cart() && is_checkout() && 0 == WC()->cart->get_cart_contents_count() && ! is_wc_endpoint_url( 'order-pay' ) && ! is_wc_endpoint_url( 'order-received' ) ) {
-      wp_safe_redirect( home_url() );
-    exit;
-   }
-}
-add_action( 'template_redirect', 'bbloomer_redirect_empty_cart_checkout_to_home' );
-
-function bbloomer_redirect_checkout_add_cart() {
-   return wc_get_checkout_url();
-}
-add_filter( 'woocommerce_add_to_cart_redirect', 'bbloomer_redirect_checkout_add_cart' );
+//   function bbloomer_cart_on_checkout_page_only() {
+//     if ( is_wc_endpoint_url( 'order-received' ) ) return;
+//     echo do_shortcode('[woocommerce_cart]');
+// }
+// add_action( 'woocommerce_before_checkout_form', 'bbloomer_cart_on_checkout_page_only', 5 );
+// 
+// function bbloomer_redirect_empty_cart_checkout_to_home() {
+//    if ( is_cart() && is_checkout() && 0 == WC()->cart->get_cart_contents_count() && ! is_wc_endpoint_url( 'order-pay' ) && ! is_wc_endpoint_url( 'order-received' ) ) {
+//       wp_safe_redirect( home_url() );
+//     exit;
+//    }
+// }
+// add_action( 'template_redirect', 'bbloomer_redirect_empty_cart_checkout_to_home' );
+// 
+// function bbloomer_redirect_checkout_add_cart() {
+//    return wc_get_checkout_url();
+// }
+// add_filter( 'woocommerce_add_to_cart_redirect', 'bbloomer_redirect_checkout_add_cart' );
  
 function bbloomer_checkout_fields_in_label_error( $field, $key, $args, $value ) {
    if ( strpos( $field, '</label>' ) !== false && $args['required'] ) {
