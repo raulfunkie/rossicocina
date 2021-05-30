@@ -1897,14 +1897,14 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 
 .wa-block a:hover,
 .payment-button:hover,
-.payu_latam_form input[type="submit"]:hover {
+#payu_latam_form input[type="submit"]:hover {
 	background-color: hsl(0,0%,100%);
 	transform: translateY(-2px);
 }
 
 .wa-block a:active,
 .payment-button:active,
-.payu_latam_form input[type="submit"]:active {
+#payu_latam_form input[type="submit"]:active {
 	transform: scale(.95);
 }
 
@@ -1933,7 +1933,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 
 /* payment button styles */
 .payment-button,
-.payu_latam_form input[type="submit"] {
+#payu_latam_form input[type="submit"] {
 	-webkit-appearance: none;
 	-webkit-user-select: none;
 	user-select: none;
@@ -1951,7 +1951,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 }
 
 div.payment-button,
-.payu_latam_form input[type="submit"] {
+#payu_latam_form input[type="submit"] {
 	transition: all 120ms linear;
 }
 
