@@ -132,11 +132,18 @@ Text Domain: rossicocina
 .woocommerce-page input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
 .woocommerce-page select,
 .woocommerce-page textarea,
-.woocommerce-checkout table.cart td.actions .coupon .input-text {
+.woocommerce-checkout table.cart td.actions .coupon .input-text,
+.woocommerce-cart table.cart td.actions .coupon .input-text {
 	width: auto;
 	min-width: 100px;
 	background-color: var(--newspaper);
 	border-radius: 1rem;
+}
+
+.woocommerce-checkout table.cart td.actions .coupon .input-text,
+.woocommerce-cart table.cart td.actions .coupon .input-text {
+	min-width: 180px;
+	font-size: .875rem;
 }
 
 .wpcf7 .form-wrap .input-container {
