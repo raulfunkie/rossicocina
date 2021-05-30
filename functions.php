@@ -355,7 +355,7 @@ add_action( 'woocommerce_before_checkout_form', 'bbloomer_cart_on_checkout_page_
 function bbloomer_redirect_empty_cart_checkout_to_home() {
    if ( is_cart() && is_checkout() && 0 == WC()->cart->get_cart_contents_count() && ! is_wc_endpoint_url( 'order-pay' ) && ! is_wc_endpoint_url( 'order-received' ) ) {
       wp_safe_redirect( home_url() );
-      exit;
+    exit;
    }
 }
 add_action( 'template_redirect', 'bbloomer_redirect_empty_cart_checkout_to_home' );
@@ -404,10 +404,4 @@ function reptro_course_tab_customize( $tabs ){
   }
 
   return $tabs;
-}
-
-add_filter( 'woocommerce_add_to_cart_redirect', 'skip_woo_cart');
-
-function skip_woo_cart() {
-  return wc_get_checkout_url();
 }
