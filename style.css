@@ -307,6 +307,10 @@ header nav ul li:not(:last-child) {
 	header nav ul li:not(:last-child) {
 		margin-right: 0;
 	}
+	
+	header nav ul li:last-child {
+		margin-bottom: 0;
+	}
 }
 
 header nav ul li a,
@@ -685,6 +689,11 @@ object.logo {
 	flex-flow: row nowrap;
 	margin-bottom: 1.25rem;
 	padding-bottom: 1.25rem;
+	transition: all 100ms linear;
+}
+
+.home-posts .posts article:hover {
+	background: linear-gradient(90deg, hsla(255, 15%, 95%, .25) 0%, rgba(241, 240, 244, 0) 100%);
 }
 
 @media only screen and (max-width: 480px) {
@@ -730,7 +739,7 @@ object.logo {
 	.home-posts .posts article figure img {
 		width: 100%;
 		position: relative;
-		bottom: 70px;
+		bottom: 50px;
 	}
 }
 
@@ -752,26 +761,48 @@ object.logo {
 	margin: .625rem 0;
 }
 
+.home-posts .posts article .post-excerpt {
+	line-height: 1.6;
+	font-size: .875rem;
+	color: var(--txt);
+}
+
 .home-posts .posts article time,
 .post-list article time,
 .related ul li a div time {
 	font-family: var(--mono);
-	font-size: .875rem;
+	font-size: .821rem;
 	font-weight: 400;
 	color: hsla(0, 0%, 73%, 1);
 }
 
 .home-posts .posts article time,
 .home-posts .posts article div .time-cat a {
+	font-size: .875rem;
+	margin: .625rem 0 0;
 	padding: 2px 4px;
 	border-radius: 4px;
-	background-color: var(--newspaper);
-	margin-right: .5rem;
+	margin-right: .25rem;
 	color: #7B7B7B;
 }
 
+.home-posts .posts article time::after {
+	display: inline-block;
+	margin-left: .5rem;
+	content: '➔';
+	color: gray;
+	font-size: 1rem;
+}
+
 .home-posts .posts article div .time-cat a {
+	background-color: #F1F0F4;
 	color: var(--wine);
+	transition: all 100ms linear;
+}
+
+.home-posts .posts article div .time-cat a:hover {
+	color: #ffffff;
+	background-color: var(--pink);
 }
 
 .home-posts .posts article div {
@@ -790,6 +821,11 @@ object.logo {
 .home-posts .posts article a h2 {
 	color: var(--wine);
 	text-decoration: none;
+	transition: color 100ms linear;
+}
+
+.home-posts .posts article:hover a h2 {
+	color: var(--pink);
 }
 
 .home-posts .posts article h2 {
@@ -809,12 +845,6 @@ object.logo {
 	.home-posts .posts article a {
 		margin: .625rem 0;
 	}
-}
-
-.home-posts .posts article span {
-	font-family: var(--basic);
-	font-size: .875rem;
-	line-height: 1.6;
 }
 
 .home-posts .posts article .btn.btn-reading {
@@ -918,6 +948,13 @@ object.logo {
 	padding: 1rem 2rem;
 }
 
+@media only screen and (max-width: 414px) {
+	.sidebar .panel .custom-html-widget > div {
+		padding-right: .625rem;
+		padding-left: .625rem;
+	}
+}
+
 .sidebar .panel .custom-html-widget div .mc_embed_signup_scroll {
 	padding: 0;
 }
@@ -935,6 +972,12 @@ object.logo {
 	color: var(--txt);
 	line-height: 1.8;
 	margin-bottom: 1.125rem;
+}
+
+@media only screen and (max-width: 414px) {
+	.sidebar .panel div .btn {
+		width: 100%;
+	}
 }
 
 /* footer */

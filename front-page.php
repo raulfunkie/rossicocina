@@ -74,7 +74,7 @@ get_header(); ?>
                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => __('Sigue leyendo: '), 'after' => ' &rarr;' ) ); ?>" >
                   <?php the_title( '<h2 itemprop="name">', '</h2>' ); ?>
                 </a>
-                <span itemprop="abstract">
+                <span class="post-excerpt" itemprop="abstract">
                 <?php if (  get_field('recipe_description') ) { ?>  
                   <?php echo wp_trim_words( get_field('recipe_description'), 40, '...' ); ?>
                 <?php } else { ?>
