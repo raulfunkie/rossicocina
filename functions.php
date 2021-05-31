@@ -395,7 +395,7 @@ function reptro_course_tab_customize( $tabs ){
 
   unset($tabs['curriculum']);
 
-  if( learn_press_is_enrolled_course() ){
+  if( LP()->user->has( 'enrolled-course', $course->id ) ){
     $tabs['curriculum'] = array(
           'title'    => __( 'Curriculum', 'learnpress' ),
           'priority' => 30,
