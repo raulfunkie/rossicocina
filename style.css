@@ -1979,6 +1979,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 @media only screen and (max-width: 414px) {
 	.wp-block-column .payment-button {
 		width: 100%;
+		max-width: none;
 		margin-bottom: 1.25rem;
 	}
 }
