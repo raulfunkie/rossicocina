@@ -405,9 +405,3 @@ function reptro_course_tab_customize( $tabs ){
 
   return $tabs;
 }
-
-add_filter( 'woocommerce_add_to_cart_redirect', 'skip_woo_cart');
-
-function skip_woo_cart() {
-  return wc_get_checkout_url();
-}

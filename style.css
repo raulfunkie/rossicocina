@@ -1955,11 +1955,15 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	align-content: center;
 	justify-content: center;
 	max-width: 220px;
+	transition: all 120ms linear;
 }
 
-div.payment-button,
-#payu_latam_form input[type="submit"] {
-	transition: all 120ms linear;
+.content-item-description .payment-button {
+	max-width: 320px;
+}
+
+.content-item-description .payment-button span {
+	margin-left: .625rem;
 }
 
 .payment-button svg {
@@ -2860,6 +2864,10 @@ form.woocommerce-checkout {
 	line-height: 1;
 	margin-bottom: .25rem;
 	display: none !important;
+}
+
+.woocommerce-form-login form .form-row label {
+	display: block !important;
 }
 
 .woocommerce form .form-row.mailchimp-newsletter {
