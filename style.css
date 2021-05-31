@@ -3140,3 +3140,21 @@ form.woocommerce-checkout {
 .learnpress .course-description .p-methods {
 	margin: 2rem auto 3rem;
 }
+
+/* Adjustment */
+.postid-763 #learn-press-course .course-summary-sidebar .course-sidebar-preview .course-price:before {
+	display: block;
+	content: 'GRATIS!';
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+
+.postid-763 #learn-press-course .course-summary-sidebar .course-sidebar-preview .course-price:after {
+	content: 'Usar codigo shakshuka';
+	font-size: 1rem;
+	color: var(--txt);
+}
+
+.postid-763 #learn-press-course .course-summary-sidebar .course-sidebar-preview .course-price .price {
+	text-decoration: line-through;
+}
