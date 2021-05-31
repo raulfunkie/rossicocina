@@ -395,13 +395,14 @@ function reptro_course_tab_customize( $tabs ){
 
   unset($tabs['curriculum']);
 
-  if( learn_press_is_enrolled_course() ){
+  // if( is_user_logged_in() ){
+    if ( $course = learn_press_get_course( $course_id ) && $user = learn_press_get_user( $user_id ) ) {
     $tabs['curriculum'] = array(
           'title'    => __( 'Curriculum', 'learnpress' ),
           'priority' => 30,
           'callback' => 'learn_press_course_curriculum_tab'
       );
   }
-  
-  var_dump($tabs);
+
+  return $tabs;
 }
