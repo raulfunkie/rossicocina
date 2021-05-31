@@ -1976,6 +1976,13 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	max-width: 100%;
 }
 
+@media only screen and (max-width: 414px) {
+	.wp-block-column .payment-button {
+		width: 100%;
+		margin-bottom: 1.25rem;
+	}
+}
+
 /* Recipe */
 @media only screen and (max-width: 1110px) {
 	.recipe-post {
@@ -2575,6 +2582,14 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	border-radius: 0;
 }
 
+@media only screen and (max-width: 414px) {
+	#learn-press-course .course-summary-sidebar .course-sidebar-preview .lp-course-buttons button {
+		width: 100%;
+	}
+}
+
+
+
 .course-title {
 	font-family: var(--title);
 	font-size: 1.5rem;
@@ -2659,6 +2674,12 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 #learn-press-course .course-summary-sidebar .course-sidebar-preview .course-results-progress .items-progress .number,
 #learn-press-course .course-summary-sidebar .course-sidebar-preview .course-results-progress .course-progress .number {
 	font-family: var(--mono);
+}
+
+@media only screen and (max-width: 414px) {
+	.course-summary .course-summary-sidebar.slide-top .course-summary-sidebar__inner {
+		position: relative !important;
+	}
 }
 
 .woocommerce .summary .product_meta .posted_in,
