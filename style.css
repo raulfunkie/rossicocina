@@ -3152,8 +3152,9 @@ form.woocommerce-checkout {
 .postid-763 #learn-press-course .course-summary-sidebar .course-sidebar-preview .course-price:after {
 	content: 'Usar código: SHAKSHUKA';
 	display: block;
-	font-size: 1rem;
-	color: var(--txt);
+	font-weight: 700;
+	font-size: .875rem;
+	color: var(--wine);
 }
 
 .postid-763 #learn-press-course .course-summary-sidebar .course-sidebar-preview .course-price .price {
