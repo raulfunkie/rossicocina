@@ -3151,6 +3151,7 @@ form.woocommerce-checkout {
 
 .postid-763 #learn-press-course .course-summary-sidebar .course-sidebar-preview .course-price:after {
 	content: 'Usar codigo shakshuka';
+	display: block;
 	font-size: 1rem;
 	color: var(--txt);
 }
