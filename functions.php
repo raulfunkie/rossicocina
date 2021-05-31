@@ -402,8 +402,6 @@ function reptro_course_tab_customize( $tabs ){
           'callback' => 'learn_press_course_curriculum_tab'
       );
   }
-
-  return $tabs;
   
   var_dump($tabs);
 }
