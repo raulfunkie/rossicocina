@@ -17,7 +17,7 @@
                 <time itemprop="prepTime"><?php the_field('prep_time'); ?> min.</time>
               </li>
               <?php endif; ?>
-              <?php if( get_field('emoji') ): ?>
+              <?php if( get_field('recipe_type') ): ?>
               <li>
                 <h5>Tipo</h5>
                 <span><?php the_field('recipe_type'); ?></span>

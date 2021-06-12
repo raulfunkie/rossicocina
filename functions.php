@@ -388,5 +388,3 @@ function woo_remove_product_tabs( $tabs ) {
     unset( $tabs['additional_information'] );  	// Remove the additional information tab
     return $tabs;
 }
-
-add_filter( 'learn-press/course-tabs', 'reptro_course_tab_customize' );
