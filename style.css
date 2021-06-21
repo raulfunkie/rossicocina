@@ -2936,6 +2936,10 @@ form.woocommerce-checkout {
 	font-size: .875rem;
 }
 
+.woocommerce-page.woocommerce-order-received ul.order_details {
+	background-color: var(--newspaper);
+}
+
 .woocommerce-checkout p.woocommerce-invalid-required-field span.error {
 	font-size: .75rem;
 	color: hsla(360, 100%, 50%, 1);
