@@ -2893,7 +2893,8 @@ form.woocommerce-checkout {
 	display: none !important;
 }
 
-.woocommerce-form-login form .form-row label {
+.woocommerce-form-login form .form-row label,
+.woocommerce-edit-account form .form-row label {
 	display: block !important;
 }
 
