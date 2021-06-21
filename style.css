@@ -2898,6 +2898,12 @@ form.woocommerce-checkout {
 	display: block !important;
 }
 
+.woocommerce-account.woocommerce-edit-account .woocommerce-form-row.form-row.form-row-wide span {
+	margin-top: .625rem;
+	display: block;
+	font-size: .875rem;
+}
+
 .woocommerce form .form-row.mailchimp-newsletter {
 	display: flex !important;
 	flex-flow: row nowrap;
