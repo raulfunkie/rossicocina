@@ -2895,7 +2895,7 @@ form.woocommerce-checkout {
 
 .woocommerce-form-login form .form-row label,
 .woocommerce-edit-account form .form-row label,
-.woocommerce-account label {
+.woocommerce-account form .form-row label {
 	display: block !important;
 }
 
