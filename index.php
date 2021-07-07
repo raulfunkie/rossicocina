@@ -21,7 +21,7 @@ get_header(); ?>
             <article>
               <figure>
                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => __('Sigue leyendo: '), 'after' => ' &rarr;' ) ); ?>">
-                  <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+                  <?php if ( has_post_thumbnail() ) { the_post_thumbnail('sticky-post-image'); } ?>
                 </a>
               </figure>
               <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => __('Sigue leyendo: '), 'after' => ' &rarr;' ) ); ?>">

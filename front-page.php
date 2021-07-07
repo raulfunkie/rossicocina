@@ -85,7 +85,7 @@ get_header(); ?>
             </article>
             <?php endwhile; ?>
           </div>
-          <a class="btn btn-magenta" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">Más Articulos</a>
+          <a class="btn btn-magenta" href="<?php echo get_permalink(52); ?>">Más Articulos</a>
         <?php else:  ?>
           <!--<?php _e( 'Sorry, no posts matched your criteria.' ); ?>-->
         <?php endif; ?>

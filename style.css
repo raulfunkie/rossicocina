@@ -2899,6 +2899,17 @@ form.woocommerce-checkout {
 	display: block !important;
 }
 
+.woocommerce form.login,
+.woocommerce form.register {
+	max-width: 420px;
+	margin: 1rem 0;
+}
+
+.woocommerce form.login input[type="text"],
+.woocommerce form.register input[type="text"] {
+	width: 100%;
+}
+
 .woocommerce-account.woocommerce-edit-account .woocommerce-form-row.form-row.form-row-wide span {
 	margin-top: .625rem;
 	display: block;
