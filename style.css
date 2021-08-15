@@ -232,11 +232,13 @@ Text Domain: rossicocina
 	background-position: right 16px center;
 }
 
-.btn:hover {
+.btn:hover,
+.woocommerce div.product form.cart .button:hover {
 	transform: translateY(-2px);
 }
 
-.btn:active {
+.btn:active,
+.woocommerce div.product form.cart .button:active {
 	transform: scale3d(0.94,0.94,0.94) scale(.95);
 }
 
@@ -3227,9 +3229,10 @@ form.woocommerce-checkout {
 }
 
 .woocommerce .woocommerce-product-details__short-description {
+	margin-bottom: 1rem;
 	font-size: 1.25rem;
 	font-weight: 400;
-	line-height: 2rem;
+	line-height: 1.8;
 	color: var(--txt);
 }
 
@@ -3266,6 +3269,17 @@ form.woocommerce-checkout {
 	align-items: center;
 	align-content: center;
 	border-radius: 1rem;
+	transition: all 100ms linear;
+}
+
+.woocommerce .product .cart .quantity .plus:active,
+.woocommerce .product .cart .quantity .minus:active {
+	transform: scale(.96);
+}
+
+.woocommerce .product .cart .quantity .plus:hover,
+.woocommerce .product .cart .quantity .minus:hover {
+	background-color: hsla(333, 81.71%, 69.93%, 0.25);
 }
 
 .woocommerce .product .cart .quantity .plus svg,
@@ -3297,4 +3311,21 @@ form.woocommerce-checkout {
 
 .woocommerce .woocommerce-tabs h2 {
 	margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 414px) {
+	.woocommerce .product .entry-summary {
+		padding: 0 .8rem;
+	}
+	
+	.woocommerce .product .entry-summary p,
+	.woocommerce .product .entry-summary p.price {
+		padding: 0;
+	}
+}
+
+.woocommerce .product .entry-summary form.cart {
+	padding: 1rem;
+	border-radius: 1.5rem;
+	background-color: rgba(255, 245, 250, 0.92);
 }
