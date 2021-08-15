@@ -388,3 +388,36 @@ function woo_remove_product_tabs( $tabs ) {
     unset( $tabs['additional_information'] );  	// Remove the additional information tab
     return $tabs;
 }
+
+//WooCommerce
+add_filter( 'woocommerce_get_price_html', 'bbloomer_simple_product_price_format', 10, 2 );
+ 
+function bbloomer_simple_product_price_format( $price, $product ) {
+    
+   if ( $product->is_on_sale() && $product->is_type('simple') ) {
+      $price = sprintf( __( '<div class="was-now-save"><div class="was">WAS %1$s</div><div class="now">NOW %2$s</div><div class="save">SAVE %3$s</div></div>', 'woocommerce' ), wc_price ( $product->get_regular_price() ), wc_price( $product->get_sale_price() ), wc_price( $product->get_regular_price() - $product->get_sale_price() )  );      
+   }
+    
+   return $price;
+}
+
+add_filter( 'woocommerce_sale_flash', '__return_null' );
+
+function woocommerce_output_product_data_tabs() {
+   $product_tabs = apply_filters( 'woocommerce_product_tabs', array() );
+   if ( empty( $product_tabs ) ) return;
+   echo '<section class="woocommerce-tabs wc-tabs-wrapper">';
+   foreach ( $product_tabs as $key => $product_tab ) {
+      ?>
+         <h2><?php echo $product_tab['title']; ?></h2>      
+         <div id="tab-<?php echo esc_attr( $key ); ?>">
+            <?php
+            if ( isset( $product_tab['callback'] ) ) {
+               call_user_func( $product_tab['callback'], $key, $product_tab );
+            }
+            ?>
+         </div>
+      <?php         
+   }
+   echo '</section>';
+}

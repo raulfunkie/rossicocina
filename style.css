@@ -189,7 +189,8 @@ Text Domain: rossicocina
 /* btn */
 .btn,
 .woocommerce ul.products li.product .button,
-#learn-press-course .course-summary-sidebar .course-sidebar-preview .lp-course-buttons button {
+#learn-press-course .course-summary-sidebar .course-sidebar-preview .lp-course-buttons button,
+.woocommerce .single_add_to_cart_button {
 	-webkit-appearance: none;
 	-webkit-user-select: none;
 	user-select: none;
@@ -932,10 +933,6 @@ object.logo {
 	}
 }
 
-.sidebar .panel .widgettitle {
-	display: none !important;
-}
-
 .sidebar .panel figure img {
 	max-width: 100%;
 	margin: 0 auto;
@@ -1371,14 +1368,17 @@ main article .content ol,
 .learnpress .wp-block-column ul,
 .learnpress .wp-block-column ol,
 .learnpress .course-description ul,
-.learnpress .course-description ol {
+.learnpress .course-description ol,
+.woocommerce .woocommerce-tabs ol,
+.woocommerce .woocommerce-tabs ul {
 	margin: 1.25rem auto;
 	padding-left: 2rem;
 }
 
 main article .content li,
 .wp-block-column li,
-.course-description li {
+.course-description li,
+.woocommerce .woocommerce-tabs li {
 	line-height: 1.6;
 	padding: .5rem;
 }
@@ -1397,7 +1397,8 @@ main article .content a:hover {
 }
 
 main article .content h2,
-.learnpress .course-description h2 {
+.learnpress .course-description h2,
+.woocommerce .panel h2 {
 	margin-top: 2rem;
 	font-family: var(--title);
 	font-size: 2.25rem;
@@ -1880,12 +1881,14 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 }
 
 /* wa-block */
-.wa-block {
+.wa-block,
+.woocommerce .panel .wa-block  {
 	max-width: 400px;
 	margin: 2rem auto;
 }
 
 .wa-block a {
+	text-decoration: none;
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: flex-start;
@@ -2077,7 +2080,8 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 }
 
 .recipe-post .recipe-details .recipe-meta h1,
-.woocommerce div.product .product_title {
+.woocommerce div.product .product_title,
+.woocommerce .entry-summary .product_title {
 	font-size: 3rem;
 	line-height: 1;
 	text-align: left;
@@ -2545,7 +2549,8 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 }
 
 .learnpress #learn-press-course-tabs .course-tab-panels .course-tab-panel .course-description,
-.learnpress #learn-press-course-tabs .course-tab-panels .course-tab-panel .course-description p {
+.learnpress #learn-press-course-tabs .course-tab-panels .course-tab-panel .course-description p,
+.woocommerce .wocommerce-tabs p {
 	font-size: 1.125rem;
 	line-height: 1.8;
 	color: var(--txt);
@@ -2698,7 +2703,9 @@ h3#order_review_heading,
 .learnpress .course-featured-review,
 .woocommerce-page .about_paypal,
 .woocommerce-checkout #payment div.payment_box,
-ul.curriculum-sections .section .section-header .section-meta {
+ul.curriculum-sections .section .section-header .section-meta,
+.sidebar .panel .widgettitle,
+.woocommerce .onsale {
 	display: none !important;
 }
 
@@ -3182,4 +3189,41 @@ form.woocommerce-checkout {
 
 .postid-763 #learn-press-course .course-summary-sidebar .course-sidebar-preview .course-price .price {
 	text-decoration: line-through;
+}
+
+/* WooCommerce */
+.woocommerce div.product p.price,
+.woocommerce div.product span.price {
+	font-family: var(--mono);
+}
+
+.woocommerce .woocommerce-product-details__short-description {
+	font-size: 1.25rem;
+	font-weight: 400;
+	line-height: 2rem;
+	color: var(--txt);
+}
+
+.was,
+.now,
+.save {
+	width: 50%;
+	padding: 0.5em 1em;
+	text-align: center;
+}
+
+.was {
+	background: #636363;
+	color: white;
+}
+
+.now {
+	background: #acacac;
+	color: black;
+}
+
+.save {
+	background: #eee;
+	color: red;
+	font-size: 120%;
 }
