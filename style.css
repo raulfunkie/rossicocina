@@ -111,7 +111,8 @@ Text Domain: rossicocina
 .input-container textarea,
 .woocommerce-page input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
 .woocommerce-page select,
-.woocommerce-page textarea {
+.woocommerce-page textarea,
+.woocommerce .woocommerce-cart table.cart td.actions .coupon .input-text {
 	cursor: text;
 	-webkit-appearance: none;
 	outline: none;
@@ -196,7 +197,8 @@ Text Domain: rossicocina
 	user-select: none;
 	outline: 0;
 	border: 0;
-	padding: .875rem 4rem .875rem 1.5rem;
+	border-radius: 1rem;
+	padding: 1rem 4rem 1rem 1.5rem;
 	margin: 10px 4px 0 0;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -2097,7 +2099,8 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	}
 }
 
-.recipe-post .recipe-details .recipe-meta p {
+.recipe-post .recipe-details .recipe-meta p,
+.woocommerce .woocommerce-tabs .tab-description p {
 	font-size: 1.125rem;
 	line-height: 1.6;
 	padding: 0;
@@ -2432,8 +2435,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 
 .recipe-post .steps-ingredients .steps h2,
 .recipe-post .steps-ingredients .ingredients h3,
-.recipe-post .tools-facts h3,
-.woocommerce .woocommerce-tabs h2 {
+.recipe-post .tools-facts h3 {
 	padding-left: 0;
 	margin-bottom: 1rem;
 	font-family: var(--title);
@@ -3065,15 +3067,22 @@ form.woocommerce-checkout {
 
 .woocommerce .summary .cart .quantity input {
 	width: 100%;
-	margin-bottom: .625rem;
+	font-size: 1.125rem;
+	font-weight: 600;
 }
 
 .woocommerce div.product form.cart .button {
+	margin-right: 0;
 	border-radius: 0;
 	background-color: var(--yellow);
 	color: var(--dark-wine);
-	font-weight: 500;
+	font-weight: 700;
 	text-transform: uppercase;
+	background-image: transparent;
+}
+
+.woocommerce div.product form.cart .button:hover {
+	transform: translateY(-2px);
 }
 
 .woocommerce div.product .woocommerce-Price-amount {
@@ -3253,4 +3262,8 @@ form.woocommerce-checkout {
 
 .woocommerce .product .cart .quantity .minus {
 	margin-right: .625rem;
+}
+
+.woocommerce .woocommerce-tabs li {
+	font-size: 1.125rem;
 }

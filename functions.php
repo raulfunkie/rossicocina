@@ -390,17 +390,6 @@ function woo_remove_product_tabs( $tabs ) {
 }
 
 //WooCommerce
-add_filter( 'woocommerce_get_price_html', 'bbloomer_simple_product_price_format', 10, 2 );
- 
-function bbloomer_simple_product_price_format( $price, $product ) {
-    
-   if ( $product->is_on_sale() && $product->is_type('simple') ) {
-      $price = sprintf( __( '<div class="was-now-save"><div class="save">Ahorra %3$s</div></div>', 'woocommerce' ), wc_price ( $product->get_regular_price() ), wc_price( $product->get_sale_price() ), wc_price( $product->get_regular_price() - $product->get_sale_price() )  );      
-   }
-    
-   return $price;
-}
-
 add_filter( 'woocommerce_product_description_heading', '__return_null' );
 
 function woocommerce_output_product_data_tabs() {
