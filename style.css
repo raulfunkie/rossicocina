@@ -2100,7 +2100,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 }
 
 .recipe-post .recipe-details .recipe-meta p,
-.woocommerce .woocommerce-tabs .tab-description p {
+.woocommerce .woocommerce-tabs p {
 	font-size: 1.125rem;
 	line-height: 1.6;
 	padding: 0;
@@ -3210,8 +3210,9 @@ form.woocommerce-checkout {
 	margin-bottom: 1rem;
 }
 
-.woocommerce .product .price del {
-	display: none;
+.woocommerce div.product p.price del,
+.woocommerce div.product span.price del {
+	display: none !important;
 }
 
 .woocommerce div.product p.price ins {
@@ -3219,7 +3220,9 @@ form.woocommerce-checkout {
 }
 
 .woocommerce .product .price .woocommerce-Price-currencySymbol {
-	font-size: .75rem;
+	font-size: 1.25rem;
+	vertical-align: 3px;
+	font-weight: 700;
 }
 
 .woocommerce .woocommerce-product-details__short-description {
