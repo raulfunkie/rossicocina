@@ -3207,10 +3207,12 @@ form.woocommerce-checkout {
 }
 
 .save {
+	display: inline-block;
+	padding: .625rem;
 	color: var(--pink);
-	font-size: 1rem;
+	font-size: .75rem;
+	font-weight: 700;
 	background-color: hsla(333, 82%, 70%, 0.1);
-	padding: 0;
 	margin: 1rem 0 1rem;
 	text-align: left;
 }
