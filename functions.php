@@ -389,7 +389,6 @@ function woo_remove_product_tabs( $tabs ) {
     return $tabs;
 }
 
-//WooCommerce
 add_filter( 'woocommerce_product_description_heading', '__return_null' );
 
 function woocommerce_output_product_data_tabs() {
@@ -409,13 +408,6 @@ function woocommerce_output_product_data_tabs() {
       <?php         
    }
    echo '</section>';
-}
-
-add_filter( 'woocommerce_product_tabs', 'bbloomer_remove_reviews_tab', 9999 );
-function bbloomer_remove_reviews_tab( $tabs ) {
-   unset( $tabs['reviews'] );
-   unset( $tabs['additional_information'] );
-   return $tabs;
 }
  
 add_action( 'woocommerce_after_quantity_input_field', 'bbloomer_display_quantity_plus' );

@@ -3073,12 +3073,12 @@ form.woocommerce-checkout {
 
 .woocommerce div.product form.cart .button {
 	margin-right: 0;
-	border-radius: 0;
+	border-radius: 1rem;
 	background-color: var(--yellow);
 	color: var(--dark-wine);
 	font-weight: 700;
 	text-transform: uppercase;
-	background-image: transparent;
+	background-image: none;
 }
 
 .woocommerce div.product form.cart .button:hover {
@@ -3205,7 +3205,21 @@ form.woocommerce-checkout {
 /* WooCommerce */
 .woocommerce div.product p.price,
 .woocommerce div.product span.price {
+	color: var(--dark-wine);
 	font-family: var(--mono);
+	margin-bottom: 1rem;
+}
+
+.woocommerce .product .price del {
+	display: none;
+}
+
+.woocommerce div.product p.price ins {
+	text-decoration: none;
+}
+
+.woocommerce .product .price .woocommerce-Price-currencySymbol {
+	font-size: .75rem;
 }
 
 .woocommerce .woocommerce-product-details__short-description {
@@ -3257,11 +3271,11 @@ form.woocommerce-checkout {
 }
 
 .woocommerce .product .cart .quantity .plus {
-	margin-left: .625rem;
+	margin-left: .5rem;
 }
 
 .woocommerce .product .cart .quantity .minus {
-	margin-right: .625rem;
+	margin-right: .5rem;
 }
 
 .woocommerce .woocommerce-tabs li {
