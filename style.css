@@ -3281,6 +3281,19 @@ form.woocommerce-checkout {
 	margin-right: .5rem;
 }
 
+.woocommerce .woocommerce-tabs {
+	padding-top: 2rem;
+}
+
+.woocommerce .woocommerce-tabs > h2 {
+	font-size: 1.25rem;
+	color: var(--wc-subtext);
+}
+
 .woocommerce .woocommerce-tabs li {
 	font-size: 1.125rem;
+}
+
+.woocommerce .woocommerce-tabs h2 {
+	margin-bottom: 1rem;
 }
