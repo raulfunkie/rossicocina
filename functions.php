@@ -395,13 +395,12 @@ add_filter( 'woocommerce_get_price_html', 'bbloomer_simple_product_price_format'
 function bbloomer_simple_product_price_format( $price, $product ) {
     
    if ( $product->is_on_sale() && $product->is_type('simple') ) {
-      $price = sprintf( __( '<div class="was-now-save"><div class="save">SAVE %3$s</div></div>', 'woocommerce' ), wc_price ( $product->get_regular_price() ), wc_price( $product->get_sale_price() ), wc_price( $product->get_regular_price() - $product->get_sale_price() )  );      
+      $price = sprintf( __( '<div class="was-now-save"><div class="save">Ahorra %3$s</div></div>', 'woocommerce' ), wc_price ( $product->get_regular_price() ), wc_price( $product->get_sale_price() ), wc_price( $product->get_regular_price() - $product->get_sale_price() )  );      
    }
     
    return $price;
 }
 
-add_filter( 'woocommerce_sale_flash', '__return_null' );
 add_filter( 'woocommerce_product_description_heading', '__return_null' );
 
 function woocommerce_output_product_data_tabs() {
@@ -423,14 +422,7 @@ function woocommerce_output_product_data_tabs() {
    echo '</section>';
 }
 
-add_filter( 'woocommerce_product_description_heading', 'bbloomer_rename_description_tab_heading' );
- 
-function bbloomer_rename_description_tab_heading() {
-return 'Product Features';
-}
-
 add_filter( 'woocommerce_product_tabs', 'bbloomer_remove_reviews_tab', 9999 );
- 
 function bbloomer_remove_reviews_tab( $tabs ) {
    unset( $tabs['reviews'] );
    unset( $tabs['additional_information'] );
@@ -440,13 +432,13 @@ function bbloomer_remove_reviews_tab( $tabs ) {
 add_action( 'woocommerce_after_quantity_input_field', 'bbloomer_display_quantity_plus' );
   
 function bbloomer_display_quantity_plus() {
-   echo '<button type="button" class="plus">+</button>';
+   echo '<button type="button" class="plus"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#5B2491" d="M22.43 32c3.22 0 5.67-.36 7.45-2.13 1.77-1.79 2.12-4.22 2.12-7.44V9.59c0-3.24-.35-5.67-2.12-7.44C28.1.38 25.65 0 22.43 0H9.55C6.38 0 3.92.38 2.13 2.15.36 3.94 0 6.36 0 9.55v12.88c0 3.22.35 5.65 2.13 7.44C3.92 31.64 6.36 32 9.6 32h12.84zM16 23.85a1.7 1.7 0 0 1-1.77-1.77v-4.3h-4.3a1.7 1.7 0 0 1-1.77-1.75c0-1.06.75-1.8 1.77-1.8h4.3v-4.3A1.7 1.7 0 0 1 16 8.15c1.04 0 1.79.75 1.79 1.79v4.28h4.3c1.02 0 1.77.75 1.77 1.8a1.7 1.7 0 0 1-1.77 1.76h-4.3v4.3a1.7 1.7 0 0 1-1.8 1.77z"/></svg></button>';
 }
   
 add_action( 'woocommerce_before_quantity_input_field', 'bbloomer_display_quantity_minus' );
   
 function bbloomer_display_quantity_minus() {
-   echo '<button type="button" class="minus">-</button>';
+   echo '<button type="button" class="minus"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#5B2491" d="M22.43 32c3.22 0 5.67-.36 7.45-2.13 1.77-1.79 2.12-4.22 2.12-7.44V9.59c0-3.24-.35-5.67-2.12-7.44C28.1.38 25.65 0 22.43 0H9.55C6.38 0 3.92.38 2.13 2.15.36 3.94 0 6.36 0 9.55v12.88c0 3.22.35 5.65 2.13 7.44C3.92 31.64 6.36 32 9.6 32h12.84zm.26-14.24H9.44c-1.1 0-1.88-.67-1.88-1.75s.74-1.77 1.88-1.77h13.25c1.13 0 1.87.69 1.87 1.77s-.75 1.75-1.87 1.75z"/></svg></button>';
 }
 
 add_action( 'wp_footer', 'bbloomer_add_cart_quantity_plus_minus' );
