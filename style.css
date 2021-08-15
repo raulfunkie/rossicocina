@@ -190,7 +190,7 @@ Text Domain: rossicocina
 .btn,
 .woocommerce ul.products li.product .button,
 #learn-press-course .course-summary-sidebar .course-sidebar-preview .lp-course-buttons button,
-.woocommerce .single_add_to_cart_button {
+.woocommerce div.product form.cart .button {
 	-webkit-appearance: none;
 	-webkit-user-select: none;
 	user-select: none;
@@ -3222,7 +3222,12 @@ form.woocommerce-checkout {
 }
 
 .save {
-	background: #eee;
-	color: red;
-	font-size: 120%;
+	color: var(--pink);
+	font-size: 1.25rem;
+}
+
+.woocommerce .quantity .input-text .qty {
+	font-family: var(--mono);
+	font-size: 1.25rem;
+	color: var(--txt);
 }
