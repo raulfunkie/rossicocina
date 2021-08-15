@@ -3337,6 +3337,10 @@ form.woocommerce-checkout {
 	}
 }
 
+.woocommerce ul.products li.product a img {
+	margin-bottom: 0;
+}
+
 .woocommerce ul.products li.product .woocommerce-loop-product__title {
 	font-size: 1.25rem;
 	text-align: center;
