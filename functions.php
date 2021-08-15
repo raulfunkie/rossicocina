@@ -462,3 +462,11 @@ function e12_remove_product_image_link( $html, $post_id ) {
 }
 add_filter( 'woocommerce_single_product_image_thumbnail_html', 'e12_remove_product_image_link', 10, 2 );
 
+add_action( 'woocommerce_after_shop_loop_item_title', 'bbloomer_show_all_subcats', 2 );
+ 
+function bbloomer_show_all_subcats() {
+   global $product;
+   $cats = get_the_terms( $product->get_id(), 'product_cat' );
+   if ( empty( $cats ) ) return;
+   echo join( ', ', wp_list_pluck( $cats, 'name' ) );
+}

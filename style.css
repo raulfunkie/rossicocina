@@ -1937,7 +1937,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 
 .wa-block a div p {
 	line-height: 1 !important;
-	margin: 0;
+	margin: 0 !important;
 	font-size: .875rem !important;
 	font-style: italic;
 	font-weight: 400 !important;
@@ -3074,6 +3074,7 @@ form.woocommerce-checkout {
 .woocommerce div.product form.cart .button {
 	margin-right: 0;
 	border-radius: 1rem;
+	padding: 1rem;
 	background-color: var(--yellow);
 	color: var(--dark-wine);
 	font-weight: 700;
