@@ -395,13 +395,14 @@ add_filter( 'woocommerce_get_price_html', 'bbloomer_simple_product_price_format'
 function bbloomer_simple_product_price_format( $price, $product ) {
     
    if ( $product->is_on_sale() && $product->is_type('simple') ) {
-      $price = sprintf( __( '<div class="was-now-save"><div class="was">WAS %1$s</div><div class="now">NOW %2$s</div><div class="save">SAVE %3$s</div></div>', 'woocommerce' ), wc_price ( $product->get_regular_price() ), wc_price( $product->get_sale_price() ), wc_price( $product->get_regular_price() - $product->get_sale_price() )  );      
+      $price = sprintf( __( '<div class="was-now-save"><div class="save">SAVE %3$s</div></div>', 'woocommerce' ), wc_price ( $product->get_regular_price() ), wc_price( $product->get_sale_price() ), wc_price( $product->get_regular_price() - $product->get_sale_price() )  );      
    }
     
    return $price;
 }
 
 add_filter( 'woocommerce_sale_flash', '__return_null' );
+add_filter( 'woocommerce_product_description_heading', '__return_null' );
 
 function woocommerce_output_product_data_tabs() {
    $product_tabs = apply_filters( 'woocommerce_product_tabs', array() );
@@ -420,4 +421,18 @@ function woocommerce_output_product_data_tabs() {
       <?php         
    }
    echo '</section>';
+}
+
+add_filter( 'woocommerce_product_description_heading', 'bbloomer_rename_description_tab_heading' );
+ 
+function bbloomer_rename_description_tab_heading() {
+return 'Product Features';
+}
+
+add_filter( 'woocommerce_product_tabs', 'bbloomer_remove_reviews_tab', 9999 );
+ 
+function bbloomer_remove_reviews_tab( $tabs ) {
+   unset( $tabs['reviews'] );
+   unset( $tabs['additional_information'] );
+   return $tabs;
 }

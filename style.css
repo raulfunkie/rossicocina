@@ -1398,7 +1398,7 @@ main article .content a:hover {
 
 main article .content h2,
 .learnpress .course-description h2,
-.woocommerce .panel h2 {
+.woocommerce .woocommerce-tabs h2 {
 	margin-top: 2rem;
 	font-family: var(--title);
 	font-size: 2.25rem;
@@ -1882,7 +1882,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 
 /* wa-block */
 .wa-block,
-.woocommerce .panel .wa-block  {
+.woocommerce .woocommerce-tabs .wa-block  {
 	max-width: 400px;
 	margin: 2rem auto;
 }
@@ -2431,7 +2431,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 .recipe-post .steps-ingredients .steps h2,
 .recipe-post .steps-ingredients .ingredients h3,
 .recipe-post .tools-facts h3,
-.woocommerce .woocommerce-Tabs-panel h2 {
+.woocommerce .woocommerce-tabs h2 {
 	padding-left: 0;
 	margin-bottom: 1rem;
 	font-family: var(--title);
@@ -3207,7 +3207,6 @@ form.woocommerce-checkout {
 .was,
 .now,
 .save {
-	width: 50%;
 	padding: 0.5em 1em;
 	text-align: center;
 }
