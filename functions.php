@@ -468,5 +468,5 @@ function bbloomer_show_all_subcats() {
    global $product;
    $cats = get_the_terms( $product->get_id(), 'product_cat' );
    if ( empty( $cats ) ) return;
-   echo join( ', ', wp_list_pluck( $cats, 'name' ) );
+   echo join('<p>', '</p>', wp_list_pluck( $cats, 'name' ) );
 }
