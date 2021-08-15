@@ -1,6 +1,6 @@
 /*
 Theme Name: rossicocina
-Version: 1.0
+Version: 1.1
 Theme URI: https://www.rossicocina.com
 Author: Raul Rincon Melendez
 Author URI: https://www.raulrincon.me
@@ -1234,7 +1234,9 @@ main .page-meta {
 main .page-meta h1,
 main .post-meta h1,
 .recipe-meta h1,
-.woocommerce .page-title {
+.woocommerce .page-title,
+.woocommerce div.product .product_title,
+.woocommerce .entry-summary .product_title {
 	font-family: var(--title);
 	color: var(--wine);
 	font-size: 4rem;
@@ -3205,16 +3207,12 @@ form.woocommerce-checkout {
 }
 
 .save {
-	padding: 0.5em 1em;
-	text-align: center;
-}
-
-.save {
 	color: var(--pink);
 	font-size: 1rem;
 	background-color: hsla(333, 82%, 70%, 0.1);
 	padding: 0;
 	margin: 1rem 0 1rem;
+	text-align: left;
 }
 
 .woocommerce .quantity .input-text .qty {
@@ -3231,14 +3229,20 @@ form.woocommerce-checkout {
 .woocommerce .product .cart .quantity .plus,
 .woocommerce .product .cart .quantity .minus {
 	padding: 1rem;
-	width: 100%;
-	height: 100%;
-	flex: 0 0 100%;
+	width: 46px;
+	height: 46px;
+	flex: 0 0 46px;
 	display: flex;
 	background-color: hsla(333, 82%, 70%, 0.1);
 	align-items: center;
 	align-content: center;
 	border-radius: 1rem;
+}
+
+.woocommerce .product .cart .quantity .plus svg,
+.woocommerce .product .cart .quantity .minus svg {
+	width: 32px;
+	height: 32px;
 }
 
 .woocommerce .product .cart .quantity .plus {
