@@ -191,7 +191,9 @@ Text Domain: rossicocina
 .btn,
 .woocommerce ul.products li.product .button,
 #learn-press-course .course-summary-sidebar .course-sidebar-preview .lp-course-buttons button,
-.woocommerce div.product form.cart .button {
+.woocommerce div.product form.cart .button,
+.woocommerce .coupon .button,
+.woocommerce .button {
 	-webkit-appearance: none;
 	-webkit-user-select: none;
 	user-select: none;
@@ -1295,7 +1297,7 @@ main .post-meta h1 a {
 	.page main article :is(p, div, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote),
 	.single main article :is(p, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote),
 	.archive main article :is(p, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote),
-	.single main:not(figure, img, div, article, main, time, ul) {
+	.single main:not(figure, img, div, article, main, time, ul, .woocommerce) {
 		padding: 0 .625rem;
 	}
 	
@@ -3066,6 +3068,7 @@ form.woocommerce-checkout {
 }
 
 .woocommerce div.product form.cart .button {
+	text-align: center;
 	margin-right: 0;
 	border-radius: 1rem;
 	padding: 1rem;
@@ -3328,12 +3331,13 @@ form.woocommerce-checkout {
 		padding: 0 .5rem;
 		display: flex;
 		flex-flow: column nowrap;
-		justify-content: center;
+		align-items: center;
 	}
 	
-	.woocommerce ul.products li.product {
-		flex: 0 1 100%;
-		width: 100%;
+	.woocommerce ul.products[class*=columns-] li.product,
+	.woocommerce-page ul.products[class*=columns-] li.product {
+		flex: 0 1 60%;
+		width: 60%;
 	}
 }
 
@@ -3354,4 +3358,18 @@ form.woocommerce-checkout {
 	font-weight: 500;
 	color: var(--dark-wine);
 	background-color: rgba(255, 245, 250, 0.92);
+}
+
+@media only screen and (max-width: 414px) {
+	.woocommerce .coupon .input-text {
+		min-width: 100%;
+		font-size: .875rem;
+		padding: .875rem;
+		text-align: center;
+		margin-bottom: .5rem;
+	}
+	
+	.woocommerce .coupon .button {
+		
+	}
 }
