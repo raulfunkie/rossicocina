@@ -3368,8 +3368,7 @@ form.woocommerce-checkout {
 		text-align: center;
 		margin-bottom: .5rem;
 	}
-	
-	.woocommerce .coupon .button {
-		
+	.woocommerce .woocommerce-message .button {
+		float: none;
 	}
 }
