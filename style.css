@@ -3245,13 +3245,14 @@ form.woocommerce-checkout {
 	color: var(--txt);
 }
 
-.woocommerce div.product form.cart div.quantity {
+.woocommerce div.product form.cart div.quantity,
+.woocommerce .quantity {
 	display: flex;
 	flex-flow: row nowrap;
 }
 
-.woocommerce .product .cart .quantity .plus,
-.woocommerce .product .cart .quantity .minus {
+.woocommerce .quantity .plus,
+.woocommerce .quantity .minus {
 	padding: 1rem;
 	width: 46px;
 	height: 46px;
@@ -3264,27 +3265,27 @@ form.woocommerce-checkout {
 	transition: all 100ms linear;
 }
 
-.woocommerce .product .cart .quantity .plus:active,
-.woocommerce .product .cart .quantity .minus:active {
+.woocommerce .quantity .plus:active,
+.woocommerce .quantity .minus:active {
 	transform: scale(.96);
 }
 
-.woocommerce .product .cart .quantity .plus:hover,
-.woocommerce .product .cart .quantity .minus:hover {
+.woocommerce .quantity .plus:hover,
+.woocommerce .quantity .minus:hover {
 	background-color: hsla(333, 81.71%, 69.93%, 0.25);
 }
 
-.woocommerce .product .cart .quantity .plus svg,
-.woocommerce .product .cart .quantity .minus svg {
+.woocommerce .quantity .plus svg,
+.woocommerce .quantity .minus svg {
 	width: 32px;
 	height: 32px;
 }
 
-.woocommerce .product .cart .quantity .plus {
+.woocommerce .quantity .plus {
 	margin-left: .5rem;
 }
 
-.woocommerce .product .cart .quantity .minus {
+.woocommerce .quantity .minus {
 	margin-right: .5rem;
 }
 
@@ -3368,7 +3369,17 @@ form.woocommerce-checkout {
 		text-align: center;
 		margin-bottom: .5rem;
 	}
+	
+	.woocommerce .woocommerce-message {
+		padding: 1em 2em 1em 3.5em;
+	}
+	
 	.woocommerce .woocommerce-message .button {
-		float: none;
+		display: none !important;
+	}
+	
+	.woocommerce .woocommerce-cart-form__cart-item .product-quantity .quantity {
+		padding-right: 0;
+		padding-left: 0;
 	}
 }
