@@ -3362,7 +3362,7 @@ form.woocommerce-checkout {
 }
 
 @media only screen and (max-width: 414px) {
-	.woocommerce .coupon .input-text {
+	.woocommerce-cart table.cart td.actions .coupon .input-text {
 		min-width: 100%;
 		font-size: .875rem;
 		padding: .875rem;
@@ -3381,5 +3381,10 @@ form.woocommerce-checkout {
 	.woocommerce .woocommerce-cart-form__cart-item .product-quantity .quantity {
 		padding-right: 0;
 		padding-left: 0;
+	}
+	
+	.woocommerce-page table.cart td.actions .coupon .input-text+.button {
+		width: 100%;
+		background-image: none;
 	}
 }
