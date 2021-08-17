@@ -3093,6 +3093,10 @@ form.woocommerce-checkout {
 	margin-bottom: 1rem;
 }
 
+.woocommerce .woocommerce-cart-form__cart-item .quantity .minus {
+	margin-left: auto;
+}
+
 /* testimonials */
 .testimonials {
 	padding: 0 1rem;
@@ -3388,3 +3392,6 @@ form.woocommerce-checkout {
 		background-image: none;
 	}
 }
+
+
+ 
