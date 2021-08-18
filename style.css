@@ -725,7 +725,7 @@ object.logo {
 }
 
 .home-posts .posts article:hover {
-	background: linear-gradient(90deg, hsla(255, 15%, 95%, .25) 0%, rgba(241, 240, 244, 0) 100%);
+	background: linear-gradient(90deg, hsla(255, 15%, 95%, .25) 0%, hsla(255, 15%, 95%, 0) 100%);
 }
 
 @media only screen and (max-width: 480px) {
@@ -815,7 +815,7 @@ object.logo {
 	padding: 2px 4px;
 	border-radius: 4px;
 	margin-right: .25rem;
-	color: #7B7B7B;
+	color: hsla(0, 0%, 48%, 1);
 }
 
 .home-posts .posts article time::after {
@@ -827,7 +827,7 @@ object.logo {
 }
 
 .home-posts .posts article div .time-cat a {
-	background-color: #F1F0F4;
+	background-color: hsla(255, 15%, 95%, 1);
 	color: var(--wine);
 	transition: all 100ms linear;
 }
@@ -1064,7 +1064,7 @@ footer .split > div ul  {
 footer .split > div ul li a {
 	display: block;
 	text-decoration: none;
-	color: #F2C5E3;
+	color: hsla(320, 63%, 86%, 1);
 	padding: .25rem 0;
 	transition: color 100ms linear;
 }
@@ -1652,7 +1652,7 @@ main article .content h5,
 }
 
 .post-meta-details ul li:not(:last-child) {
-	border-right: 1px solid #FECB4D;
+	border-right: 1px solid hsla(43, 99%, 65%, 1);
 }
 
 .post-meta-details ul li {
@@ -1721,7 +1721,7 @@ main article .content h5,
 }
 
 .post-meta-details ul li .tag-list a {
-	color: #838383;
+	color: hsla(0, 0%, 51%, 1);
 	text-decoration: none;
 	transition: color 100ms linear;
 }
@@ -1946,7 +1946,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	margin: 0 0 .5rem;
 	font-size: 1.125rem;
 	font-weight: 700;
-	color: #27AE60;
+	color: hsla(145, 63%, 42%, 1);
 	text-align: left;
 }
 
@@ -1970,7 +1970,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	padding: .75rem 1rem;
 	margin: 10px 4px 0 0;
 	text-decoration: none;
-	border: 1px solid #E1E2E9;
+	border: 1px solid hsla(233, 15%, 90%, 1);
 	box-shadow: var(--shadow);
 	border-radius: 8px;
 	display: flex;
@@ -2613,8 +2613,6 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	}
 }
 
-
-
 .course-title {
 	font-family: var(--title);
 	font-size: 1.5rem;
@@ -2705,27 +2703,6 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	.course-summary .course-summary-sidebar.slide-top .course-summary-sidebar__inner {
 		position: relative !important;
 	}
-}
-
-.woocommerce .summary .product_meta .posted_in,
-ul.learn-press-nav-tabs .course-nav.active::before,
-.course-summary #popup-header .items-progress .learn-press-progress,
-.course-meta.course-meta-primary,
-.course-instructor,
-.woocommerce-checkout .col-2,
-.woocommerce-checkout .col-2.woocommerce-shipping-fields,
-.woocommerce-checkout .col2-set::after,
-.woocommerce-result-count,
-h3#order_review_heading,
-.learnpress .meta-item.meta-item-quiz,
-.learnpress .meta-item.meta-item-student,
-.learnpress .course-featured-review,
-.woocommerce-page .about_paypal,
-.woocommerce-checkout #payment div.payment_box,
-ul.curriculum-sections .section .section-header .section-meta,
-.sidebar .panel .widgettitle,
-.woocommerce .onsale {
-	display: none !important;
 }
 
 #learn-press-course .course-summary-sidebar .course-sidebar-preview {
@@ -2871,6 +2848,12 @@ ul.curriculum-sections .section .section-header .section-meta,
 .woocommerce table.shop_table tfoot td,
 .woocommerce table.shop_table tfoot th {
 	font-size: .875rem;
+}
+
+@media only screen and (max-width: 414px) {
+	.woocommerce table.shop_table tfoot tr.order-total {
+		background-color: hsla(333, 82%, 70%, 0.1);
+	}
 }
 
 form.woocommerce-checkout {
@@ -3172,11 +3155,11 @@ form.woocommerce-checkout {
 }
 
 .testimonials .testimonial:first-child {
-	background: linear-gradient(142.49deg, #FFE1D7 16.52%, rgba(255, 225, 215, 0) 81.27%);
+	background: linear-gradient(142.49deg, hsla(15, 100%, 92%, 1) 16.52%, hsla(15, 100%, 92%, 0) 81.27%);
 }
 
 .testimonials .testimonial:nth-child(2) {
-	background: linear-gradient(142.49deg, #FFF1CE 16.52%, rgba(255, 241, 207, 0) 81.27%);
+	background: linear-gradient(142.49deg, hsla(43, 100%, 90%, 1) 16.52%, hsla(42, 100%, 91%, 0) 81.27%);
 }
 
 .testimonials .testimonial picture {
@@ -3366,7 +3349,7 @@ form.woocommerce-checkout {
 .woocommerce .product .entry-summary form.cart {
 	padding: 1rem;
 	border-radius: 1.5rem;
-	background-color: rgba(255, 245, 250, 0.92);
+	background-color: hsla(330, 100%, 98%, 0.92);
 }
 
 .woocommerce ul.products li.product {
@@ -3404,7 +3387,7 @@ form.woocommerce-checkout {
 	font-size: .875rem;
 	font-weight: 500;
 	color: var(--dark-wine);
-	background-color: rgba(255, 245, 250, 0.92);
+	background-color: hsla(330, 100%, 98%, 0.92);
 }
 
 @media only screen and (max-width: 414px) {
@@ -3470,4 +3453,24 @@ form.woocommerce-checkout {
 		padding: 0 !important;
 	}
 }
- 
+
+.woocommerce .summary .product_meta .posted_in,
+ul.learn-press-nav-tabs .course-nav.active::before,
+.course-summary #popup-header .items-progress .learn-press-progress,
+.course-meta.course-meta-primary,
+.course-instructor,
+.woocommerce-checkout .col-2,
+.woocommerce-checkout .col-2.woocommerce-shipping-fields,
+.woocommerce-checkout .col2-set::after,
+.woocommerce-result-count,
+h3#order_review_heading,
+.learnpress .meta-item.meta-item-quiz,
+.learnpress .meta-item.meta-item-student,
+.learnpress .course-featured-review,
+.woocommerce-page .about_paypal,
+.woocommerce-checkout #payment div.payment_box,
+ul.curriculum-sections .section .section-header .section-meta,
+.sidebar .panel .widgettitle,
+.woocommerce .onsale {
+	display: none !important;
+}
