@@ -193,7 +193,9 @@ Text Domain: rossicocina
 #learn-press-course .course-summary-sidebar .course-sidebar-preview .lp-course-buttons button,
 .woocommerce div.product form.cart .button,
 .woocommerce .coupon .button,
-.woocommerce .button {
+.woocommerce .button,
+.woocommerce .checkout-button,
+.woocomerce-page .checkout-button {
 	-webkit-appearance: none;
 	-webkit-user-select: none;
 	user-select: none;
@@ -3394,12 +3396,25 @@ form.woocommerce-checkout {
 		padding-left: 0;
 	}
 	
-	.woocommerce-page table.cart td.actions .coupon .input-text+.button {
+	.woocommerce-page table.cart td.actions .coupon .input-text+.button,
+	.woocomerce .checkout-button,
+	.woocommerce-page .checkout-button {
+		padding: 1rem;
 		width: 100%;
 		background-image: none;
 		text-align: center;
 		margin-right: 0;
 		margin-top: 0;
+	}
+	
+	.woocommerce table.shop_table_responsive tr td::before,
+	.woocommerce-page table.shop_table_responsive tr td::before {
+		font-size: .875rem;
+	}
+	
+	.woocommerce .woocommerce-remove-coupon,
+	.woocommerce-page .woocommerce-remove-coupon {
+		font-size: .875rem;
 	}
 }
 
