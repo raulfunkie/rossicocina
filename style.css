@@ -3076,6 +3076,12 @@ form.woocommerce-checkout {
 	margin: auto 1rem auto 0 !important;
 }
 
+@media only screen and (max-width: 414px) {
+	.woocommerce-page .wc_payment_method input {
+		transform: scale(1.8);
+	}
+}
+
 .woocommerce-page .wc_payment_method label img,
 .woocommerce-checkout #payment ul.payment_methods li img {
 	margin: 0 .5rem 0 0 !important;
@@ -3461,7 +3467,7 @@ form.woocommerce-checkout {
 	.woocommerce-privacy-policy-text p,
 	.woocommerce-terms-and-conditions-wrapper,
 	.woocommerce-checkout-review-order {
-		padding: 0;
+		padding: 0 !important;
 	}
 }
  
