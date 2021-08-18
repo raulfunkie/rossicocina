@@ -221,6 +221,12 @@ Text Domain: rossicocina
 	transition: all 100ms ease-in-out;
 }
 
+@media only screen and (max-width: 414px) {
+	.btn {
+		background-position: right 24px center;
+	}
+}
+
 .woocommerce ul.products li.product .button,
 #learn-press-course .course-summary-sidebar .course-sidebar-preview .lp-course-buttons button {
 	background-image: none;
@@ -241,7 +247,7 @@ Text Domain: rossicocina
 
 .btn:active,
 .woocommerce div.product form.cart .button:active {
-	transform: scale3d(0.94,0.94,0.94) scale(.95);
+	transform: scale3d(0.94,0.94,0.94) scale(.98);
 }
 
 .btn.btn-magenta {
@@ -1285,7 +1291,7 @@ main .post-meta h1 a {
 }
 
 .page main article :is(p, div, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote),
-.single main article :is(p, div, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote),
+.single main article :is(p, div, main, section, ul, ol, time, hr, blockquote),
 .archive main article :is(p, main, section, h1, h2, h3, h4, h5, ul, ol, time, hr, blockquote),
 .single main :not(figure, img, div, article, main, h1, h2, h3, h4, h5, ul) {
 	max-width: 940px;
@@ -1407,6 +1413,7 @@ main article .content a:hover {
 main article .content h2,
 .learnpress .course-description h2,
 .woocommerce .woocommerce-tabs h2 {
+	padding: 0;
 	margin-top: 2rem;
 	font-family: var(--title);
 	font-size: 2.25rem;
@@ -3390,6 +3397,9 @@ form.woocommerce-checkout {
 	.woocommerce-page table.cart td.actions .coupon .input-text+.button {
 		width: 100%;
 		background-image: none;
+		text-align: center;
+		margin-right: 0;
+		margin-top: 0;
 	}
 }
 
