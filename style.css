@@ -1431,6 +1431,11 @@ main article .content h2,
 	color: var(--wine);
 }
 
+.woocommerce .woocommerce-column__title,
+.woocommerce-page .woocommerce-column__title {
+	line-height: 1.2;
+}
+
 main article .content h3 {
 	margin-top: 2rem;
 	font-family: var(--basic);
@@ -2933,7 +2938,8 @@ form.woocommerce-checkout {
 }
 
 .woocommerce form.login input[type="text"],
-.woocommerce form.register input[type="text"] {
+.woocommerce form.register input[type="text"],
+.woocommerce-form-login .woocommerce-Input {
 	width: 100%;
 }
 
@@ -3473,4 +3479,29 @@ ul.curriculum-sections .section .section-header .section-meta,
 .sidebar .panel .widgettitle,
 .woocommerce .onsale {
 	display: none !important;
+}
+
+@media only screen and (max-width: 414px) {
+	.woocommerce-page.woocommerce-order-received ul.order_details {
+		display: flex;
+		flex-flow: column nowrap;
+		padding: 1rem;
+		border-radius: 1rem;
+		border: 1px solid hsla(333, 82%, 70%, 0.25);
+	}
+	
+	.woocommerce ul.order_details li {
+		border-right: 0;
+		flex: 0 0 100%;
+	}
+	
+	.woocommerce ul.order_details li:not(:last-child) {
+		border-bottom: 1px dashed hsla(333, 82%, 70%, 0.25);
+	}
+	
+	.woocommerce ul.order_details li strong {
+		margin-top: .5rem;
+		font-family: var(--mono);
+		color: var(--dark-wine);
+	}
 }
