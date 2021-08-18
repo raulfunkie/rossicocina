@@ -3425,6 +3425,13 @@ form.woocommerce-checkout {
 @media only screen and (max-width: 414px) {
 	.woocommerce .col2-set,
 	.woocommerce-page .col2-set,
+	.woocommerce #customer_details .col-1,
+	.woocommerce .woocommerce-billing-fields,
+	.woocommerce .woocommerce-account-fields,
+	.woocommerce .woocommerce-billing-fields__field-wrapper,
+	.woocommerce .create-account {
+		padding: 0;
+	}
 	
 }
  
