@@ -195,7 +195,9 @@ Text Domain: rossicocina
 .woocommerce .coupon .button,
 .woocommerce .button,
 .woocommerce .checkout-button,
-.woocomerce-page .checkout-button {
+.woocomerce-page .checkout-button,
+.woocommerce #payment #place_order,
+.woocommerce-page #payment #place_order {
 	-webkit-appearance: none;
 	-webkit-user-select: none;
 	user-select: none;
@@ -226,6 +228,13 @@ Text Domain: rossicocina
 @media only screen and (max-width: 414px) {
 	.btn {
 		background-position: right 24px center;
+	}
+	
+	.woocommerce #payment #place_order,
+	.woocommerce-page #payment #place_order {
+		background-image: none;
+		padding: 1rem;
+		text-align: center;
 	}
 }
 
@@ -2893,6 +2902,24 @@ form.woocommerce-checkout {
 	width: auto !important;
 }
 
+@media only screen and (max-width: 414px) {
+	.form-row-wide.mailchimp-newsletter {
+		display: flex;
+		flex-flow: row nowrap;
+		align-content: center;
+	}
+	
+	.form-row-wide.mailchimp-newsletter > * {
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+	
+	#customer_details p.form-row-wide.mailchimp-newsletter input[type="checkbox"] {
+		transform: scale(1.8);
+		margin-right: .5rem;
+	}
+}
+
 .woocommerce form .form-row,
 #add_payment_method #payment div.form-row,
 .woocommerce-cart #payment div.form-row,
@@ -3429,9 +3456,12 @@ form.woocommerce-checkout {
 	.woocommerce .woocommerce-billing-fields,
 	.woocommerce .woocommerce-account-fields,
 	.woocommerce .woocommerce-billing-fields__field-wrapper,
-	.woocommerce .create-account {
+	.woocommerce .create-account,
+	.woocommerce-privacy-policy-text,
+	.woocommerce-privacy-policy-text p,
+	.woocommerce-terms-and-conditions-wrapper,
+	.woocommerce-checkout-review-order {
 		padding: 0;
 	}
-	
 }
  
