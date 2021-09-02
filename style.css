@@ -145,6 +145,12 @@ Text Domain: rossicocina
 .woocommerce-cart table.cart td.actions .coupon .input-text {
 	min-width: 180px;
 	font-size: .875rem;
+	padding: .8rem .75rem;
+	border: 0;
+}
+
+.woocommerce-cart table.cart td.actions .coupon button {
+	margin-top: 0;
 }
 
 .wpcf7 .form-wrap .input-container {
@@ -197,7 +203,10 @@ Text Domain: rossicocina
 .woocommerce .checkout-button,
 .woocomerce-page .checkout-button,
 .woocommerce #payment #place_order,
-.woocommerce-page #payment #place_order {
+.woocommerce-page #payment #place_order,
+#add_payment_method .wc-proceed-to-checkout a.checkout-button,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
+.woocommerce-checkout .wc-proceed-to-checkout a.checkout-button {
 	-webkit-appearance: none;
 	-webkit-user-select: none;
 	user-select: none;

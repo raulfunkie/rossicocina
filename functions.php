@@ -470,3 +470,14 @@ function bbloomer_show_all_subcats() {
    if ( empty( $cats ) ) return;
    echo '<span class="cat_name">'. join( ', ', wp_list_pluck( $cats, 'name' ) ) .'</span>';
 }
+
+function woo_dequeue_select2() {
+  if ( class_exists( 'woocommerce' ) ) {
+      wp_dequeue_style( 'select2' );
+      wp_deregister_style( 'select2' );
+
+      wp_dequeue_script( 'selectWoo');
+      wp_deregister_script('selectWoo');
+  } 
+}
+add_action( 'wp_enqueue_scripts', 'woo_dequeue_select2', 100 );
