@@ -2814,6 +2814,10 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 }
 
 /* WooCommerce */
+.woocommerce-checkout .woocommerce {
+	padding: 0;
+}
+
 .woocommerce-Price-amount,
 #learn-press-course .course-summary-sidebar .course-sidebar-preview .course-price,
 .learnpress .course-price {
@@ -2917,8 +2921,13 @@ form.woocommerce-checkout {
 	}
 	
 	#customer_details p.form-row-wide.mailchimp-newsletter input[type="checkbox"] {
-		transform: scale(1.8);
+		transform: scale(1.25);
 		margin-right: .5rem;
+		margin-top: .16rem;
+	}
+	
+	#customer_details p.form-row-wide.mailchimp-newsletter label {
+		margin-bottom: 0;
 	}
 }
 
@@ -2930,8 +2939,13 @@ form.woocommerce-checkout {
 	margin-bottom: .5rerm;
 }
 
+.woocommerce-page form .form-row-first,
+.woocommerce-page form .form-row-last {
+	width: 49%;
+}
+
 .woocommerce form .form-row label {
-	font-size: .875rem;
+	font-size: 1rem;
 	font-weight: 600;
 	color: var(--dark-wine);
 	line-height: 1;
