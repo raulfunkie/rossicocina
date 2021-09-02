@@ -2897,9 +2897,7 @@ form.woocommerce-checkout {
 }
 
 #customer_details p.form-row-wide.mailchimp-newsletter {
-	padding-bottom: 2rem;
-	margin-bottom: 2rem;
-	border-bottom: 2px solid hsla(333, 82%, 70%, 0.1);
+	margin: 1.25rem 0 2rem !important;
 }
 
 #customer_details p.form-row-wide.mailchimp-newsletter input[type="checkbox"] {
