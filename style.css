@@ -1996,7 +1996,6 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 }
 
 .content-item-description .payment-button {
-	margin: 1rem auto 2rem;
 	display: flex;
 	align-items: center;
 	max-width: 320px;
@@ -2005,7 +2004,12 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	margin-bottom: 2rem;
 }
 
-.content-item-description .payment-button p {
+.course-description .payment-button {
+	margin: 1rem auto 2rem;
+}
+
+.course-description .payment-button p {
+	text-align: center;
 	margin-bottom: 0;
 	text-transform: uppercase;
 	font-weight: .875rem;
@@ -2604,7 +2608,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 
 .learnpress #learn-press-course-tabs .course-tab-panels .course-tab-panel .course-description h3 {
 	font-family: var(--title);
-	font-size: 1.25rem;
+	font-size: 1.75rem;
 	color: var(--wine);
 	margin-bottom: 1.25rem;
 }
