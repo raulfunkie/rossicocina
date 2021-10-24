@@ -2010,10 +2010,11 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 
 .course-description .payment-button p {
 	text-align: center;
-	margin-bottom: 0;
+	margin-bottom: 0 !important;
 	text-transform: uppercase;
-	font-weight: .875rem;
-	font-weight: 700;
+	font-size: 1rem !important;
+	font-weight: 700 !important;
+	color: var(--wine) !important;
 }
 
 .content-item-description .payment-button svg {
