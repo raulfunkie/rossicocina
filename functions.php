@@ -337,6 +337,8 @@ function bbloomer_required_woo_checkout_fields( $fields ) {
   $fields['billing']['billing_phone']['required'] = false;
   $fields['account']['account_password']['required'] = false;
   $fields['account']['account_password-2']['required'] = false;
+  $fields['account']['account_username']['required'] = false;
+  
   
   unset($fields['billing']['billing_company']);
   unset($fields['billing']['billing_address_1']);
