@@ -369,17 +369,7 @@ function custom_checkout_fields( $fields ) {
   
   return $fields;
 }
-add_filter( 'woocommerce_checkout_fields' , 'custom_checkout_fields' );\\
-
-function my_text_strings( $translated_text, $text, $domain ) {
-  switch ( $translated_text ) {
-      case 'Coupon code' :
-          $translated_text = __( 'Codigo Promonocional', 'woocommerce' );
-          break;
-  }
-  return $translated_text;
-}
-add_filter( 'gettext', 'my_text_strings', 20, 3 );
+add_filter( 'woocommerce_checkout_fields' , 'custom_checkout_fields' );
 
 add_filter( 'woocommerce_new_customer_data', function( $data ) {
   $data['user_login'] = $data['user_email'];
