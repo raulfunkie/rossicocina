@@ -438,7 +438,7 @@ add_action( 'wp_footer', 'bbloomer_add_cart_quantity_plus_minus' );
   
 function bbloomer_add_cart_quantity_plus_minus() {
  
-   if ( ! is_product() && ! is_cart() ) return;
+   if ( ! is_product() ) return;
     
    wc_enqueue_js( "   
            
