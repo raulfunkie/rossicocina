@@ -2930,6 +2930,7 @@ form.woocommerce-checkout {
 
 #customer_details p.form-row-wide.mailchimp-newsletter input[type="checkbox"] {
 	width: auto !important;
+	margin: auto .625rem auto 0;
 }
 
 @media only screen and (max-width: 414px) {
@@ -2975,6 +2976,10 @@ form.woocommerce-checkout {
 	line-height: 1;
 	margin-bottom: .25rem;
 	display: none !important;
+}
+
+.woocoommerce form .form-row.mailchimp-newsletter label {
+	margin-bottom: 0;
 }
 
 .woocommerce-form-login form .form-row label,

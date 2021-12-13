@@ -335,6 +335,8 @@ function bbloomer_required_woo_checkout_fields( $fields ) {
   $fields['billing']['billing_state']['required'] = false;
   $fields['billing']['billing_phone']['required'] = false;
   $fields['billing']['billing_phone']['required'] = false;
+  $fields['account']['account_password']['required'] = false;
+
   
   unset($fields['billing']['billing_company']);
   unset($fields['billing']['billing_address_1']);
@@ -344,6 +346,7 @@ function bbloomer_required_woo_checkout_fields( $fields ) {
   unset($fields['billing']['billing_state']);
   unset($fields['billing']['billing_phone']);
   unset($fields['order']['order_comments']);
+  
   
   return $fields;
 }
@@ -355,8 +358,6 @@ function custom_checkout_fields( $fields ) {
   $fields['billing']['billing_last_name']['placeholder'] = 'Apellido';
   $fields['billing']['billing_country']['placeholder'] = 'Pais';
   $fields['account']['account_username']['placeholder'] = 'Usuario';
-  $fields['account']['account_password']['placeholder'] = 'Contraseña';
-  $fields['account']['account_password']['type'] = 'password';
   
   $fields['billing']['billing_country']['priority'] = '1';
   $fields['billing']['billing_email']['priority'] = '2';
