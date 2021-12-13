@@ -361,8 +361,9 @@ function custom_checkout_fields( $fields ) {
   $fields['billing']['billing_email']['placeholder'] = 'Email';
   $fields['billing']['billing_last_name']['placeholder'] = 'Apellido';
   $fields['billing']['billing_country']['placeholder'] = 'Pais';
-  // $fields['account']['account_username']['placeholder'] = 'Usuario';
-  
+  // $fields['account']['account_password']['placeholder'] = 'Contraseña';
+  // $fields['account']['account_password']['type'] = 'password';
+   
   $fields['billing']['billing_country']['priority'] = '1';
   $fields['billing']['billing_email']['priority'] = '2';
   
