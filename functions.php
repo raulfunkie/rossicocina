@@ -348,6 +348,7 @@ function bbloomer_required_woo_checkout_fields( $fields ) {
   unset($fields['order']['order_comments']);
   unset($fields['account']['account_password']);
   unset($fields['account']['account_password-2']);
+  unset($fields['account']['account_username']);
   
   return $fields;
 }
