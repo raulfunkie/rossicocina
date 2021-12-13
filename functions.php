@@ -336,7 +336,7 @@ function bbloomer_required_woo_checkout_fields( $fields ) {
   $fields['billing']['billing_phone']['required'] = false;
   $fields['billing']['billing_phone']['required'] = false;
   $fields['account']['account_password']['required'] = false;
-
+  $fields['account']['account_password-2']['required'] = false;
   
   unset($fields['billing']['billing_company']);
   unset($fields['billing']['billing_address_1']);
@@ -346,7 +346,8 @@ function bbloomer_required_woo_checkout_fields( $fields ) {
   unset($fields['billing']['billing_state']);
   unset($fields['billing']['billing_phone']);
   unset($fields['order']['order_comments']);
-  
+  unset($fields['account']['account_password']);
+  unset($fields['account']['account_password-2']);
   
   return $fields;
 }
@@ -365,6 +366,12 @@ function custom_checkout_fields( $fields ) {
   return $fields;
 }
 add_filter( 'woocommerce_checkout_fields' , 'custom_checkout_fields' );
+
+add_filter( 'woocommerce_new_customer_data', function( $data ) {
+  $data['user_login'] = $data['user_email'];
+
+  return $data;
+} );
  
 function bbloomer_checkout_fields_in_label_error( $field, $key, $args, $value ) {
    if ( strpos( $field, '</label>' ) !== false && $args['required'] ) {
