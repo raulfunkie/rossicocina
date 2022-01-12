@@ -3124,7 +3124,7 @@ form.woocommerce-checkout {
 
 @media only screen and (max-width: 414px) {
 	.woocommerce-page .wc_payment_method input {
-		transform: scale(1.8);
+		transform: scale(1.25);
 	}
 }
 
@@ -3341,6 +3341,13 @@ form.woocommerce-checkout {
 .woocommerce .quantity {
 	display: flex;
 	flex-flow: row nowrap;
+}
+
+@media only screen and (max-width: 414px) {
+	.woocommerce div.product form.cart div.quantity {
+		margin: 0;
+		padding: 0;
+	}
 }
 
 .woocommerce .quantity .plus,
@@ -3572,16 +3579,15 @@ ul.curriculum-sections .section .section-header .section-meta,
 
 @media only screen and (max-width: 414px) {
 	.coupon-code .input-text {
-		width: 100%;
-		margin: .625rem auto;
+		width: 100% !important;
 		text-align: center;
 	}
 }
 
 /* Cart item */
 @media only screen and (max-width: 414px) {
-	.cart_item .product-quantity {
-		display: flex;
+	tr.cart_item td.product-quantity {
+		display: flex !important;
 		flex-flow: row nowrap;
 		justify-content: space-between;
 		align-items: center;
