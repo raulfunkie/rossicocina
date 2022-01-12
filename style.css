@@ -3344,7 +3344,8 @@ form.woocommerce-checkout {
 }
 
 @media only screen and (max-width: 414px) {
-	.woocommerce div.product form.cart div.quantity {
+	.woocommerce div.product form.cart div.quantity,
+	.woocommerce .quantity {
 		margin: 0;
 		padding: 0;
 	}
