@@ -3595,3 +3595,8 @@ ul.curriculum-sections .section .section-header .section-meta,
 		align-items: center;
 	}
 }
+
+.woocommerce-checkout-review-order-table .minus,
+.woocommerce-checkout-review-order-table .plus {
+	display: none !important;
+}
