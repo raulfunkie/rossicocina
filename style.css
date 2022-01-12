@@ -3335,6 +3335,7 @@ form.woocommerce-checkout {
 	font-family: var(--mono);
 	font-size: 1.25rem;
 	color: var(--txt);
+	min-width: 0;
 }
 
 .woocommerce div.product form.cart div.quantity,
@@ -3594,6 +3595,10 @@ ul.curriculum-sections .section .section-header .section-meta,
 		justify-content: space-between;
 		align-items: center;
 	}
+}
+
+.woocommerce-checkout-review-order-table .product-name {
+	min-width: 200px !important;
 }
 
 .woocommerce-checkout-review-order-table .minus,
