@@ -3346,6 +3346,7 @@ form.woocommerce-checkout {
 @media only screen and (max-width: 414px) {
 	.woocommerce div.product form.cart div.quantity,
 	.woocommerce .quantity {
+		justify-content: space-between;
 		margin: 0;
 		padding: 0;
 	}
