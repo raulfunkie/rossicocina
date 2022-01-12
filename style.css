@@ -3357,6 +3357,13 @@ form.woocommerce-checkout {
 	transition: all 100ms linear;
 }
 
+@media only screen and (max-width: 414px) {
+	.woocommerce .quantity .plus,
+	.woocommerce .quantity .minus {
+		display: none;
+	}
+}
+
 .woocommerce .quantity .plus:active,
 .woocommerce .quantity .minus:active {
 	transform: scale(.96);
@@ -3560,5 +3567,23 @@ ul.curriculum-sections .section .section-header .section-meta,
 		margin-top: .5rem;
 		font-family: var(--mono);
 		color: var(--dark-wine);
+	}
+}
+
+@media only screen and (max-width: 414px) {
+	.coupon-code .input-text {
+		width: 100%;
+		margin: .625rem auto;
+		text-align: center;
+	}
+}
+
+/* Cart item */
+@media only screen and (max-width: 414px) {
+	.cart_item .product-quantity {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
 	}
 }
