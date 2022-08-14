@@ -3605,3 +3605,11 @@ ul.curriculum-sections .section .section-header .section-meta,
 .woocommerce-checkout-review-order-table .plus {
 	display: none !important;
 }
+.woocommerce .product .price .woocommerce-Price-currencySymbol {
+	font-size: .875rem;
+}
+
+.woocommerce ul.products li.product .price {
+	font-size: 1rem;
+	color: var(--newspaper);
+}
