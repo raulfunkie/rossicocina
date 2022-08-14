@@ -422,7 +422,7 @@ function woocommerce_output_product_data_tabs() {
    echo '</section>';
 }
 add_action( 'woocommerce_after_quantity_input_field', 'bbloomer_display_quantity_plus' );
-remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+// remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
   
 function bbloomer_display_quantity_plus() {
    echo '<button type="button" class="plus"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#5B2491" d="M22.43 32c3.22 0 5.67-.36 7.45-2.13 1.77-1.79 2.12-4.22 2.12-7.44V9.59c0-3.24-.35-5.67-2.12-7.44C28.1.38 25.65 0 22.43 0H9.55C6.38 0 3.92.38 2.13 2.15.36 3.94 0 6.36 0 9.55v12.88c0 3.22.35 5.65 2.13 7.44C3.92 31.64 6.36 32 9.6 32h12.84zM16 23.85a1.7 1.7 0 0 1-1.77-1.77v-4.3h-4.3a1.7 1.7 0 0 1-1.77-1.75c0-1.06.75-1.8 1.77-1.8h4.3v-4.3A1.7 1.7 0 0 1 16 8.15c1.04 0 1.79.75 1.79 1.79v4.28h4.3c1.02 0 1.77.75 1.77 1.8a1.7 1.7 0 0 1-1.77 1.76h-4.3v4.3a1.7 1.7 0 0 1-1.8 1.77z"/></svg></button>';
