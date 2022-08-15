@@ -3617,4 +3617,5 @@ ul.curriculum-sections .section .section-header .section-meta,
 
 .woocommerce ul.products li.product .price {
 	font-size: 1rem;
+	color: var(--dark-wine);
 }
